@@ -1,0 +1,26 @@
+[
+  {
+    "full_image_path": "images/DSCF1464_quarter.JPG",
+    "thumbnail_path": "images/DSCF1464_thumbnail.JPG",
+    "size": "quarter",
+    "caption": "View from Flattop Mountain. Anchorage, AK"
+  },
+  {
+    "full_image_path": "images/DSCF1472_quarter.JPG",
+    "thumbnail_path": "images/DSCF1472_thumbnail.JPG",
+    "size": "quarter",
+    "caption": "Me on Flattop Mountain. Anchorage, AK"
+  },
+  {
+    "full_image_path": "images/DSCF1489_quarter.JPG",
+    "thumbnail_path": "images/DSCF1489_thumbnail.JPG",
+    "size": "quarter",
+    "caption": "Our Cabin in K’esugi Ken Campground, Denali State Park, AK"
+  },
+  {
+    "full_image_path": "images/DSCF1520_quarter.JPG",
+    "thumbnail_path": "images/DSCF1520_thumbnail.JPG",
+    "size": "quarter",
+    "caption": "View of Denali, AK"
+  }
+]
