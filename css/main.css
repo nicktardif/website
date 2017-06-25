@@ -1,6 +1,13 @@
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+.header {
+  text-align: center;
+}
 .my-gallery {
   width: 100%;
-  float: left;
+  display: inline-block;
+  text-align: center;
 }
 .my-gallery img {
   object-fit: cover;
@@ -8,8 +15,7 @@
   height: 150px;
 }
 .my-gallery figure {
-  display: block;
-  float: left;
+  display: inline-block;
   margin: 0 5px 5px 0;
   width: 150px;
 }
@@ -19,13 +25,19 @@
 }
 .pswp__caption__center {
   text-align: center;
+  font-size: 1.4em;
+  max-width: none;
+}
+.photo-header {
+  display: inline-block;
 }
 
 .filters {
-  float: left;
+  display: inline-block;
   margin-bottom: 10px;
 }
 .filters svg {
+  margin-top: 20px;
   height: 36px;
   width: 36px;
 }

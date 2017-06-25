@@ -20,7 +20,9 @@
         "date": "2017:01:01 18:27:50",
         "full_image_path": "images/converted/DSCF0347_2400x1600.JPG",
         "original_path": "images/DSCF0347.JPG",
-        "tags": ["food"],
+        "tags": [
+            "food"
+        ],
         "thumbnail_path": "images/converted/DSCF0347_300x200.JPG"
     },
     "images/DSCF0380.JPG": {
@@ -28,7 +30,9 @@
         "date": "2017:01:07 16:27:46",
         "full_image_path": "images/converted/DSCF0380_2400x1600.JPG",
         "original_path": "images/DSCF0380.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0380_300x200.JPG"
     },
     "images/DSCF0410.JPG": {
@@ -36,7 +40,9 @@
         "date": "2017:01:08 08:10:50",
         "full_image_path": "images/converted/DSCF0410_2400x1600.JPG",
         "original_path": "images/DSCF0410.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0410_300x200.JPG"
     },
     "images/DSCF0427.JPG": {
@@ -44,7 +50,9 @@
         "date": "2017:01:08 08:39:17",
         "full_image_path": "images/converted/DSCF0427_2400x1600.JPG",
         "original_path": "images/DSCF0427.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0427_300x200.JPG"
     },
     "images/DSCF0455.JPG": {
@@ -52,7 +60,9 @@
         "date": "2017:01:08 12:14:12",
         "full_image_path": "images/converted/DSCF0455_2400x1600.JPG",
         "original_path": "images/DSCF0455.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0455_300x200.JPG"
     },
     "images/DSCF0545.JPG": {
@@ -60,7 +70,9 @@
         "date": "2017:01:17 19:28:55",
         "full_image_path": "images/converted/DSCF0545_2400x1600.JPG",
         "original_path": "images/DSCF0545.JPG",
-        "tags": ["food"],
+        "tags": [
+            "food"
+        ],
         "thumbnail_path": "images/converted/DSCF0545_300x200.JPG"
     },
     "images/DSCF0719.JPG": {
@@ -68,7 +80,9 @@
         "date": "2017:03:15 17:58:15",
         "full_image_path": "images/converted/DSCF0719_2400x1600.JPG",
         "original_path": "images/DSCF0719.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0719_300x200.JPG"
     },
     "images/DSCF0796.JPG": {
@@ -76,7 +90,9 @@
         "date": "2017:03:17 07:43:39",
         "full_image_path": "images/converted/DSCF0796_2400x1600.JPG",
         "original_path": "images/DSCF0796.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0796_300x200.JPG"
     },
     "images/DSCF0836.JPG": {
@@ -84,7 +100,9 @@
         "date": "2017:03:17 12:57:38",
         "full_image_path": "images/converted/DSCF0836_2400x1600.JPG",
         "original_path": "images/DSCF0836.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0836_300x200.JPG"
     },
     "images/DSCF0888.JPG": {
@@ -92,7 +110,9 @@
         "date": "2017:03:17 16:49:12",
         "full_image_path": "images/converted/DSCF0888_2400x1600.JPG",
         "original_path": "images/DSCF0888.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0888_300x200.JPG"
     },
     "images/DSCF0894.JPG": {
@@ -100,7 +120,9 @@
         "date": "2017:03:17 17:33:52",
         "full_image_path": "images/converted/DSCF0894_2400x1600.JPG",
         "original_path": "images/DSCF0894.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0894_300x200.JPG"
     },
     "images/DSCF0900.JPG": {
@@ -108,7 +130,9 @@
         "date": "2017:03:19 09:46:57",
         "full_image_path": "images/converted/DSCF0900_2400x1600.JPG",
         "original_path": "images/DSCF0900.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0900_300x200.JPG"
     },
     "images/DSCF0915.JPG": {
@@ -116,7 +140,9 @@
         "date": "2017:03:19 11:47:03",
         "full_image_path": "images/converted/DSCF0915_2400x1600.JPG",
         "original_path": "images/DSCF0915.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0915_300x200.JPG"
     },
     "images/DSCF0927.JPG": {
@@ -132,7 +158,9 @@
         "date": "2017:03:19 12:52:52",
         "full_image_path": "images/converted/DSCF0932_2400x1600.JPG",
         "original_path": "images/DSCF0932.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF0932_300x200.JPG"
     },
     "images/DSCF0983.JPG": {
@@ -156,7 +184,9 @@
         "date": "2017:04:02 19:17:27",
         "full_image_path": "images/converted/DSCF1024_2400x1600.JPG",
         "original_path": "images/DSCF1024.JPG",
-        "tags": ["food"],
+        "tags": [
+            "food"
+        ],
         "thumbnail_path": "images/converted/DSCF1024_300x200.JPG"
     },
     "images/DSCF1092.JPG": {
@@ -180,7 +210,9 @@
         "date": "2017:04:24 19:03:14",
         "full_image_path": "images/converted/DSCF1125_2400x1600.JPG",
         "original_path": "images/DSCF1125.JPG",
-        "tags": ["food"],
+        "tags": [
+            "food"
+        ],
         "thumbnail_path": "images/converted/DSCF1125_300x200.JPG"
     },
     "images/DSCF1144.JPG": {
@@ -188,7 +220,9 @@
         "date": "2017:04:24 19:49:30",
         "full_image_path": "images/converted/DSCF1144_2400x1600.JPG",
         "original_path": "images/DSCF1144.JPG",
-        "tags": ["food"],
+        "tags": [
+            "food"
+        ],
         "thumbnail_path": "images/converted/DSCF1144_300x200.JPG"
     },
     "images/DSCF1256.JPG": {
@@ -204,7 +238,9 @@
         "date": "2017:05:14 22:24:05",
         "full_image_path": "images/converted/DSCF1417_2400x1600.JPG",
         "original_path": "images/DSCF1417.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF1417_300x200.JPG"
     },
     "images/DSCF1464.JPG": {
@@ -212,7 +248,9 @@
         "date": "2017:05:15 14:10:39",
         "full_image_path": "images/converted/DSCF1464_2400x1600.JPG",
         "original_path": "images/DSCF1464.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF1464_300x200.JPG"
     },
     "images/DSCF1470.JPG": {
@@ -220,7 +258,9 @@
         "date": "2017:05:15 14:11:22",
         "full_image_path": "images/converted/DSCF1470_2400x1600.JPG",
         "original_path": "images/DSCF1470.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF1470_300x200.JPG"
     },
     "images/DSCF1489.JPG": {
@@ -228,7 +268,9 @@
         "date": "2017:05:16 19:46:02",
         "full_image_path": "images/converted/DSCF1489_2400x1600.JPG",
         "original_path": "images/DSCF1489.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF1489_300x200.JPG"
     },
     "images/DSCF1520.JPG": {
@@ -236,7 +278,9 @@
         "date": "2017:05:16 23:07:31",
         "full_image_path": "images/converted/DSCF1520_2400x1600.JPG",
         "original_path": "images/DSCF1520.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSCF1520_300x200.JPG"
     },
     "images/DSC_4240.JPG": {
@@ -244,7 +288,9 @@
         "date": "2016:10:02 11:34:28",
         "full_image_path": "images/converted/DSC_4240_2400x1600.JPG",
         "original_path": "images/DSC_4240.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSC_4240_300x200.JPG"
     },
     "images/DSC_4275.JPG": {
@@ -252,7 +298,9 @@
         "date": "2016:10:02 21:47:50",
         "full_image_path": "images/converted/DSC_4275_2400x1600.JPG",
         "original_path": "images/DSC_4275.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSC_4275_300x200.JPG"
     },
     "images/DSC_4310.JPG": {
@@ -268,7 +316,9 @@
         "date": "2016:10:03 18:55:53",
         "full_image_path": "images/converted/DSC_4337_2400x1600.JPG",
         "original_path": "images/DSC_4337.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSC_4337_300x200.JPG"
     },
     "images/DSC_4381.JPG": {
@@ -276,7 +326,9 @@
         "date": "2016:10:04 08:49:58",
         "full_image_path": "images/converted/DSC_4381_2400x1600.JPG",
         "original_path": "images/DSC_4381.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSC_4381_300x200.JPG"
     },
     "images/DSC_4430.JPG": {
@@ -284,7 +336,9 @@
         "date": "2016:10:05 16:01:01",
         "full_image_path": "images/converted/DSC_4430_2400x1600.JPG",
         "original_path": "images/DSC_4430.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSC_4430_300x200.JPG"
     },
     "images/DSC_4447.JPG": {
@@ -292,7 +346,9 @@
         "date": "2016:10:05 17:14:18",
         "full_image_path": "images/converted/DSC_4447_2400x1600.JPG",
         "original_path": "images/DSC_4447.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSC_4447_300x200.JPG"
     },
     "images/DSC_4578.JPG": {
@@ -300,7 +356,9 @@
         "date": "2016:10:07 10:34:27",
         "full_image_path": "images/converted/DSC_4578_2400x1600.JPG",
         "original_path": "images/DSC_4578.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSC_4578_300x200.JPG"
     },
     "images/DSC_4614.JPG": {
@@ -308,7 +366,9 @@
         "date": "2016:10:08 15:39:45",
         "full_image_path": "images/converted/DSC_4614_2400x1600.JPG",
         "original_path": "images/DSC_4614.JPG",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/DSC_4614_300x200.JPG"
     },
     "images/simon_nick_utah_chair.jpg": {
@@ -316,7 +376,9 @@
         "date": "",
         "full_image_path": "images/converted/simon_nick_utah_chair_2048x1536.jpg",
         "original_path": "images/simon_nick_utah_chair.jpg",
-        "tags": ["travel"],
+        "tags": [
+            "travel"
+        ],
         "thumbnail_path": "images/converted/simon_nick_utah_chair_300x200.jpg"
     }
 }
