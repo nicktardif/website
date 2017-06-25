@@ -1,26 +1,322 @@
-[
-  {
-    "full_image_path": "images/DSCF1464_quarter.JPG",
-    "thumbnail_path": "images/DSCF1464_thumbnail.JPG",
-    "size": "quarter",
-    "caption": "View from Flattop Mountain. Anchorage, AK"
-  },
-  {
-    "full_image_path": "images/DSCF1472_quarter.JPG",
-    "thumbnail_path": "images/DSCF1472_thumbnail.JPG",
-    "size": "quarter",
-    "caption": "Me on Flattop Mountain. Anchorage, AK"
-  },
-  {
-    "full_image_path": "images/DSCF1489_quarter.JPG",
-    "thumbnail_path": "images/DSCF1489_thumbnail.JPG",
-    "size": "quarter",
-    "caption": "Our Cabin in K’esugi Ken Campground, Denali State Park, AK"
-  },
-  {
-    "full_image_path": "images/DSCF1520_quarter.JPG",
-    "thumbnail_path": "images/DSCF1520_thumbnail.JPG",
-    "size": "quarter",
-    "caption": "View of Denali, AK"
-  }
-]
+{
+    "images/DSCF0284.JPG": {
+        "caption": "",
+        "date": "2016:12:18 19:00:25",
+        "full_image_path": "images/converted/DSCF0284_1664x1664.JPG",
+        "original_path": "images/DSCF0284.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0284_200x300.JPG"
+    },
+    "images/DSCF0314.JPG": {
+        "caption": "",
+        "date": "2016:12:23 12:39:42",
+        "full_image_path": "images/converted/DSCF0314_2400x1600.JPG",
+        "original_path": "images/DSCF0314.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0314_300x200.JPG"
+    },
+    "images/DSCF0347.JPG": {
+        "caption": "",
+        "date": "2017:01:01 18:27:50",
+        "full_image_path": "images/converted/DSCF0347_2400x1600.JPG",
+        "original_path": "images/DSCF0347.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0347_300x200.JPG"
+    },
+    "images/DSCF0380.JPG": {
+        "caption": "",
+        "date": "2017:01:07 16:27:46",
+        "full_image_path": "images/converted/DSCF0380_2400x1600.JPG",
+        "original_path": "images/DSCF0380.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0380_300x200.JPG"
+    },
+    "images/DSCF0410.JPG": {
+        "caption": "",
+        "date": "2017:01:08 08:10:50",
+        "full_image_path": "images/converted/DSCF0410_2400x1600.JPG",
+        "original_path": "images/DSCF0410.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0410_300x200.JPG"
+    },
+    "images/DSCF0427.JPG": {
+        "caption": "",
+        "date": "2017:01:08 08:39:17",
+        "full_image_path": "images/converted/DSCF0427_2400x1600.JPG",
+        "original_path": "images/DSCF0427.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0427_300x200.JPG"
+    },
+    "images/DSCF0455.JPG": {
+        "caption": "",
+        "date": "2017:01:08 12:14:12",
+        "full_image_path": "images/converted/DSCF0455_2400x1600.JPG",
+        "original_path": "images/DSCF0455.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0455_300x200.JPG"
+    },
+    "images/DSCF0545.JPG": {
+        "caption": "",
+        "date": "2017:01:17 19:28:55",
+        "full_image_path": "images/converted/DSCF0545_2400x1600.JPG",
+        "original_path": "images/DSCF0545.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0545_300x200.JPG"
+    },
+    "images/DSCF0719.JPG": {
+        "caption": "",
+        "date": "2017:03:15 17:58:15",
+        "full_image_path": "images/converted/DSCF0719_2400x1600.JPG",
+        "original_path": "images/DSCF0719.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0719_300x200.JPG"
+    },
+    "images/DSCF0796.JPG": {
+        "caption": "",
+        "date": "2017:03:17 07:43:39",
+        "full_image_path": "images/converted/DSCF0796_2400x1600.JPG",
+        "original_path": "images/DSCF0796.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0796_300x200.JPG"
+    },
+    "images/DSCF0836.JPG": {
+        "caption": "",
+        "date": "2017:03:17 12:57:38",
+        "full_image_path": "images/converted/DSCF0836_2400x1600.JPG",
+        "original_path": "images/DSCF0836.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0836_300x200.JPG"
+    },
+    "images/DSCF0888.JPG": {
+        "caption": "",
+        "date": "2017:03:17 16:49:12",
+        "full_image_path": "images/converted/DSCF0888_2400x1600.JPG",
+        "original_path": "images/DSCF0888.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0888_300x200.JPG"
+    },
+    "images/DSCF0894.JPG": {
+        "caption": "",
+        "date": "2017:03:17 17:33:52",
+        "full_image_path": "images/converted/DSCF0894_2400x1600.JPG",
+        "original_path": "images/DSCF0894.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0894_300x200.JPG"
+    },
+    "images/DSCF0900.JPG": {
+        "caption": "",
+        "date": "2017:03:19 09:46:57",
+        "full_image_path": "images/converted/DSCF0900_2400x1600.JPG",
+        "original_path": "images/DSCF0900.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0900_300x200.JPG"
+    },
+    "images/DSCF0915.JPG": {
+        "caption": "",
+        "date": "2017:03:19 11:47:03",
+        "full_image_path": "images/converted/DSCF0915_2400x1600.JPG",
+        "original_path": "images/DSCF0915.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0915_300x200.JPG"
+    },
+    "images/DSCF0927.JPG": {
+        "caption": "",
+        "date": "2017:03:19 12:45:14",
+        "full_image_path": "images/converted/DSCF0927_2400x1600.JPG",
+        "original_path": "images/DSCF0927.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0927_300x200.JPG"
+    },
+    "images/DSCF0932.JPG": {
+        "caption": "",
+        "date": "2017:03:19 12:52:52",
+        "full_image_path": "images/converted/DSCF0932_2400x1600.JPG",
+        "original_path": "images/DSCF0932.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0932_300x200.JPG"
+    },
+    "images/DSCF0983.JPG": {
+        "caption": "",
+        "date": "2017:04:01 12:25:50",
+        "full_image_path": "images/converted/DSCF0983_2400x1600.JPG",
+        "original_path": "images/DSCF0983.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0983_300x200.JPG"
+    },
+    "images/DSCF0986.JPG": {
+        "caption": "",
+        "date": "2017:04:01 12:26:51",
+        "full_image_path": "images/converted/DSCF0986_2400x1600.JPG",
+        "original_path": "images/DSCF0986.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF0986_300x200.JPG"
+    },
+    "images/DSCF1024.JPG": {
+        "caption": "",
+        "date": "2017:04:02 19:17:27",
+        "full_image_path": "images/converted/DSCF1024_2400x1600.JPG",
+        "original_path": "images/DSCF1024.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1024_300x200.JPG"
+    },
+    "images/DSCF1092.JPG": {
+        "caption": "",
+        "date": "2017:04:08 17:49:17",
+        "full_image_path": "images/converted/DSCF1092_2400x1600.JPG",
+        "original_path": "images/DSCF1092.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1092_300x200.JPG"
+    },
+    "images/DSCF1117.JPG": {
+        "caption": "",
+        "date": "2017:04:16 11:04:58",
+        "full_image_path": "images/converted/DSCF1117_2400x1600.JPG",
+        "original_path": "images/DSCF1117.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1117_300x200.JPG"
+    },
+    "images/DSCF1125.JPG": {
+        "caption": "",
+        "date": "2017:04:24 19:03:14",
+        "full_image_path": "images/converted/DSCF1125_2400x1600.JPG",
+        "original_path": "images/DSCF1125.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1125_300x200.JPG"
+    },
+    "images/DSCF1144.JPG": {
+        "caption": "",
+        "date": "2017:04:24 19:49:30",
+        "full_image_path": "images/converted/DSCF1144_2400x1600.JPG",
+        "original_path": "images/DSCF1144.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1144_300x200.JPG"
+    },
+    "images/DSCF1256.JPG": {
+        "caption": "",
+        "date": "2017:04:29 12:40:03",
+        "full_image_path": "images/converted/DSCF1256_2400x1600.JPG",
+        "original_path": "images/DSCF1256.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1256_300x200.JPG"
+    },
+    "images/DSCF1417.JPG": {
+        "caption": "",
+        "date": "2017:05:14 22:24:05",
+        "full_image_path": "images/converted/DSCF1417_2400x1600.JPG",
+        "original_path": "images/DSCF1417.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1417_300x200.JPG"
+    },
+    "images/DSCF1464.JPG": {
+        "caption": "",
+        "date": "2017:05:15 14:10:39",
+        "full_image_path": "images/converted/DSCF1464_2400x1600.JPG",
+        "original_path": "images/DSCF1464.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1464_300x200.JPG"
+    },
+    "images/DSCF1470.JPG": {
+        "caption": "",
+        "date": "2017:05:15 14:11:22",
+        "full_image_path": "images/converted/DSCF1470_2400x1600.JPG",
+        "original_path": "images/DSCF1470.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1470_300x200.JPG"
+    },
+    "images/DSCF1489.JPG": {
+        "caption": "",
+        "date": "2017:05:16 19:46:02",
+        "full_image_path": "images/converted/DSCF1489_2400x1600.JPG",
+        "original_path": "images/DSCF1489.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1489_300x200.JPG"
+    },
+    "images/DSCF1520.JPG": {
+        "caption": "",
+        "date": "2017:05:16 23:07:31",
+        "full_image_path": "images/converted/DSCF1520_2400x1600.JPG",
+        "original_path": "images/DSCF1520.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSCF1520_300x200.JPG"
+    },
+    "images/DSC_4240.JPG": {
+        "caption": "",
+        "date": "2016:10:02 11:34:28",
+        "full_image_path": "images/converted/DSC_4240_2400x1600.JPG",
+        "original_path": "images/DSC_4240.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSC_4240_300x200.JPG"
+    },
+    "images/DSC_4275.JPG": {
+        "caption": "",
+        "date": "2016:10:02 21:47:50",
+        "full_image_path": "images/converted/DSC_4275_2400x1600.JPG",
+        "original_path": "images/DSC_4275.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSC_4275_300x200.JPG"
+    },
+    "images/DSC_4310.JPG": {
+        "caption": "",
+        "date": "2016:10:03 12:36:50",
+        "full_image_path": "images/converted/DSC_4310_2400x1600.JPG",
+        "original_path": "images/DSC_4310.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSC_4310_300x200.JPG"
+    },
+    "images/DSC_4337.JPG": {
+        "caption": "",
+        "date": "2016:10:03 18:55:53",
+        "full_image_path": "images/converted/DSC_4337_2400x1600.JPG",
+        "original_path": "images/DSC_4337.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSC_4337_300x200.JPG"
+    },
+    "images/DSC_4381.JPG": {
+        "caption": "",
+        "date": "2016:10:04 08:49:58",
+        "full_image_path": "images/converted/DSC_4381_2400x1600.JPG",
+        "original_path": "images/DSC_4381.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSC_4381_300x200.JPG"
+    },
+    "images/DSC_4430.JPG": {
+        "caption": "",
+        "date": "2016:10:05 16:01:01",
+        "full_image_path": "images/converted/DSC_4430_2400x1600.JPG",
+        "original_path": "images/DSC_4430.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSC_4430_300x200.JPG"
+    },
+    "images/DSC_4447.JPG": {
+        "caption": "",
+        "date": "2016:10:05 17:14:18",
+        "full_image_path": "images/converted/DSC_4447_2400x1600.JPG",
+        "original_path": "images/DSC_4447.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSC_4447_300x200.JPG"
+    },
+    "images/DSC_4578.JPG": {
+        "caption": "",
+        "date": "2016:10:07 10:34:27",
+        "full_image_path": "images/converted/DSC_4578_2400x1600.JPG",
+        "original_path": "images/DSC_4578.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSC_4578_300x200.JPG"
+    },
+    "images/DSC_4614.JPG": {
+        "caption": "",
+        "date": "2016:10:08 15:39:45",
+        "full_image_path": "images/converted/DSC_4614_2400x1600.JPG",
+        "original_path": "images/DSC_4614.JPG",
+        "tags": [],
+        "thumbnail_path": "images/converted/DSC_4614_300x200.JPG"
+    },
+    "images/simon_nick_utah_chair.jpg": {
+        "caption": "",
+        "date": "",
+        "full_image_path": "images/converted/simon_nick_utah_chair_2048x1536.jpg",
+        "original_path": "images/simon_nick_utah_chair.jpg",
+        "tags": [],
+        "thumbnail_path": "images/converted/simon_nick_utah_chair_300x200.jpg"
+    }
+}

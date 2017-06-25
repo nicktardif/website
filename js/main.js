@@ -21,7 +21,6 @@ function initPhotoSwipeFromDOM(gallerySelector) {
             }
 
             linkEl = figureEl.children[0]; // <a> element
-
             size = linkEl.getAttribute('data-size').split('x');
 
             // create slide object
@@ -30,8 +29,6 @@ function initPhotoSwipeFromDOM(gallerySelector) {
                 w: parseInt(size[0], 10),
                 h: parseInt(size[1], 10)
             };
-
-
 
             if(figureEl.children.length > 1) {
                 // <figcaption> content
@@ -46,7 +43,6 @@ function initPhotoSwipeFromDOM(gallerySelector) {
             item.el = figureEl; // save link to element for getThumbBoundsFn
             items.push(item);
         }
-
         return items;
     };
 
@@ -90,8 +86,6 @@ function initPhotoSwipeFromDOM(gallerySelector) {
             }
             nodeIndex++;
         }
-
-
 
         if(index >= 0) {
             // open PhotoSwipe if valid index found
@@ -149,7 +143,8 @@ function initPhotoSwipeFromDOM(gallerySelector) {
                     rect = thumbnail.getBoundingClientRect(); 
 
                 return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            }
+            },
+            showHideOpacity: true
 
         };
 
@@ -201,6 +196,20 @@ function initPhotoSwipeFromDOM(gallerySelector) {
     }
 };
 
+function baseName(str)
+{
+  var base = new String(str).substring(str.lastIndexOf('/') + 1); 
+  if(base.lastIndexOf(".") != -1)       
+    base = base.substring(0, base.lastIndexOf("."));
+  return base;
+}
+
+function getSize(filename) {
+  basename = baseName(filename)
+  dimension_string = basename.split('_').pop()
+  return dimension_string
+};
+
 function addImages(gallerySelector) {
   var json_file = 'images/images.json'
   var request = new XMLHttpRequest();
@@ -208,25 +217,13 @@ function addImages(gallerySelector) {
   request.send(null)
   var images_json = JSON.parse(request.responseText); 
 
-  images_json.forEach(function(element) {
-    size = '0x0'
-    switch(element['size']) {
-      case 'full':
-        size = '4896x3264'
-        break;
-      case 'quarter':
-        size = '2488x1632'
-        break;
-      case 'thumbnail':
-        size = '300x200'
-        break;
-      default:
-        console.log('unsupported image size');
-    }
+  for(var key in images_json) {
+    element = images_json[key]
 
-    full_image_path = element['full_image_path']
-    thumbnail_path = element['thumbnail_path']
-    caption = element['caption']
+    size = getSize(element['full_image_path']);
+    full_image_path = element['full_image_path'];
+    thumbnail_path = element['thumbnail_path'];
+    caption = element['caption'];
 
     var html = '' +
         '<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
@@ -237,7 +234,7 @@ function addImages(gallerySelector) {
         '</figure>';
     console.log(html);
     $(gallerySelector).append(html);
-  });
+  };
 
 };
 
