@@ -23,7 +23,19 @@
 
 .filters {
   float: left;
+  margin-bottom: 10px;
 }
-.filters img {
-  height: 24px;
+.filters svg {
+  height: 36px;
+  width: 36px;
+}
+
+.filters svg.active {
+  fill: #78B9EF !important;
+}
+.filters img.active text{
+  fill: #78B9EF !important;
+}
+.filters img.active path{
+  fill: #78B9EF !important;
 }
