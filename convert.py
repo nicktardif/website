@@ -52,11 +52,11 @@ def main():
 
         downscaled_file = resize_file(image, output_dir, new_dimensions)
 
-        thumbnail_dimensions = '300x300'
+        thumbnail_dimensions = '150x150'
         if width > height: # landscape
-            thumbnail_dimensions = '300x200'
+            thumbnail_dimensions = '150x100'
         else: # portrait
-            thumbnail_dimensions = '200x300'
+            thumbnail_dimensions = '100x150'
         thumbnail_file = resize_file(image, output_dir, thumbnail_dimensions)
 
         print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))

@@ -29,14 +29,22 @@ body {
   max-width: none;
 }
 .photo-header {
-  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 2em;
 }
 
 .filters {
   display: inline-block;
   margin-bottom: 10px;
 }
+.filters img {
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+}
 .filters svg {
+  display: inline-block;
   margin-top: 20px;
   height: 36px;
   width: 36px;

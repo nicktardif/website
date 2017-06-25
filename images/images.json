@@ -1,384 +1,384 @@
 {
-    "images/DSCF0284.JPG": {
+    "input_images/DSCF0284.JPG": {
         "caption": "Jessica and Morgan",
         "date": "2016:12:18 19:00:25",
-        "full_image_path": "images/converted/DSCF0284_1664x1664.JPG",
-        "original_path": "images/DSCF0284.JPG",
+        "full_image_path": "images/DSCF0284_1664x1664.JPG",
+        "original_path": "input_images/DSCF0284.JPG",
         "tags": [],
-        "thumbnail_path": "images/converted/DSCF0284_200x300.JPG"
+        "thumbnail_path": "images/DSCF0284_100x150.JPG"
     },
-    "images/DSCF0314.JPG": {
+    "input_images/DSCF0314.JPG": {
         "caption": "Mercy - Our Christmas tree-topper",
         "date": "2016:12:23 12:39:42",
-        "full_image_path": "images/converted/DSCF0314_2400x1600.JPG",
-        "original_path": "images/DSCF0314.JPG",
+        "full_image_path": "images/DSCF0314_2400x1600.JPG",
+        "original_path": "input_images/DSCF0314.JPG",
         "tags": [],
-        "thumbnail_path": "images/converted/DSCF0314_300x200.JPG"
+        "thumbnail_path": "images/DSCF0314_150x100.JPG"
     },
-    "images/DSCF0347.JPG": {
+    "input_images/DSCF0347.JPG": {
         "caption": "Emergency Biscuits!",
         "date": "2017:01:01 18:27:50",
-        "full_image_path": "images/converted/DSCF0347_2400x1600.JPG",
-        "original_path": "images/DSCF0347.JPG",
+        "full_image_path": "images/DSCF0347_2400x1600.JPG",
+        "original_path": "input_images/DSCF0347.JPG",
         "tags": [
             "food"
         ],
-        "thumbnail_path": "images/converted/DSCF0347_300x200.JPG"
+        "thumbnail_path": "images/DSCF0347_150x100.JPG"
     },
-    "images/DSCF0380.JPG": {
+    "input_images/DSCF0380.JPG": {
         "caption": "Ice-glazed trees in FDR State Park, GA",
         "date": "2017:01:07 16:27:46",
-        "full_image_path": "images/converted/DSCF0380_2400x1600.JPG",
-        "original_path": "images/DSCF0380.JPG",
+        "full_image_path": "images/DSCF0380_2400x1600.JPG",
+        "original_path": "input_images/DSCF0380.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0380_300x200.JPG"
+        "thumbnail_path": "images/DSCF0380_150x100.JPG"
     },
-    "images/DSCF0410.JPG": {
+    "input_images/DSCF0410.JPG": {
         "caption": "Foggy lake at FDR State Park, GA",
         "date": "2017:01:08 08:10:50",
-        "full_image_path": "images/converted/DSCF0410_2400x1600.JPG",
-        "original_path": "images/DSCF0410.JPG",
+        "full_image_path": "images/DSCF0410_2400x1600.JPG",
+        "original_path": "input_images/DSCF0410.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0410_300x200.JPG"
+        "thumbnail_path": "images/DSCF0410_150x100.JPG"
     },
-    "images/DSCF0427.JPG": {
+    "input_images/DSCF0427.JPG": {
         "caption": "Dockhouse at FDR State Park, GA",
         "date": "2017:01:08 08:39:17",
-        "full_image_path": "images/converted/DSCF0427_2400x1600.JPG",
-        "original_path": "images/DSCF0427.JPG",
+        "full_image_path": "images/DSCF0427_2400x1600.JPG",
+        "original_path": "input_images/DSCF0427.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0427_300x200.JPG"
+        "thumbnail_path": "images/DSCF0427_150x100.JPG"
     },
-    "images/DSCF0455.JPG": {
+    "input_images/DSCF0455.JPG": {
         "caption": "Hiking in FDR State Park, GA",
         "date": "2017:01:08 12:14:12",
-        "full_image_path": "images/converted/DSCF0455_2400x1600.JPG",
-        "original_path": "images/DSCF0455.JPG",
+        "full_image_path": "images/DSCF0455_2400x1600.JPG",
+        "original_path": "input_images/DSCF0455.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0455_300x200.JPG"
+        "thumbnail_path": "images/DSCF0455_150x100.JPG"
     },
-    "images/DSCF0545.JPG": {
+    "input_images/DSCF0545.JPG": {
         "caption": "Grasshopper cake for Spencers birthday",
         "date": "2017:01:17 19:28:55",
-        "full_image_path": "images/converted/DSCF0545_2400x1600.JPG",
-        "original_path": "images/DSCF0545.JPG",
+        "full_image_path": "images/DSCF0545_2400x1600.JPG",
+        "original_path": "input_images/DSCF0545.JPG",
         "tags": [
             "food"
         ],
-        "thumbnail_path": "images/converted/DSCF0545_300x200.JPG"
+        "thumbnail_path": "images/DSCF0545_150x100.JPG"
     },
-    "images/DSCF0719.JPG": {
+    "input_images/DSCF0719.JPG": {
         "caption": "Sand shadows in Huntington Beach State Park, SC",
         "date": "2017:03:15 17:58:15",
-        "full_image_path": "images/converted/DSCF0719_2400x1600.JPG",
-        "original_path": "images/DSCF0719.JPG",
+        "full_image_path": "images/DSCF0719_2400x1600.JPG",
+        "original_path": "input_images/DSCF0719.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0719_300x200.JPG"
+        "thumbnail_path": "images/DSCF0719_150x100.JPG"
     },
-    "images/DSCF0796.JPG": {
+    "input_images/DSCF0796.JPG": {
         "caption": "Lighthouse at Cape Lookout, NC",
         "date": "2017:03:17 07:43:39",
-        "full_image_path": "images/converted/DSCF0796_2400x1600.JPG",
-        "original_path": "images/DSCF0796.JPG",
+        "full_image_path": "images/DSCF0796_2400x1600.JPG",
+        "original_path": "input_images/DSCF0796.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0796_300x200.JPG"
+        "thumbnail_path": "images/DSCF0796_150x100.JPG"
     },
-    "images/DSCF0836.JPG": {
+    "input_images/DSCF0836.JPG": {
         "caption": "Jonathan taking a snooze",
         "date": "2017:03:17 12:57:38",
-        "full_image_path": "images/converted/DSCF0836_2400x1600.JPG",
-        "original_path": "images/DSCF0836.JPG",
+        "full_image_path": "images/DSCF0836_2400x1600.JPG",
+        "original_path": "input_images/DSCF0836.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0836_300x200.JPG"
+        "thumbnail_path": "images/DSCF0836_150x100.JPG"
     },
-    "images/DSCF0888.JPG": {
+    "input_images/DSCF0888.JPG": {
         "caption": "Beach camping at Cape Lookout National Seashore, NC",
         "date": "2017:03:17 16:49:12",
-        "full_image_path": "images/converted/DSCF0888_2400x1600.JPG",
-        "original_path": "images/DSCF0888.JPG",
+        "full_image_path": "images/DSCF0888_2400x1600.JPG",
+        "original_path": "input_images/DSCF0888.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0888_300x200.JPG"
+        "thumbnail_path": "images/DSCF0888_150x100.JPG"
     },
-    "images/DSCF0894.JPG": {
+    "input_images/DSCF0894.JPG": {
         "caption": "Jonathan and I at Cape Lookout National Seashore, NC",
         "date": "2017:03:17 17:33:52",
-        "full_image_path": "images/converted/DSCF0894_2400x1600.JPG",
-        "original_path": "images/DSCF0894.JPG",
+        "full_image_path": "images/DSCF0894_2400x1600.JPG",
+        "original_path": "input_images/DSCF0894.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0894_300x200.JPG"
+        "thumbnail_path": "images/DSCF0894_150x100.JPG"
     },
-    "images/DSCF0900.JPG": {
+    "input_images/DSCF0900.JPG": {
         "caption": "Flowers in Charleston, SC",
         "date": "2017:03:19 09:46:57",
-        "full_image_path": "images/converted/DSCF0900_2400x1600.JPG",
-        "original_path": "images/DSCF0900.JPG",
+        "full_image_path": "images/DSCF0900_2400x1600.JPG",
+        "original_path": "input_images/DSCF0900.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0900_300x200.JPG"
+        "thumbnail_path": "images/DSCF0900_150x100.JPG"
     },
-    "images/DSCF0915.JPG": {
+    "input_images/DSCF0915.JPG": {
         "caption": "Pretty vines on brick in Charleston, SC",
         "date": "2017:03:19 11:47:03",
-        "full_image_path": "images/converted/DSCF0915_2400x1600.JPG",
-        "original_path": "images/DSCF0915.JPG",
+        "full_image_path": "images/DSCF0915_2400x1600.JPG",
+        "original_path": "input_images/DSCF0915.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0915_300x200.JPG"
+        "thumbnail_path": "images/DSCF0915_150x100.JPG"
     },
-    "images/DSCF0927.JPG": {
+    "input_images/DSCF0927.JPG": {
         "caption": "Jonathan close-up",
         "date": "2017:03:19 12:45:14",
-        "full_image_path": "images/converted/DSCF0927_2400x1600.JPG",
-        "original_path": "images/DSCF0927.JPG",
+        "full_image_path": "images/DSCF0927_2400x1600.JPG",
+        "original_path": "input_images/DSCF0927.JPG",
         "tags": [],
-        "thumbnail_path": "images/converted/DSCF0927_300x200.JPG"
+        "thumbnail_path": "images/DSCF0927_150x100.JPG"
     },
-    "images/DSCF0932.JPG": {
+    "input_images/DSCF0932.JPG": {
         "caption": "Alleyway in Charleston, SC",
         "date": "2017:03:19 12:52:52",
-        "full_image_path": "images/converted/DSCF0932_2400x1600.JPG",
-        "original_path": "images/DSCF0932.JPG",
+        "full_image_path": "images/DSCF0932_2400x1600.JPG",
+        "original_path": "input_images/DSCF0932.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF0932_300x200.JPG"
+        "thumbnail_path": "images/DSCF0932_150x100.JPG"
     },
-    "images/DSCF0983.JPG": {
+    "input_images/DSCF0983.JPG": {
         "caption": "Jessica looking spry in Gold Head Branch State Park, FL",
         "date": "2017:04:01 12:25:50",
-        "full_image_path": "images/converted/DSCF0983_2400x1600.JPG",
-        "original_path": "images/DSCF0983.JPG",
+        "full_image_path": "images/DSCF0983_2400x1600.JPG",
+        "original_path": "input_images/DSCF0983.JPG",
         "tags": [],
-        "thumbnail_path": "images/converted/DSCF0983_300x200.JPG"
+        "thumbnail_path": "images/DSCF0983_150x100.JPG"
     },
-    "images/DSCF0986.JPG": {
+    "input_images/DSCF0986.JPG": {
         "caption": "Nick looking dope in Gold Head Branch State Park, FL",
         "date": "2017:04:01 12:26:51",
-        "full_image_path": "images/converted/DSCF0986_2400x1600.JPG",
-        "original_path": "images/DSCF0986.JPG",
+        "full_image_path": "images/DSCF0986_2400x1600.JPG",
+        "original_path": "input_images/DSCF0986.JPG",
         "tags": [],
-        "thumbnail_path": "images/converted/DSCF0986_300x200.JPG"
+        "thumbnail_path": "images/DSCF0986_150x100.JPG"
     },
-    "images/DSCF1024.JPG": {
+    "input_images/DSCF1024.JPG": {
         "caption": "Potato tart",
         "date": "2017:04:02 19:17:27",
-        "full_image_path": "images/converted/DSCF1024_2400x1600.JPG",
-        "original_path": "images/DSCF1024.JPG",
+        "full_image_path": "images/DSCF1024_2400x1600.JPG",
+        "original_path": "input_images/DSCF1024.JPG",
         "tags": [
             "food"
         ],
-        "thumbnail_path": "images/converted/DSCF1024_300x200.JPG"
+        "thumbnail_path": "images/DSCF1024_150x100.JPG"
     },
-    "images/DSCF1092.JPG": {
+    "input_images/DSCF1092.JPG": {
         "caption": "Beach at Fot de Soto State Park, FL",
         "date": "2017:04:08 17:49:17",
-        "full_image_path": "images/converted/DSCF1092_2400x1600.JPG",
-        "original_path": "images/DSCF1092.JPG",
+        "full_image_path": "images/DSCF1092_2400x1600.JPG",
+        "original_path": "input_images/DSCF1092.JPG",
         "tags": [],
-        "thumbnail_path": "images/converted/DSCF1092_300x200.JPG"
+        "thumbnail_path": "images/DSCF1092_150x100.JPG"
     },
-    "images/DSCF1117.JPG": {
+    "input_images/DSCF1117.JPG": {
         "caption": "",
         "date": "2017:04:16 11:04:58",
-        "full_image_path": "images/converted/DSCF1117_2400x1600.JPG",
-        "original_path": "images/DSCF1117.JPG",
+        "full_image_path": "images/DSCF1117_2400x1600.JPG",
+        "original_path": "input_images/DSCF1117.JPG",
         "tags": [],
-        "thumbnail_path": "images/converted/DSCF1117_300x200.JPG"
+        "thumbnail_path": "images/DSCF1117_150x100.JPG"
     },
-    "images/DSCF1125.JPG": {
+    "input_images/DSCF1125.JPG": {
         "caption": "Bread - recipe from FWSY",
         "date": "2017:04:24 19:03:14",
-        "full_image_path": "images/converted/DSCF1125_2400x1600.JPG",
-        "original_path": "images/DSCF1125.JPG",
+        "full_image_path": "images/DSCF1125_2400x1600.JPG",
+        "original_path": "input_images/DSCF1125.JPG",
         "tags": [
             "food"
         ],
-        "thumbnail_path": "images/converted/DSCF1125_300x200.JPG"
+        "thumbnail_path": "images/DSCF1125_150x100.JPG"
     },
-    "images/DSCF1144.JPG": {
+    "input_images/DSCF1144.JPG": {
         "caption": "Fancy eggplant dinner",
         "date": "2017:04:24 19:49:30",
-        "full_image_path": "images/converted/DSCF1144_2400x1600.JPG",
-        "original_path": "images/DSCF1144.JPG",
+        "full_image_path": "images/DSCF1144_2400x1600.JPG",
+        "original_path": "input_images/DSCF1144.JPG",
         "tags": [
             "food"
         ],
-        "thumbnail_path": "images/converted/DSCF1144_300x200.JPG"
+        "thumbnail_path": "images/DSCF1144_150x100.JPG"
     },
-    "images/DSCF1256.JPG": {
+    "input_images/DSCF1256.JPG": {
         "caption": "Blue Springs, FL",
         "date": "2017:04:29 12:40:03",
-        "full_image_path": "images/converted/DSCF1256_2400x1600.JPG",
-        "original_path": "images/DSCF1256.JPG",
+        "full_image_path": "images/DSCF1256_2400x1600.JPG",
+        "original_path": "input_images/DSCF1256.JPG",
         "tags": [],
-        "thumbnail_path": "images/converted/DSCF1256_300x200.JPG"
+        "thumbnail_path": "images/DSCF1256_150x100.JPG"
     },
-    "images/DSCF1417.JPG": {
+    "input_images/DSCF1417.JPG": {
         "caption": "View from the Seward Highway, AK",
         "date": "2017:05:14 22:24:05",
-        "full_image_path": "images/converted/DSCF1417_2400x1600.JPG",
-        "original_path": "images/DSCF1417.JPG",
+        "full_image_path": "images/DSCF1417_2400x1600.JPG",
+        "original_path": "input_images/DSCF1417.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF1417_300x200.JPG"
+        "thumbnail_path": "images/DSCF1417_150x100.JPG"
     },
-    "images/DSCF1464.JPG": {
+    "input_images/DSCF1464.JPG": {
         "caption": "View from the top of Flattop Mountain, Anchorage, AK",
         "date": "2017:05:15 14:10:39",
-        "full_image_path": "images/converted/DSCF1464_2400x1600.JPG",
-        "original_path": "images/DSCF1464.JPG",
+        "full_image_path": "images/DSCF1464_2400x1600.JPG",
+        "original_path": "input_images/DSCF1464.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF1464_300x200.JPG"
+        "thumbnail_path": "images/DSCF1464_150x100.JPG"
     },
-    "images/DSCF1470.JPG": {
+    "input_images/DSCF1470.JPG": {
         "caption": "Me on the top of Flattop mountain, Anchorage, AK",
         "date": "2017:05:15 14:11:22",
-        "full_image_path": "images/converted/DSCF1470_2400x1600.JPG",
-        "original_path": "images/DSCF1470.JPG",
+        "full_image_path": "images/DSCF1470_2400x1600.JPG",
+        "original_path": "input_images/DSCF1470.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF1470_300x200.JPG"
+        "thumbnail_path": "images/DSCF1470_150x100.JPG"
     },
-    "images/DSCF1489.JPG": {
+    "input_images/DSCF1489.JPG": {
         "caption": "Our cabin in Kesugi Ken Campground, Denali State Park, AK",
         "date": "2017:05:16 19:46:02",
-        "full_image_path": "images/converted/DSCF1489_2400x1600.JPG",
-        "original_path": "images/DSCF1489.JPG",
+        "full_image_path": "images/DSCF1489_2400x1600.JPG",
+        "original_path": "input_images/DSCF1489.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF1489_300x200.JPG"
+        "thumbnail_path": "images/DSCF1489_150x100.JPG"
     },
-    "images/DSCF1520.JPG": {
+    "input_images/DSCF1520.JPG": {
         "caption": "View of Denali from our cabin, AK",
         "date": "2017:05:16 23:07:31",
-        "full_image_path": "images/converted/DSCF1520_2400x1600.JPG",
-        "original_path": "images/DSCF1520.JPG",
+        "full_image_path": "images/DSCF1520_2400x1600.JPG",
+        "original_path": "input_images/DSCF1520.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSCF1520_300x200.JPG"
+        "thumbnail_path": "images/DSCF1520_150x100.JPG"
     },
-    "images/DSC_4240.JPG": {
+    "input_images/DSC_4240.JPG": {
         "caption": "The Green River at Mineral Bottom, UT",
         "date": "2016:10:02 11:34:28",
-        "full_image_path": "images/converted/DSC_4240_2400x1600.JPG",
-        "original_path": "images/DSC_4240.JPG",
+        "full_image_path": "images/DSC_4240_2400x1600.JPG",
+        "original_path": "input_images/DSC_4240.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSC_4240_300x200.JPG"
+        "thumbnail_path": "images/DSC_4240_150x100.JPG"
     },
-    "images/DSC_4275.JPG": {
+    "input_images/DSC_4275.JPG": {
         "caption": "Milky Way over the Canyonlands, UT",
         "date": "2016:10:02 21:47:50",
-        "full_image_path": "images/converted/DSC_4275_2400x1600.JPG",
-        "original_path": "images/DSC_4275.JPG",
+        "full_image_path": "images/DSC_4275_2400x1600.JPG",
+        "original_path": "input_images/DSC_4275.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSC_4275_300x200.JPG"
+        "thumbnail_path": "images/DSC_4275_150x100.JPG"
     },
-    "images/DSC_4310.JPG": {
+    "input_images/DSC_4310.JPG": {
         "caption": "Some buttes viewed through a cabin in Canyonlands, UT",
         "date": "2016:10:03 12:36:50",
-        "full_image_path": "images/converted/DSC_4310_2400x1600.JPG",
-        "original_path": "images/DSC_4310.JPG",
+        "full_image_path": "images/DSC_4310_2400x1600.JPG",
+        "original_path": "input_images/DSC_4310.JPG",
         "tags": [],
-        "thumbnail_path": "images/converted/DSC_4310_300x200.JPG"
+        "thumbnail_path": "images/DSC_4310_150x100.JPG"
     },
-    "images/DSC_4337.JPG": {
+    "input_images/DSC_4337.JPG": {
         "caption": "Awesome rock in Holeman Canyon, Canyonlands, UT",
         "date": "2016:10:03 18:55:53",
-        "full_image_path": "images/converted/DSC_4337_2400x1600.JPG",
-        "original_path": "images/DSC_4337.JPG",
+        "full_image_path": "images/DSC_4337_2400x1600.JPG",
+        "original_path": "input_images/DSC_4337.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSC_4337_300x200.JPG"
+        "thumbnail_path": "images/DSC_4337_150x100.JPG"
     },
-    "images/DSC_4381.JPG": {
+    "input_images/DSC_4381.JPG": {
         "caption": "Our transportation for the week down the Green River, UT",
         "date": "2016:10:04 08:49:58",
-        "full_image_path": "images/converted/DSC_4381_2400x1600.JPG",
-        "original_path": "images/DSC_4381.JPG",
+        "full_image_path": "images/DSC_4381_2400x1600.JPG",
+        "original_path": "input_images/DSC_4381.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSC_4381_300x200.JPG"
+        "thumbnail_path": "images/DSC_4381_150x100.JPG"
     },
-    "images/DSC_4430.JPG": {
+    "input_images/DSC_4430.JPG": {
         "caption": "Overlook of Spanish Bottom, UT",
         "date": "2016:10:05 16:01:01",
-        "full_image_path": "images/converted/DSC_4430_2400x1600.JPG",
-        "original_path": "images/DSC_4430.JPG",
+        "full_image_path": "images/DSC_4430_2400x1600.JPG",
+        "original_path": "input_images/DSC_4430.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSC_4430_300x200.JPG"
+        "thumbnail_path": "images/DSC_4430_150x100.JPG"
     },
-    "images/DSC_4447.JPG": {
+    "input_images/DSC_4447.JPG": {
         "caption": "Doll House - Canyonlands, UT",
         "date": "2016:10:05 17:14:18",
-        "full_image_path": "images/converted/DSC_4447_2400x1600.JPG",
-        "original_path": "images/DSC_4447.JPG",
+        "full_image_path": "images/DSC_4447_2400x1600.JPG",
+        "original_path": "input_images/DSC_4447.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSC_4447_300x200.JPG"
+        "thumbnail_path": "images/DSC_4447_150x100.JPG"
     },
-    "images/DSC_4578.JPG": {
+    "input_images/DSC_4578.JPG": {
         "caption": "Me at Delicate Arch - Arches National Park, UT",
         "date": "2016:10:07 10:34:27",
-        "full_image_path": "images/converted/DSC_4578_2400x1600.JPG",
-        "original_path": "images/DSC_4578.JPG",
+        "full_image_path": "images/DSC_4578_2400x1600.JPG",
+        "original_path": "input_images/DSC_4578.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSC_4578_300x200.JPG"
+        "thumbnail_path": "images/DSC_4578_150x100.JPG"
     },
-    "images/DSC_4614.JPG": {
+    "input_images/DSC_4614.JPG": {
         "caption": "Salt Lake City, UT",
         "date": "2016:10:08 15:39:45",
-        "full_image_path": "images/converted/DSC_4614_2400x1600.JPG",
-        "original_path": "images/DSC_4614.JPG",
+        "full_image_path": "images/DSC_4614_2400x1600.JPG",
+        "original_path": "input_images/DSC_4614.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/DSC_4614_300x200.JPG"
+        "thumbnail_path": "images/DSC_4614_150x100.JPG"
     },
-    "images/simon_nick_utah_chair.jpg": {
+    "input_images/simon_nick_utah_chair.jpg": {
         "caption": "Looking out over the Green River in the Canyonlands, UT",
         "date": "",
-        "full_image_path": "images/converted/simon_nick_utah_chair_2048x1536.jpg",
-        "original_path": "images/simon_nick_utah_chair.jpg",
+        "full_image_path": "images/simon_nick_utah_chair_2048x1536.jpg",
+        "original_path": "input_images/simon_nick_utah_chair.jpg",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/converted/simon_nick_utah_chair_300x200.jpg"
+        "thumbnail_path": "images/simon_nick_utah_chair_150x100.jpg"
     }
 }
