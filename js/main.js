@@ -210,16 +210,30 @@ function getSize(filename) {
   return dimension_string
 };
 
+function compareDate(a,b) {
+  if (a['date'] < b['date'])
+    return 1;
+  if (a['date'] > b['date'])
+    return -1;
+  return 0;
+}
+
 function addImages(gallerySelector) {
   var json_file = 'images/images.json'
   var request = new XMLHttpRequest();
   request.open("GET", json_file, false);
   request.send(null)
-  var images_json = JSON.parse(request.responseText); 
+  var images_json_dict = JSON.parse(request.responseText); 
 
-  for(var key in images_json) {
-    element = images_json[key]
+  var images_json_array = []
 
+  for(var key in images_json_dict) {
+    images_json_array.push(images_json_dict[key])
+  }
+
+  images_json_array.sort(compareDate);
+
+  images_json_array.forEach(function(element) {
     size = getSize(element['full_image_path']);
     full_image_path = element['full_image_path'];
     thumbnail_path = element['thumbnail_path'];
@@ -234,7 +248,7 @@ function addImages(gallerySelector) {
         '</figure>';
     console.log(html);
     $(gallerySelector).append(html);
-  };
+  });
 
 };
 
