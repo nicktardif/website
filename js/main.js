@@ -1,3 +1,5 @@
+filters = []
+
 function initPhotoSwipeFromDOM(gallerySelector) {
 
     // parse slide data (url, title, size ...) from DOM elements 
@@ -239,6 +241,18 @@ function addImages(gallerySelector) {
     thumbnail_path = element['thumbnail_path'];
     caption = element['caption'];
 
+    if(filters.length != 0) {
+      found_match = false;
+      element['tags'].forEach(function(tag) {
+        if(filters.indexOf(tag) >= 0) {
+          found_match = true;
+        }
+      });
+      if(!found_match) {
+        return;
+      }
+    }
+
     var html = '' +
         '<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
           '<a href="' + full_image_path + '" itemprop="contentUrl" data-size="' + size + '">' +
@@ -246,14 +260,43 @@ function addImages(gallerySelector) {
           '</a>' +
           '<figcaption itemprop="caption description">' + caption + '</figcaption>' +
         '</figure>';
-    console.log(html);
     $(gallerySelector).append(html);
   });
 
+  initPhotoSwipeFromDOM(gallerySelector);
 };
 
 window.onload = function() {
   gallerySelector = '.my-gallery';
   addImages(gallerySelector);
-  initPhotoSwipeFromDOM(gallerySelector);
+
+  $('#travel-filter').click(function() {
+    if ($(this).hasClass('active')) {
+      index = filters.indexOf('travel');
+      if(index > -1) {
+        filters.splice(index, 1);
+      }
+      $(this).removeClass('active');
+    } else {
+      filters.push('travel');  
+      $(this).addClass('active');
+    }
+    $(gallerySelector).empty();
+    addImages(gallerySelector);
+  });
+
+  $('#food-filter').click(function() {
+    if ($(this).hasClass('active')) {
+      index = filters.indexOf('food');
+      if(index > -1) {
+        filters.splice(index, 1);
+      }
+      $(this).removeClass('active');
+    } else {
+      filters.push('food');  
+      $(this).addClass('active');
+    }
+    $(gallerySelector).empty();
+    addImages(gallerySelector);
+  });
 }

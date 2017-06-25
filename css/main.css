@@ -20,3 +20,10 @@
 .pswp__caption__center {
   text-align: center;
 }
+
+.filters {
+  float: left;
+}
+.filters img {
+  height: 24px;
+}
