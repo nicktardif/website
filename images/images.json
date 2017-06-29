@@ -1,4 +1,52 @@
 {
+    "input_images/0702161210.jpg": {
+        "caption": "Wisconsin State Capitol<br>Madison, WI",
+        "date": "2016:07:02 12:10:02",
+        "full_image_path": "images/0702161210_2400x1600.jpg",
+        "original_path": "input_images/0702161210.jpg",
+        "tags": [],
+        "thumbnail_path": "images/0702161210_150x100.jpg"
+    },
+    "input_images/0703161233a.jpg": {
+        "caption": "Epic Software's Headquarters<br>Madison, WI",
+        "date": "2016:07:03 12:33:41",
+        "full_image_path": "images/0703161233a_2400x1600.jpg",
+        "original_path": "input_images/0703161233a.jpg",
+        "tags": [],
+        "thumbnail_path": "images/0703161233a_150x100.jpg"
+    },
+    "input_images/1212151157b.jpg": {
+        "caption": "Snowy morning<br>Girdwood, AK",
+        "date": "2015:12:12 11:57:28",
+        "full_image_path": "images/1212151157b_2400x1600.jpg",
+        "original_path": "input_images/1212151157b.jpg",
+        "tags": [],
+        "thumbnail_path": "images/1212151157b_150x100.jpg"
+    },
+    "input_images/1212151309e.jpg": {
+        "caption": "Beautiful snowy day<br>Girdwood, AK",
+        "date": "2015:12:12 13:09:41",
+        "full_image_path": "images/1212151309e_2400x1600.jpg",
+        "original_path": "input_images/1212151309e.jpg",
+        "tags": [],
+        "thumbnail_path": "images/1212151309e_150x100.jpg"
+    },
+    "input_images/1213152051b.jpg": {
+        "caption": "Christmas in Alaska!",
+        "date": "2015:12:13 20:51:50",
+        "full_image_path": "images/1213152051b_3264x1836.jpg",
+        "original_path": "input_images/1213152051b.jpg",
+        "tags": [],
+        "thumbnail_path": "images/1213152051b_150x100.jpg"
+    },
+    "input_images/1214151323a.jpg": {
+        "caption": "Quick stop with some planes before our flight back<br>Anchorage, AK",
+        "date": "2015:12:14 13:23:03",
+        "full_image_path": "images/1214151323a_2400x1600.jpg",
+        "original_path": "input_images/1214151323a.jpg",
+        "tags": [],
+        "thumbnail_path": "images/1214151323a_150x100.jpg"
+    },
     "input_images/DSCF0284.JPG": {
         "caption": "Jessica and Morgan",
         "date": "2016:12:18 19:00:25",
@@ -26,7 +74,7 @@
         "thumbnail_path": "images/DSCF0347_150x100.JPG"
     },
     "input_images/DSCF0380.JPG": {
-        "caption": "Ice-glazed trees in FDR State Park, GA",
+        "caption": "Ice-glazed trees<br>FDR State Park, GA",
         "date": "2017:01:07 16:27:46",
         "full_image_path": "images/DSCF0380_2400x1600.JPG",
         "original_path": "input_images/DSCF0380.JPG",
@@ -36,7 +84,7 @@
         "thumbnail_path": "images/DSCF0380_150x100.JPG"
     },
     "input_images/DSCF0410.JPG": {
-        "caption": "Foggy lake at FDR State Park, GA",
+        "caption": "Foggy morning lake<br>FDR State Park, GA",
         "date": "2017:01:08 08:10:50",
         "full_image_path": "images/DSCF0410_2400x1600.JPG",
         "original_path": "input_images/DSCF0410.JPG",
@@ -46,7 +94,7 @@
         "thumbnail_path": "images/DSCF0410_150x100.JPG"
     },
     "input_images/DSCF0427.JPG": {
-        "caption": "Dockhouse at FDR State Park, GA",
+        "caption": "Dockhouse<br>FDR State Park, GA",
         "date": "2017:01:08 08:39:17",
         "full_image_path": "images/DSCF0427_2400x1600.JPG",
         "original_path": "input_images/DSCF0427.JPG",
@@ -56,7 +104,7 @@
         "thumbnail_path": "images/DSCF0427_150x100.JPG"
     },
     "input_images/DSCF0455.JPG": {
-        "caption": "Hiking in FDR State Park, GA",
+        "caption": "Hiking<br>FDR State Park, GA",
         "date": "2017:01:08 12:14:12",
         "full_image_path": "images/DSCF0455_2400x1600.JPG",
         "original_path": "input_images/DSCF0455.JPG",
@@ -76,7 +124,7 @@
         "thumbnail_path": "images/DSCF0545_150x100.JPG"
     },
     "input_images/DSCF0719.JPG": {
-        "caption": "Sand shadows in Huntington Beach State Park, SC",
+        "caption": "Sand shadows<br>Huntington Beach State Park, SC",
         "date": "2017:03:15 17:58:15",
         "full_image_path": "images/DSCF0719_2400x1600.JPG",
         "original_path": "input_images/DSCF0719.JPG",
@@ -86,7 +134,7 @@
         "thumbnail_path": "images/DSCF0719_150x100.JPG"
     },
     "input_images/DSCF0796.JPG": {
-        "caption": "Lighthouse at Cape Lookout, NC",
+        "caption": "Lighthouse<br>Cape Lookout, NC",
         "date": "2017:03:17 07:43:39",
         "full_image_path": "images/DSCF0796_2400x1600.JPG",
         "original_path": "input_images/DSCF0796.JPG",
@@ -96,7 +144,7 @@
         "thumbnail_path": "images/DSCF0796_150x100.JPG"
     },
     "input_images/DSCF0836.JPG": {
-        "caption": "Jonathan taking a snooze",
+        "caption": "Jonathan taking a snooze<br> Cape Lookout National Seashore, NC",
         "date": "2017:03:17 12:57:38",
         "full_image_path": "images/DSCF0836_2400x1600.JPG",
         "original_path": "input_images/DSCF0836.JPG",
@@ -106,7 +154,7 @@
         "thumbnail_path": "images/DSCF0836_150x100.JPG"
     },
     "input_images/DSCF0888.JPG": {
-        "caption": "Beach camping at Cape Lookout National Seashore, NC",
+        "caption": "Beach camping<br>Cape Lookout National Seashore, NC",
         "date": "2017:03:17 16:49:12",
         "full_image_path": "images/DSCF0888_2400x1600.JPG",
         "original_path": "input_images/DSCF0888.JPG",
@@ -116,7 +164,7 @@
         "thumbnail_path": "images/DSCF0888_150x100.JPG"
     },
     "input_images/DSCF0894.JPG": {
-        "caption": "Jonathan and I at Cape Lookout National Seashore, NC",
+        "caption": "Jonathan and I<br>Cape Lookout National Seashore, NC",
         "date": "2017:03:17 17:33:52",
         "full_image_path": "images/DSCF0894_2400x1600.JPG",
         "original_path": "input_images/DSCF0894.JPG",
@@ -126,7 +174,7 @@
         "thumbnail_path": "images/DSCF0894_150x100.JPG"
     },
     "input_images/DSCF0900.JPG": {
-        "caption": "Flowers in Charleston, SC",
+        "caption": "Flowers<br>Charleston, SC",
         "date": "2017:03:19 09:46:57",
         "full_image_path": "images/DSCF0900_2400x1600.JPG",
         "original_path": "input_images/DSCF0900.JPG",
@@ -136,7 +184,7 @@
         "thumbnail_path": "images/DSCF0900_150x100.JPG"
     },
     "input_images/DSCF0915.JPG": {
-        "caption": "Pretty vines on brick in Charleston, SC",
+        "caption": "Pretty vines on brick<br>Charleston, SC",
         "date": "2017:03:19 11:47:03",
         "full_image_path": "images/DSCF0915_2400x1600.JPG",
         "original_path": "input_images/DSCF0915.JPG",
@@ -154,7 +202,7 @@
         "thumbnail_path": "images/DSCF0927_150x100.JPG"
     },
     "input_images/DSCF0932.JPG": {
-        "caption": "Alleyway in Charleston, SC",
+        "caption": "Alleyway<br>Charleston, SC",
         "date": "2017:03:19 12:52:52",
         "full_image_path": "images/DSCF0932_2400x1600.JPG",
         "original_path": "input_images/DSCF0932.JPG",
@@ -164,7 +212,7 @@
         "thumbnail_path": "images/DSCF0932_150x100.JPG"
     },
     "input_images/DSCF0983.JPG": {
-        "caption": "Jessica looking spry in Gold Head Branch State Park, FL",
+        "caption": "Jessica looking cool<br>Gold Head Branch State Park, FL",
         "date": "2017:04:01 12:25:50",
         "full_image_path": "images/DSCF0983_2400x1600.JPG",
         "original_path": "input_images/DSCF0983.JPG",
@@ -172,7 +220,7 @@
         "thumbnail_path": "images/DSCF0983_150x100.JPG"
     },
     "input_images/DSCF0986.JPG": {
-        "caption": "Nick looking dope in Gold Head Branch State Park, FL",
+        "caption": "Nick looking dope<br>Gold Head Branch State Park, FL",
         "date": "2017:04:01 12:26:51",
         "full_image_path": "images/DSCF0986_2400x1600.JPG",
         "original_path": "input_images/DSCF0986.JPG",
@@ -190,7 +238,7 @@
         "thumbnail_path": "images/DSCF1024_150x100.JPG"
     },
     "input_images/DSCF1092.JPG": {
-        "caption": "Beach at Fot de Soto State Park, FL",
+        "caption": "Fort de Soto State Park, FL",
         "date": "2017:04:08 17:49:17",
         "full_image_path": "images/DSCF1092_2400x1600.JPG",
         "original_path": "input_images/DSCF1092.JPG",
@@ -198,7 +246,7 @@
         "thumbnail_path": "images/DSCF1092_150x100.JPG"
     },
     "input_images/DSCF1117.JPG": {
-        "caption": "",
+        "caption": "Easter basket reflected in glass",
         "date": "2017:04:16 11:04:58",
         "full_image_path": "images/DSCF1117_2400x1600.JPG",
         "original_path": "input_images/DSCF1117.JPG",
@@ -206,7 +254,7 @@
         "thumbnail_path": "images/DSCF1117_150x100.JPG"
     },
     "input_images/DSCF1125.JPG": {
-        "caption": "Bread - recipe from FWSY",
+        "caption": "White Bread - recipe from FWSY",
         "date": "2017:04:24 19:03:14",
         "full_image_path": "images/DSCF1125_2400x1600.JPG",
         "original_path": "input_images/DSCF1125.JPG",
@@ -234,7 +282,7 @@
         "thumbnail_path": "images/DSCF1256_150x100.JPG"
     },
     "input_images/DSCF1417.JPG": {
-        "caption": "View from the Seward Highway, AK",
+        "caption": "Seward Highway, AK",
         "date": "2017:05:14 22:24:05",
         "full_image_path": "images/DSCF1417_2400x1600.JPG",
         "original_path": "input_images/DSCF1417.JPG",
@@ -244,7 +292,7 @@
         "thumbnail_path": "images/DSCF1417_150x100.JPG"
     },
     "input_images/DSCF1464.JPG": {
-        "caption": "View from the top of Flattop Mountain, Anchorage, AK",
+        "caption": "View from the top of Flattop Mountain<br>Anchorage, AK",
         "date": "2017:05:15 14:10:39",
         "full_image_path": "images/DSCF1464_2400x1600.JPG",
         "original_path": "input_images/DSCF1464.JPG",
@@ -254,7 +302,7 @@
         "thumbnail_path": "images/DSCF1464_150x100.JPG"
     },
     "input_images/DSCF1470.JPG": {
-        "caption": "Me on the top of Flattop mountain, Anchorage, AK",
+        "caption": "Me on the top of Flattop mountain<br>Anchorage, AK",
         "date": "2017:05:15 14:11:22",
         "full_image_path": "images/DSCF1470_2400x1600.JPG",
         "original_path": "input_images/DSCF1470.JPG",
@@ -264,7 +312,7 @@
         "thumbnail_path": "images/DSCF1470_150x100.JPG"
     },
     "input_images/DSCF1489.JPG": {
-        "caption": "Our cabin in Kesugi Ken Campground, Denali State Park, AK",
+        "caption": "Our cabin in Kesugi Ken Campground<br>Denali State Park, AK",
         "date": "2017:05:16 19:46:02",
         "full_image_path": "images/DSCF1489_2400x1600.JPG",
         "original_path": "input_images/DSCF1489.JPG",
@@ -274,7 +322,7 @@
         "thumbnail_path": "images/DSCF1489_150x100.JPG"
     },
     "input_images/DSCF1520.JPG": {
-        "caption": "View of Denali from our cabin, AK",
+        "caption": "View of Denali from our cabin<br>Denali State Park, AK",
         "date": "2017:05:16 23:07:31",
         "full_image_path": "images/DSCF1520_2400x1600.JPG",
         "original_path": "input_images/DSCF1520.JPG",
@@ -283,8 +331,184 @@
         ],
         "thumbnail_path": "images/DSCF1520_150x100.JPG"
     },
+    "input_images/DSC_0043.JPG": {
+        "caption": "Bioshock New Years decorations",
+        "date": "2015:01:01 11:44:52",
+        "full_image_path": "images/DSC_0043_4000x6000.JPG",
+        "original_path": "input_images/DSC_0043.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_0043_100x150.JPG"
+    },
+    "input_images/DSC_0044.JPG": {
+        "caption": "Get your salts here",
+        "date": "2015:01:01 11:45:28",
+        "full_image_path": "images/DSC_0044_4000x6000.JPG",
+        "original_path": "input_images/DSC_0044.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_0044_100x150.JPG"
+    },
+    "input_images/DSC_0778.JPG": {
+        "caption": "Opening ceremonies for the first annual SwampHacks",
+        "date": "2015:03:15 20:54:01",
+        "full_image_path": "images/DSC_0778_1500x1000.JPG",
+        "original_path": "input_images/DSC_0778.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_0778_150x100.JPG"
+    },
+    "input_images/DSC_1622.JPG": {
+        "caption": "Pretty cathedral<br>Barcelona",
+        "date": "2015:05:07 11:14:56",
+        "full_image_path": "images/DSC_1622_2400x1600.JPG",
+        "original_path": "input_images/DSC_1622.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_1622_150x100.JPG"
+    },
+    "input_images/DSC_1638.JPG": {
+        "caption": "Sunset from our apartment<br>Barcelona",
+        "date": "2015:06:30 20:51:59",
+        "full_image_path": "images/DSC_1638_2400x1600.JPG",
+        "original_path": "input_images/DSC_1638.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_1638_150x100.JPG"
+    },
+    "input_images/DSC_1765.JPG": {
+        "caption": "Cactus Gardens of Montjuic<br>Barcelona",
+        "date": "2015:05:08 17:45:42",
+        "full_image_path": "images/DSC_1765_2400x1600.JPG",
+        "original_path": "input_images/DSC_1765.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_1765_150x100.JPG"
+    },
+    "input_images/DSC_1938.JPG": {
+        "caption": "Jessica in front of the pants<br>Barcelona",
+        "date": "2015:05:10 14:20:38",
+        "full_image_path": "images/DSC_1938_2400x1600.JPG",
+        "original_path": "input_images/DSC_1938.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_1938_150x100.JPG"
+    },
+    "input_images/DSC_2348.JPG": {
+        "caption": "Amaze<br>The Louvre, Paris",
+        "date": "2015:05:15 13:00:48",
+        "full_image_path": "images/DSC_2348_2400x1600.JPG",
+        "original_path": "input_images/DSC_2348.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_2348_150x100.JPG"
+    },
+    "input_images/DSC_2578.JPG": {
+        "caption": "Sacre-Couer<br>Paris",
+        "date": "2015:05:17 16:47:32",
+        "full_image_path": "images/DSC_2578_2400x1600.JPG",
+        "original_path": "input_images/DSC_2578.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_2578_150x100.JPG"
+    },
+    "input_images/DSC_2713.JPG": {
+        "caption": "Hiking<br>Norway",
+        "date": "2015:05:22 10:16:39",
+        "full_image_path": "images/DSC_2713_2400x1600.JPG",
+        "original_path": "input_images/DSC_2713.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_2713_150x100.JPG"
+    },
+    "input_images/DSC_2843.JPG": {
+        "caption": "Fjords<br>Norway",
+        "date": "2015:05:23 12:49:50",
+        "full_image_path": "images/DSC_2843_2400x1600.JPG",
+        "original_path": "input_images/DSC_2843.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_2843_150x100.JPG"
+    },
+    "input_images/DSC_2992.JPG": {
+        "caption": "Houses<br>Norway",
+        "date": "2015:05:24 18:16:14",
+        "full_image_path": "images/DSC_2992_2400x1600.JPG",
+        "original_path": "input_images/DSC_2992.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_2992_150x100.JPG"
+    },
+    "input_images/DSC_3069.JPG": {
+        "caption": "Tiny things<br>Minatur Wunderland, Hamburg",
+        "date": "2015:05:28 16:14:10",
+        "full_image_path": "images/DSC_3069_2400x1600.JPG",
+        "original_path": "input_images/DSC_3069.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3069_150x100.JPG"
+    },
+    "input_images/DSC_3112.JPG": {
+        "caption": "Berlin Cathedral<br>Berlin",
+        "date": "2015:05:31 15:51:02",
+        "full_image_path": "images/DSC_3112_2400x1600.JPG",
+        "original_path": "input_images/DSC_3112.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3112_150x100.JPG"
+    },
+    "input_images/DSC_3157.JPG": {
+        "caption": "Jessia looking all witch-y",
+        "date": "2015:06:02 15:47:10",
+        "full_image_path": "images/DSC_3157_2400x1600.JPG",
+        "original_path": "input_images/DSC_3157.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3157_150x100.JPG"
+    },
+    "input_images/DSC_3232.JPG": {
+        "caption": "Windmill<br>Berlin",
+        "date": "2015:06:02 17:33:29",
+        "full_image_path": "images/DSC_3232_2400x1600.JPG",
+        "original_path": "input_images/DSC_3232.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3232_150x100.JPG"
+    },
+    "input_images/DSC_3248.JPG": {
+        "caption": "Gardens<br>Berlin",
+        "date": "2015:06:02 17:40:27",
+        "full_image_path": "images/DSC_3248_2400x1600.JPG",
+        "original_path": "input_images/DSC_3248.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3248_150x100.JPG"
+    },
+    "input_images/DSC_3419_v1.JPG": {
+        "caption": "The Bean<br>Chicago",
+        "date": "2015:09:06 14:54:52",
+        "full_image_path": "images/DSC_3419_v1_2400x1600.JPG",
+        "original_path": "input_images/DSC_3419_v1.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3419_v1_150x100.JPG"
+    },
+    "input_images/DSC_3444_v1.JPG": {
+        "caption": "Beans and Bros<br>Chicago",
+        "date": "2015:09:06 15:06:52",
+        "full_image_path": "images/DSC_3444_v1_2400x1600.JPG",
+        "original_path": "input_images/DSC_3444_v1.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3444_v1_150x100.JPG"
+    },
+    "input_images/DSC_3733.JPG": {
+        "caption": "Big Creek Loop, Great Smoky Mountains, GA",
+        "date": "2016:03:04 14:57:38",
+        "full_image_path": "images/DSC_3733_2400x1600.JPG",
+        "original_path": "input_images/DSC_3733.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3733_150x100.JPG"
+    },
+    "input_images/DSC_3739.JPG": {
+        "caption": "Jonathan on a hike<br>Great Smoky Mountains, GA",
+        "date": "2016:03:04 15:02:37",
+        "full_image_path": "images/DSC_3739_2400x1600.JPG",
+        "original_path": "input_images/DSC_3739.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3739_150x100.JPG"
+    },
+    "input_images/DSC_3785.JPG": {
+        "caption": "Fire Tower<br>Great Smoky Mountains, GA",
+        "date": "2016:03:05 18:05:26",
+        "full_image_path": "images/DSC_3785_2400x1600.JPG",
+        "original_path": "input_images/DSC_3785.JPG",
+        "tags": [],
+        "thumbnail_path": "images/DSC_3785_150x100.JPG"
+    },
     "input_images/DSC_4240.JPG": {
-        "caption": "The Green River at Mineral Bottom, UT",
+        "caption": "The Green River at Mineral Bottom<br>Canyonlands, UT",
         "date": "2016:10:02 11:34:28",
         "full_image_path": "images/DSC_4240_2400x1600.JPG",
         "original_path": "input_images/DSC_4240.JPG",
@@ -294,7 +518,7 @@
         "thumbnail_path": "images/DSC_4240_150x100.JPG"
     },
     "input_images/DSC_4275.JPG": {
-        "caption": "Milky Way over the Canyonlands, UT",
+        "caption": "Milky Way<br>Canyonlands, UT",
         "date": "2016:10:02 21:47:50",
         "full_image_path": "images/DSC_4275_2400x1600.JPG",
         "original_path": "input_images/DSC_4275.JPG",
@@ -304,7 +528,7 @@
         "thumbnail_path": "images/DSC_4275_150x100.JPG"
     },
     "input_images/DSC_4310.JPG": {
-        "caption": "Some buttes viewed through a cabin in Canyonlands, UT",
+        "caption": "Some buttes viewed through a cabin<br>Canyonlands, UT",
         "date": "2016:10:03 12:36:50",
         "full_image_path": "images/DSC_4310_2400x1600.JPG",
         "original_path": "input_images/DSC_4310.JPG",
@@ -312,7 +536,7 @@
         "thumbnail_path": "images/DSC_4310_150x100.JPG"
     },
     "input_images/DSC_4337.JPG": {
-        "caption": "Awesome rock in Holeman Canyon, Canyonlands, UT",
+        "caption": "Awesome rock in Holeman Canyon<br>Canyonlands, UT",
         "date": "2016:10:03 18:55:53",
         "full_image_path": "images/DSC_4337_2400x1600.JPG",
         "original_path": "input_images/DSC_4337.JPG",
@@ -322,7 +546,7 @@
         "thumbnail_path": "images/DSC_4337_150x100.JPG"
     },
     "input_images/DSC_4381.JPG": {
-        "caption": "Our transportation for the week down the Green River, UT",
+        "caption": "Our transportation for the week<br>Canyonlands, UT",
         "date": "2016:10:04 08:49:58",
         "full_image_path": "images/DSC_4381_2400x1600.JPG",
         "original_path": "input_images/DSC_4381.JPG",
@@ -332,7 +556,7 @@
         "thumbnail_path": "images/DSC_4381_150x100.JPG"
     },
     "input_images/DSC_4430.JPG": {
-        "caption": "Overlook of Spanish Bottom, UT",
+        "caption": "Overlook of Spanish Bottom<br>Canyonlands, UT",
         "date": "2016:10:05 16:01:01",
         "full_image_path": "images/DSC_4430_2400x1600.JPG",
         "original_path": "input_images/DSC_4430.JPG",
@@ -342,7 +566,7 @@
         "thumbnail_path": "images/DSC_4430_150x100.JPG"
     },
     "input_images/DSC_4447.JPG": {
-        "caption": "Doll House - Canyonlands, UT",
+        "caption": "Doll House<br>Canyonlands, UT",
         "date": "2016:10:05 17:14:18",
         "full_image_path": "images/DSC_4447_2400x1600.JPG",
         "original_path": "input_images/DSC_4447.JPG",
@@ -352,7 +576,7 @@
         "thumbnail_path": "images/DSC_4447_150x100.JPG"
     },
     "input_images/DSC_4578.JPG": {
-        "caption": "Me at Delicate Arch - Arches National Park, UT",
+        "caption": "Me at Delicate Arch<br>Arches National Park, UT",
         "date": "2016:10:07 10:34:27",
         "full_image_path": "images/DSC_4578_2400x1600.JPG",
         "original_path": "input_images/DSC_4578.JPG",
@@ -371,8 +595,16 @@
         ],
         "thumbnail_path": "images/DSC_4614_150x100.JPG"
     },
+    "input_images/IMG_20150906_183702832.jpg": {
+        "caption": "Chicago from the river",
+        "date": "2015:09:06 18:37:03",
+        "full_image_path": "images/IMG_20150906_183702832_2400x1600.jpg",
+        "original_path": "input_images/IMG_20150906_183702832.jpg",
+        "tags": [],
+        "thumbnail_path": "images/IMG_20150906_183702832_150x100.jpg"
+    },
     "input_images/simon_nick_utah_chair.jpg": {
-        "caption": "Looking out over the Green River in the Canyonlands, UT",
+        "caption": "Looking out over the Green River<br>Canyonlands, UT",
         "date": "",
         "full_image_path": "images/simon_nick_utah_chair_2048x1536.jpg",
         "original_path": "input_images/simon_nick_utah_chair.jpg",
