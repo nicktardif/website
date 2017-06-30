@@ -339,9 +339,41 @@ window.onload = function() {
     addImages(gallerySelector);
   });
 
+  $(document).on('click','#plant-filter',function() {
+    if ($(this).hasClass('active')) {
+      index = filters.indexOf('plant');
+      if(index > -1) {
+        filters.splice(index, 1);
+      }
+      $(this).removeClass('active');
+    } else {
+      filters.push('plant');  
+      $(this).addClass('active');
+    }
+    $(gallerySelector).empty();
+    addImages(gallerySelector);
+  });
+
+  $(document).on('click','#people-filter',function() {
+    if ($(this).hasClass('active')) {
+      index = filters.indexOf('people');
+      if(index > -1) {
+        filters.splice(index, 1);
+      }
+      $(this).removeClass('active');
+    } else {
+      filters.push('people');  
+      $(this).addClass('active');
+    }
+    $(gallerySelector).empty();
+    addImages(gallerySelector);
+  });
+
   $(document).on('click','#reset-filter',function() {
     $(document).find('#travel-filter').removeClass('active')
     $(document).find('#food-filter').removeClass('active')
+    $(document).find('#plant-filter').removeClass('active')
+    $(document).find('#people-filter').removeClass('active')
     filters = []
 
     $(gallerySelector).empty();

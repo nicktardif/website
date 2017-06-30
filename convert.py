@@ -45,14 +45,14 @@ def main():
         if width > max_dimension | height > max_dimension: # large image
             if width > height: # landscape
                 ratio = width / float(max_dimension)
-                new_height = height / ratio
+                new_height = int(height / ratio)
                 new_dimensions = '{}x{}'.format(max_dimension, new_height)
             elif width == height: # square
                 new_dimensions = '2400x2400'
             else: # portrait
                 new_dimensions = '1600x2400'
                 ratio = height / float(max_dimension)
-                new_width = width / ratio
+                new_width = int(width / ratio)
                 new_dimensions = '{}x{}'.format(new_width, max_dimension)
 
         downscaled_file = resize_file(image, output_dir, new_dimensions)
