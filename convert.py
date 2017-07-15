@@ -10,10 +10,50 @@ def parse_arguments():
     args = parser.parse_args()
     return args
 
-def resize_file(image, output_dir, new_dimensions):
+def calculate_dimensions(image, request_dimension, is_max):
+    width = int(subprocess.check_output("identify -format '%w' {}".format(image), shell=True))
+    height = int(subprocess.check_output("identify -format '%h' {}".format(image), shell=True))
+    print('width is {}'.format(width))
+    print('height is {}'.format(height))
+
+    aspect_ratio = float(width) / float(height)
+    max_dimension = max(width, height)
+    min_dimension = min(width, height)
+
+    new_width = width
+    new_height = height
+    scale_ratio = 1.0
+
+    if(is_max): # Reduce max dimension to request_dimension
+        if(max_dimension > request_dimension):
+            scale_ratio = float(request_dimension) / float(max_dimension)
+    else: # Reduce min dimension to request_dimension
+        if(min_dimension > request_dimension):
+            scale_ratio = float(request_dimension) / float(min_dimension)
+
+    if(aspect_ratio > 1.0): # Landscape
+        new_width = int(max_dimension * scale_ratio)
+        new_height = int(min_dimension * scale_ratio)
+    else: # Square or portrait
+        new_width = int(min_dimension * scale_ratio)
+        new_height = int(max_dimension * scale_ratio)
+
+    new_dimensions = '{}x{}'.format(new_width, new_height)
+    return new_dimensions
+
+def get_downscaled_file_name(image, output_dir, new_dimensions):
     _, extension = os.path.splitext(image)
     basename = os.path.splitext(os.path.basename(image))[0]
     downscaled_file = os.path.join(output_dir, basename + '_' + new_dimensions + extension)
+    return downscaled_file
+
+def create_thumbnail_file(image, output_dir, new_dimensions):
+    downscaled_file = get_downscaled_file_name(image, output_dir, new_dimensions)
+    subprocess.check_output("convert -strip -interlace Plane -quality 75% {} -resize {} {}".format(image, new_dimensions, downscaled_file), shell=True)
+    return downscaled_file
+
+def create_hires_file(image, output_dir, new_dimensions):
+    downscaled_file = get_downscaled_file_name(image, output_dir, new_dimensions)
     subprocess.check_output("convert {} -resize {} {}".format(image, new_dimensions, downscaled_file), shell=True)
     return downscaled_file
 
@@ -35,34 +75,15 @@ def main():
     json_data = {}
 
     for image in images:
-        width = int(subprocess.check_output("identify -format '%w' {}".format(image), shell=True))
-        height = int(subprocess.check_output("identify -format '%h' {}".format(image), shell=True))
-        print('width is {}'.format(width))
-        print('height is {}'.format(height))
-
         max_dimension = 2400
-        new_dimensions = '{}x{}'.format(width, height)
-        if width > max_dimension | height > max_dimension: # large image
-            if width > height: # landscape
-                ratio = width / float(max_dimension)
-                new_height = int(height / ratio)
-                new_dimensions = '{}x{}'.format(max_dimension, new_height)
-            elif width == height: # square
-                new_dimensions = '2400x2400'
-            else: # portrait
-                new_dimensions = '1600x2400'
-                ratio = height / float(max_dimension)
-                new_width = int(width / ratio)
-                new_dimensions = '{}x{}'.format(new_width, max_dimension)
+        new_dimensions = calculate_dimensions(image, max_dimension, True)
+        print('Full image scaled dimensions: {}'.format(new_dimensions))
+        downscaled_file = create_hires_file(image, output_dir, new_dimensions)
 
-        downscaled_file = resize_file(image, output_dir, new_dimensions)
-
-        thumbnail_dimensions = '150x150'
-        if width > height: # landscape
-            thumbnail_dimensions = '150x100'
-        else: # portrait
-            thumbnail_dimensions = '100x150'
-        thumbnail_file = resize_file(image, output_dir, thumbnail_dimensions)
+        min_dimension = 150
+        thumbnail_dimensions = calculate_dimensions(image, min_dimension, False)
+        print('Thumnail image scaled dimensions: {}'.format(thumbnail_dimensions))
+        thumbnail_file = create_thumbnail_file(image, output_dir, thumbnail_dimensions)
 
         print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))
 
