@@ -5,6 +5,7 @@ Right now it will just be hosting photos, but its scope will expand in the futur
 ## Dependencies
 ```
 pip install glue # for spritemapping
+npm install uglify-js -g
 ```
 
 
