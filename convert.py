@@ -82,7 +82,7 @@ def main():
 
         min_dimension = 150
         thumbnail_dimensions = calculate_dimensions(image, min_dimension, False)
-        print('Thumnail image scaled dimensions: {}'.format(thumbnail_dimensions))
+        print('Thumbnail image scaled dimensions: {}'.format(thumbnail_dimensions))
         thumbnail_file = create_thumbnail_file(image, output_dir, thumbnail_dimensions)
 
         print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))
