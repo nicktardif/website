@@ -77,7 +77,7 @@ function initPhotoSwipeFromDOM(gallerySelector) {
 
             if(linkEl.children.length > 0) {
                 // <img> thumbnail element, retrieving thumbnail url
-                item.msrc = linkEl.children[0].getAttribute('src');
+                //item.msrc = linkEl.children[0].getAttribute('src');
             } 
 
             item.el = figureEl; // save link to element for getThumbBoundsFn
@@ -176,14 +176,15 @@ function initPhotoSwipeFromDOM(gallerySelector) {
             // define gallery index (for URL)
             galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
-            getThumbBoundsFn: function(index) {
-                // See Options -> getThumbBoundsFn section of documentation for more info
-                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                    rect = thumbnail.getBoundingClientRect(); 
+            //getThumbBoundsFn: function(index) {
+            //    // See Options -> getThumbBoundsFn section of documentation for more info
+            //    var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+            //        pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+            //        rect = thumbnail.getBoundingClientRect();
 
-                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-            },
+            //    return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+            //},
+            getThumbBoundsFn: false,
             showHideOpacity: true
 
         };
@@ -278,6 +279,8 @@ function addImages(gallerySelector) {
     full_image_path = element['full_image_path'];
     thumbnail_path = element['thumbnail_path'];
     caption = element['caption'];
+    thumb_basename = baseName(thumbnail_path)
+    sprite_class = 'sprite-thumbs-' + thumb_basename
 
     if(filters.length != 0) {
       found_match = false;
@@ -294,7 +297,7 @@ function addImages(gallerySelector) {
     var html = '' +
         '<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
           '<a href="' + full_image_path + '" itemprop="contentUrl" data-size="' + size + '">' +
-            '<img src="' + thumbnail_path + '" itemprop="thumbnail" alt="Image description" />' +
+            '<img class="' + sprite_class + '" itemprop="thumbnail" />' +
           '</a>' +
           '<figcaption itemprop="caption description">' + caption + '</figcaption>' +
         '</figure>';

@@ -2,6 +2,11 @@
 
 Right now it will just be hosting photos, but its scope will expand in the future.
 
+## Dependencies
+```
+pip install glue # for spritemapping
+```
+
 
 ## How to Launch
 ```

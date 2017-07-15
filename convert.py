@@ -49,7 +49,7 @@ def get_downscaled_file_name(image, output_dir, new_dimensions):
 
 def create_thumbnail_file(image, output_dir, new_dimensions):
     downscaled_file = get_downscaled_file_name(image, output_dir, new_dimensions)
-    subprocess.check_output("convert -strip -interlace Plane -quality 75% {} -resize {} {}".format(image, new_dimensions, downscaled_file), shell=True)
+    subprocess.check_output("convert -resize 150x150^ -extent 150x150 -gravity Center -interlace Plane -quality 75% \( {} -strip -resize {} \) {}".format(image, new_dimensions, downscaled_file), shell=True)
     return downscaled_file
 
 def create_hires_file(image, output_dir, new_dimensions):
@@ -78,12 +78,15 @@ def main():
         max_dimension = 2400
         new_dimensions = calculate_dimensions(image, max_dimension, True)
         print('Full image scaled dimensions: {}'.format(new_dimensions))
-        downscaled_file = create_hires_file(image, output_dir, new_dimensions)
+        full_dir = os.path.join(output_dir, 'full')
+        downscaled_file = create_hires_file(image, full_dir, new_dimensions)
 
         min_dimension = 150
         thumbnail_dimensions = calculate_dimensions(image, min_dimension, False)
         print('Thumbnail image scaled dimensions: {}'.format(thumbnail_dimensions))
-        thumbnail_file = create_thumbnail_file(image, output_dir, thumbnail_dimensions)
+        thumbnail_dimensions = '150x150'
+        thumbnail_dir = os.path.join(output_dir, 'thumbs')
+        thumbnail_file = create_thumbnail_file(image, thumbnail_dir, thumbnail_dimensions)
 
         print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))
 
