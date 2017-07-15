@@ -54,7 +54,7 @@ def create_thumbnail_file(image, output_dir, new_dimensions):
 
 def create_hires_file(image, output_dir, new_dimensions):
     downscaled_file = get_downscaled_file_name(image, output_dir, new_dimensions)
-    subprocess.check_output("convert {} -resize {} {}".format(image, new_dimensions, downscaled_file), shell=True)
+    subprocess.check_output("convert -strip -interlace Plane -quality 85% {} -resize {} {}".format(image, new_dimensions, downscaled_file), shell=True)
     return downscaled_file
 
 def get_date(image):
