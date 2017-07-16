@@ -1,43 +1,5 @@
 filters = []
 
-/*
- * Replace all SVG images with inline SVG
- */
-function svgToInline() {
-  jQuery('img.svg').each(function(){
-    var $img = jQuery(this);
-    var imgID = $img.attr('id');
-    var imgClass = $img.attr('class');
-    var imgURL = $img.attr('src');
-
-    jQuery.get(imgURL, function(data) {
-      // Get the SVG tag, ignore the rest
-      var $svg = jQuery(data).find('svg');
-
-      // Add replaced image's ID to the new SVG
-      if(typeof imgID !== 'undefined') {
-        $svg = $svg.attr('id', imgID);
-      }
-      // Add replaced image's classes to the new SVG
-      if(typeof imgClass !== 'undefined') {
-        $svg = $svg.attr('class', imgClass+' replaced-svg');
-      }
-
-      // Remove any invalid XML tags as per http://validator.w3.org
-      $svg = $svg.removeAttr('xmlns:a');
-
-      // Check if the viewport is set, if the viewport is not set the SVG wont't scale.
-      if(!$svg.attr('viewBox') && $svg.attr('height') && $svg.attr('width')) {
-        $svg.attr('viewBox', '0 0 ' + $svg.attr('height') + ' ' + $svg.attr('width'))
-      }
-
-      // Replace image with new SVG
-      $img.replaceWith($svg);
-
-    }, 'xml');
-  });
-};
-
 function initPhotoSwipeFromDOM(gallerySelector) {
 
     // parse slide data (url, title, size ...) from DOM elements 
@@ -259,7 +221,7 @@ function compareDate(a,b) {
   return 0;
 }
 
-function addImages(gallerySelector) {
+function addImages(galleryId) {
   var json_file = 'images/images.json'
   var request = new XMLHttpRequest();
   request.open("GET", json_file, false);
@@ -301,85 +263,14 @@ function addImages(gallerySelector) {
           '</a>' +
           '<figcaption itemprop="caption description">' + caption + '</figcaption>' +
         '</figure>';
-    $(gallerySelector).append(html);
+    var gallery = document.getElementById(galleryId);
+    gallery.insertAdjacentHTML('beforeend', html);
   });
 
-  initPhotoSwipeFromDOM(gallerySelector);
+  initPhotoSwipeFromDOM('#' + galleryId);
 };
 
 window.onload = function() {
-  gallerySelector = '.my-gallery';
-  addImages(gallerySelector);
-  svgToInline();
-
-  $(document).on('click','#travel-filter',function() {
-    if ($(this).hasClass('active')) {
-      index = filters.indexOf('travel');
-      if(index > -1) {
-        filters.splice(index, 1);
-      }
-      $(this).removeClass('active');
-    } else {
-      filters.push('travel');  
-      $(this).addClass('active');
-    }
-    $(gallerySelector).empty();
-    addImages(gallerySelector);
-  });
-
-  $(document).on('click','#food-filter',function() {
-    if ($(this).hasClass('active')) {
-      index = filters.indexOf('food');
-      if(index > -1) {
-        filters.splice(index, 1);
-      }
-      $(this).removeClass('active');
-    } else {
-      filters.push('food');  
-      $(this).addClass('active');
-    }
-    $(gallerySelector).empty();
-    addImages(gallerySelector);
-  });
-
-  $(document).on('click','#plant-filter',function() {
-    if ($(this).hasClass('active')) {
-      index = filters.indexOf('plant');
-      if(index > -1) {
-        filters.splice(index, 1);
-      }
-      $(this).removeClass('active');
-    } else {
-      filters.push('plant');  
-      $(this).addClass('active');
-    }
-    $(gallerySelector).empty();
-    addImages(gallerySelector);
-  });
-
-  $(document).on('click','#people-filter',function() {
-    if ($(this).hasClass('active')) {
-      index = filters.indexOf('people');
-      if(index > -1) {
-        filters.splice(index, 1);
-      }
-      $(this).removeClass('active');
-    } else {
-      filters.push('people');  
-      $(this).addClass('active');
-    }
-    $(gallerySelector).empty();
-    addImages(gallerySelector);
-  });
-
-  $(document).on('click','#reset-filter',function() {
-    $(document).find('#travel-filter').removeClass('active')
-    $(document).find('#food-filter').removeClass('active')
-    $(document).find('#plant-filter').removeClass('active')
-    $(document).find('#people-filter').removeClass('active')
-    filters = []
-
-    $(gallerySelector).empty();
-    addImages(gallerySelector);
-  });
+  galleryId = 'my-gallery';
+  addImages(galleryId);
 }
