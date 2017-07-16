@@ -380,6 +380,22 @@
         ],
         "thumbnail_path": "images/thumbs/DSCF1683_400x400.JPG"
     },
+    "input_images/DSCF1696.JPG": {
+        "caption": "Zora interrupted my bread photo shoot",
+        "date": "2017:07:02 18:05:36",
+        "full_image_path": "images/full/DSCF1696_2400x1600.JPG",
+        "original_path": "input_images/DSCF1696.JPG",
+        "tags": [],
+        "thumbnail_path": "images/thumbs/DSCF1696_400x400.JPG"
+    },
+    "input_images/DSCF1723.JPG": {
+        "caption": "Tomato and Almond Tart",
+        "date": "2017:07:13 20:07:13",
+        "full_image_path": "images/full/DSCF1723_2400x1600.JPG",
+        "original_path": "input_images/DSCF1723.JPG",
+        "tags": [],
+        "thumbnail_path": "images/thumbs/DSCF1723_400x400.JPG"
+    },
     "input_images/DSC_0043.JPG": {
         "caption": "Bioshock New Years decorations",
         "date": "2015:01:01 11:44:52",
