@@ -1,3 +1,11 @@
 *.swp
+
 *.JPG
 *.jpg
+images/sprites/
+
+css/nicktardif.min.css
+css/thumbs.css
+js/min/
+
+node_modules/
