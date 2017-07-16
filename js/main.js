@@ -259,7 +259,7 @@ function addImages(galleryId) {
     var html = '' +
         '<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
           '<a href="' + full_image_path + '" itemprop="contentUrl" data-size="' + size + '">' +
-            '<img class="' + sprite_class + '" itemprop="thumbnail" />' +
+            '<div class="' + sprite_class + '" itemprop="thumbnail" />' +
           '</a>' +
           '<figcaption itemprop="caption description">' + caption + '</figcaption>' +
         '</figure>';
