@@ -13,13 +13,10 @@ body {
 .my-gallery img {
   object-fit: cover;
   image-orientation: from-image;
-  width: 200px;
-  height: 200px;
 }
 .my-gallery figure {
   display: inline-block;
   margin: 0 5px 5px 0;
-  width: 200px;
 }
 .my-gallery figcaption {
   display: none;

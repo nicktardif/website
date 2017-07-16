@@ -81,7 +81,7 @@ def main():
         full_dir = os.path.join(output_dir, 'full')
         downscaled_file = create_hires_file(image, full_dir, new_dimensions)
 
-        min_dimension = 200
+        min_dimension = 400 
         thumbnail_dimensions = calculate_dimensions(image, min_dimension, False)
         print('Thumbnail image scaled dimensions: {}'.format(thumbnail_dimensions))
         square_dimensions = '{}x{}'.format(min_dimension, min_dimension)
