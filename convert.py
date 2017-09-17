@@ -97,17 +97,18 @@ def main():
             thumbnail_file = create_thumbnail_file(image, thumbnail_dir, thumbnail_dimensions, square_dimensions)
 
             print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))
+            image_filename = os.path.basename(image)
 
             date = get_date(image)
             new_data =  {
-                        'original_path': image,
+                        'original_path': image_filename,
                         'full_image_path': downscaled_file,
                         'date': date,
                         'thumbnail_path': thumbnail_file,
                         'caption': '',
                         'tags': []
                         }
-            json_data[image] = new_data
+            json_data[image_filename] = new_data
 
         # Preserve the captions and tags from previous data
         if(args.previous_json):
