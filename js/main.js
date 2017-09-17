@@ -269,3 +269,41 @@ function addImages(galleryId, category) {
 
   initPhotoSwipeFromDOM('#' + galleryId);
 };
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("sidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("sidenav").style.width = "0";
+}
+
+function getPageTopLeft(el) {
+  var rect = el.getBoundingClientRect();
+  var docEl = document.documentElement;
+  return {
+    left: rect.left + (window.pageXOffset || docEl.scrollLeft || 0),
+    top: rect.top + (window.pageYOffset || docEl.scrollTop || 0)
+  };
+}
+
+function setMenuLeftPadding() {
+  firstImg = document.getElementById(galleryId).getElementsByTagName('figure')[0];
+  topLeft = getPageTopLeft(firstImg);
+  document.getElementById("opennav").style.paddingLeft = topLeft.left + "px";
+}
+
+window.addEventListener('load', function(event) {
+  document.getElementById("closenavbtn").onclick = function() { 
+    closeNav(); 
+  };
+  document.getElementById("opennav").onclick = function() { 
+    openNav(); 
+  };
+});
+
+window.addEventListener('resize', function(event) {
+  setMenuLeftPadding();
+});
