@@ -221,8 +221,8 @@ function compareDate(a,b) {
   return 0;
 }
 
-function addImages(galleryId) {
-  var json_file = 'images/images.json'
+function addImages(galleryId, category) {
+  var json_file = 'images/downsampled/' + category + '/' + category + '.json'
   var request = new XMLHttpRequest();
   request.open("GET", json_file, false);
   request.send(null)
@@ -242,7 +242,7 @@ function addImages(galleryId) {
     thumbnail_path = element['thumbnail_path'];
     caption = element['caption'];
     thumb_basename = baseName(thumbnail_path)
-    sprite_class = 'sprite-thumbs-' + thumb_basename
+    sprite_class = 'sprite-' + category + '-' + thumb_basename
 
     if(filters.length != 0) {
       found_match = false;
@@ -269,8 +269,3 @@ function addImages(galleryId) {
 
   initPhotoSwipeFromDOM('#' + galleryId);
 };
-
-window.onload = function() {
-  galleryId = 'my-gallery';
-  addImages(galleryId);
-}
