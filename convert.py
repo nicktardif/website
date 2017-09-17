@@ -75,7 +75,7 @@ def main():
 
     for input_dir in subdirectories:
         images = glob.glob('{}/{}/*.jpg'.format(input_root_dir, input_dir))
-        images.extend(glob.glob('{}/*.JPG'.format(input_dir)))
+        images.extend(glob.glob('{}/{}/*.JPG'.format(input_root_dir, input_dir)))
 
         print(images)
         json_data = {}
