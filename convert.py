@@ -57,7 +57,7 @@ def create_hires_file(image, output_dir, new_dimensions):
     return downscaled_file
 
 def get_date(image):
-    cmd = "exif {} | grep 'Date and Time' | head -n 1 | cut -f 2 -d '|'".format(image)
+    cmd = "exif {} | grep 'Date and Time (Orig' | head -n 1 | cut -f 2 -d '|'".format(image)
     date = subprocess.check_output(cmd, shell=True).strip()
     return date
 
