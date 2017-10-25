@@ -1,4 +1,5 @@
 filters = []
+images_json_array = []
 
 function initPhotoSwipeFromDOM(gallerySelector) {
 
@@ -221,28 +222,41 @@ function compareDate(a,b) {
   return 0;
 }
 
-function addImages(galleryId, category) {
+function addImages(category) {
   var json_file = 'images/downsampled/' + category + '/' + category + '.json'
   var request = new XMLHttpRequest();
   request.open("GET", json_file, false);
   request.send(null)
   var images_json_dict = JSON.parse(request.responseText); 
 
-  var images_json_array = []
-
   for(var key in images_json_dict) {
-    images_json_array.push(images_json_dict[key])
+    image_json_data = images_json_dict[key]
+    image_json_data['css_category'] = category
+    images_json_array.push(image_json_data)
   }
+}
 
+function displayGallery(galleryId) {
   images_json_array.sort(compareDate);
+
+  previous_image_basename = ''
 
   images_json_array.forEach(function(element) {
     size = getSize(element['full_image_path']);
     full_image_path = element['full_image_path'];
     thumbnail_path = element['thumbnail_path'];
     caption = element['caption'];
+    css_category = element['css_category'];
+    image_basename = baseName(full_image_path);
     thumb_basename = baseName(thumbnail_path)
-    sprite_class = 'sprite-' + category + '-' + thumb_basename
+    sprite_class = 'sprite-' + css_category + '-' + thumb_basename
+
+    // Don't display the same image twice
+    // This works because the data is already sorted
+    if(image_basename === previous_image_basename) {
+      return;
+    }
+    previous_image_basename = image_basename
 
     if(filters.length != 0) {
       found_match = false;
@@ -268,7 +282,7 @@ function addImages(galleryId, category) {
   });
 
   initPhotoSwipeFromDOM('#' + galleryId);
-};
+}
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
