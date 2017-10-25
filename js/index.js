@@ -1,5 +1,8 @@
 window.addEventListener('load', function(event) {
+  addImages('recent');
+
   galleryId = 'my-gallery';
-  addImages(galleryId, 'recent');
+  displayGallery(galleryId);
+
   setMenuLeftPadding();
 });
