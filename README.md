@@ -16,7 +16,7 @@ python -m SimpleHTTPServer 8000
 
 ## How to Deploy
 ```
-rsync -rv --exclude 'input_images' --exclude '.git' --exclude 'node_modules' . root@138.197.91.238:/root
+rsync -rv --exclude 'input_images' --exclude '.git' --exclude 'node_modules' . root@138.197.91.238:/var/www/nicktardif/
 ```
 
 Visit 127.0.0.1:8000 to visit the site
