@@ -2,1249 +2,1216 @@
     "0702161210.jpg": {
         "caption": "Wisconsin State Capitol<br>Madison, WI",
         "date": "2016:07:02 12:10:02",
-        "full_image_path": "images/full/0702161210_2400x1350.jpg",
-        "original_path": "input_images/all/0702161210.jpg",
+        "full_image_path": "images/downsampled/all/full/0702161210_2400x1350.jpg",
+        "original_path": "0702161210.jpg",
         "tags": [],
-        "thumbnail_path": "images/thumbs/0702161210_400x400.jpg"
+        "thumbnail_path": "images/downsampled/all/0702161210_400x400.jpg"
     },
     "0703161233a.jpg": {
         "caption": "Epic Software's Headquarters<br>Madison, WI",
         "date": "2016:07:03 12:33:41",
-        "full_image_path": "images/full/0703161233a_2400x1350.jpg",
+        "full_image_path": "images/downsampled/all/full/0703161233a_2400x1350.jpg",
         "original_path": "0703161233a.jpg",
         "tags": [],
-        "thumbnail_path": "images/thumbs/0703161233a_400x400.jpg"
+        "thumbnail_path": "images/downsampled/all/0703161233a_400x400.jpg"
     },
     "1212151157b.jpg": {
         "caption": "Snowy morning<br>Girdwood, AK",
         "date": "2015:12:12 11:57:28",
-        "full_image_path": "images/full/1212151157b_2400x1350.jpg",
+        "full_image_path": "images/downsampled/all/full/1212151157b_2400x1350.jpg",
         "original_path": "1212151157b.jpg",
         "tags": [],
-        "thumbnail_path": "images/thumbs/1212151157b_400x400.jpg"
+        "thumbnail_path": "images/downsampled/all/1212151157b_400x400.jpg"
     },
     "1212151309e.jpg": {
         "caption": "Beautiful snowy day<br>Girdwood, AK",
         "date": "2015:12:12 13:09:41",
-        "full_image_path": "images/full/1212151309e_2400x1350.jpg",
+        "full_image_path": "images/downsampled/all/full/1212151309e_2400x1350.jpg",
         "original_path": "1212151309e.jpg",
         "tags": [],
-        "thumbnail_path": "images/thumbs/1212151309e_400x400.jpg"
+        "thumbnail_path": "images/downsampled/all/1212151309e_400x400.jpg"
     },
     "1213152051b.jpg": {
         "caption": "Christmas in Alaska!",
         "date": "2015:12:13 20:51:50",
-        "full_image_path": "images/full/1213152051b_2400x1350.jpg",
+        "full_image_path": "images/downsampled/all/full/1213152051b_2400x1350.jpg",
         "original_path": "1213152051b.jpg",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/1213152051b_400x400.jpg"
+        "thumbnail_path": "images/downsampled/all/1213152051b_400x400.jpg"
     },
     "1214151323a.jpg": {
         "caption": "Quick stop with some planes before our flight back<br>Anchorage, AK",
         "date": "2015:12:14 13:23:03",
-        "full_image_path": "images/full/1214151323a_2400x1350.jpg",
+        "full_image_path": "images/downsampled/all/full/1214151323a_2400x1350.jpg",
         "original_path": "1214151323a.jpg",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/1214151323a_400x400.jpg"
+        "thumbnail_path": "images/downsampled/all/1214151323a_400x400.jpg"
     },
     "DSCF0284.JPG": {
         "caption": "Jessica and Morgan",
         "date": "2016:12:18 19:00:25",
-        "full_image_path": "images/full/DSCF0284_1664x1664.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0284_1664x1664.JPG",
         "original_path": "DSCF0284.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0284_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0284_400x400.JPG"
     },
     "DSCF0314.JPG": {
         "caption": "Mercy - Our Christmas tree-topper",
         "date": "2016:12:23 12:39:42",
-        "full_image_path": "images/full/DSCF0314_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0314_2400x1600.JPG",
         "original_path": "DSCF0314.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSCF0314_400x400.JPG"
-    },
-    "DSCF0347.JPG": {
-        "caption": "Emergency Biscuits!",
-        "date": "2017:01:01 18:27:50",
-        "full_image_path": "images/full/DSCF0347_2400x1600.JPG",
-        "original_path": "DSCF0347.JPG",
-        "tags": [
-            "food"
-        ],
-        "thumbnail_path": "images/thumbs/DSCF0347_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0314_400x400.JPG"
     },
     "DSCF0380.JPG": {
         "caption": "Ice-glazed trees<br>FDR State Park, GA",
         "date": "2017:01:07 16:27:46",
-        "full_image_path": "images/full/DSCF0380_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0380_2400x1600.JPG",
         "original_path": "DSCF0380.JPG",
         "tags": [
             "travel",
             "plant",
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0380_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0380_400x400.JPG"
     },
     "DSCF0410.JPG": {
         "caption": "Foggy morning lake<br>FDR State Park, GA",
         "date": "2017:01:08 08:10:50",
-        "full_image_path": "images/full/DSCF0410_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0410_2400x1600.JPG",
         "original_path": "DSCF0410.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0410_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0410_400x400.JPG"
     },
     "DSCF0427.JPG": {
         "caption": "Dockhouse<br>FDR State Park, GA",
         "date": "2017:01:08 08:39:17",
-        "full_image_path": "images/full/DSCF0427_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0427_2400x1600.JPG",
         "original_path": "DSCF0427.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0427_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0427_400x400.JPG"
     },
     "DSCF0455.JPG": {
         "caption": "Hiking<br>FDR State Park, GA",
         "date": "2017:01:08 12:14:12",
-        "full_image_path": "images/full/DSCF0455_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0455_2400x1600.JPG",
         "original_path": "DSCF0455.JPG",
         "tags": [
             "travel",
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0455_400x400.JPG"
-    },
-    "DSCF0545.JPG": {
-        "caption": "Grasshopper cake for Spencer's birthday",
-        "date": "2017:01:17 19:28:55",
-        "full_image_path": "images/full/DSCF0545_2400x1600.JPG",
-        "original_path": "DSCF0545.JPG",
-        "tags": [
-            "food"
-        ],
-        "thumbnail_path": "images/thumbs/DSCF0545_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0455_400x400.JPG"
     },
     "DSCF0719.JPG": {
         "caption": "Sand shadows<br>Huntington Beach State Park, SC",
         "date": "2017:03:15 17:58:15",
-        "full_image_path": "images/full/DSCF0719_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0719_2400x1600.JPG",
         "original_path": "DSCF0719.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0719_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0719_400x400.JPG"
     },
     "DSCF0796.JPG": {
         "caption": "Lighthouse<br>Cape Lookout, NC",
         "date": "2017:03:17 07:43:39",
-        "full_image_path": "images/full/DSCF0796_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0796_2400x1600.JPG",
         "original_path": "DSCF0796.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0796_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0796_400x400.JPG"
     },
     "DSCF0836.JPG": {
         "caption": "Jonathan taking a snooze<br> Cape Lookout National Seashore, NC",
         "date": "2017:03:17 12:57:38",
-        "full_image_path": "images/full/DSCF0836_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0836_2400x1600.JPG",
         "original_path": "DSCF0836.JPG",
         "tags": [
             "travel",
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0836_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0836_400x400.JPG"
     },
     "DSCF0888.JPG": {
         "caption": "Beach camping<br>Cape Lookout National Seashore, NC",
         "date": "2017:03:17 16:49:12",
-        "full_image_path": "images/full/DSCF0888_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0888_2400x1600.JPG",
         "original_path": "DSCF0888.JPG",
         "tags": [
             "travel",
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0888_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0888_400x400.JPG"
     },
     "DSCF0894.JPG": {
         "caption": "Jonathan and I<br>Cape Lookout National Seashore, NC",
         "date": "2017:03:17 17:33:52",
-        "full_image_path": "images/full/DSCF0894_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0894_2400x1600.JPG",
         "original_path": "DSCF0894.JPG",
         "tags": [
             "travel",
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0894_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0894_400x400.JPG"
     },
     "DSCF0900.JPG": {
         "caption": "Flowers<br>Charleston, SC",
         "date": "2017:03:19 09:46:57",
-        "full_image_path": "images/full/DSCF0900_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0900_2400x1600.JPG",
         "original_path": "DSCF0900.JPG",
         "tags": [
             "travel",
             "plant"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0900_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0900_400x400.JPG"
     },
     "DSCF0915.JPG": {
         "caption": "Pretty vines on brick<br>Charleston, SC",
         "date": "2017:03:19 11:47:03",
-        "full_image_path": "images/full/DSCF0915_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0915_2400x1600.JPG",
         "original_path": "DSCF0915.JPG",
         "tags": [
             "travel",
             "plant"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0915_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0915_400x400.JPG"
     },
     "DSCF0927.JPG": {
         "caption": "Jonathan close-up",
         "date": "2017:03:19 12:45:14",
-        "full_image_path": "images/full/DSCF0927_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0927_2400x1600.JPG",
         "original_path": "DSCF0927.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0927_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0927_400x400.JPG"
     },
     "DSCF0932.JPG": {
         "caption": "Alleyway<br>Charleston, SC",
         "date": "2017:03:19 12:52:52",
-        "full_image_path": "images/full/DSCF0932_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0932_2400x1600.JPG",
         "original_path": "DSCF0932.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0932_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0932_400x400.JPG"
     },
     "DSCF0983.JPG": {
         "caption": "Jessica looking cool<br>Gold Head Branch State Park, FL",
         "date": "2017:04:01 12:25:50",
-        "full_image_path": "images/full/DSCF0983_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0983_2400x1600.JPG",
         "original_path": "DSCF0983.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0983_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0983_400x400.JPG"
     },
     "DSCF0986.JPG": {
         "caption": "Nick looking dope<br>Gold Head Branch State Park, FL",
         "date": "2017:04:01 12:26:51",
-        "full_image_path": "images/full/DSCF0986_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF0986_2400x1600.JPG",
         "original_path": "DSCF0986.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF0986_400x400.JPG"
-    },
-    "DSCF1024.JPG": {
-        "caption": "Potato tart",
-        "date": "2017:04:02 19:17:27",
-        "full_image_path": "images/full/DSCF1024_2400x1600.JPG",
-        "original_path": "DSCF1024.JPG",
-        "tags": [
-            "food"
-        ],
-        "thumbnail_path": "images/thumbs/DSCF1024_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF0986_400x400.JPG"
     },
     "DSCF1092.JPG": {
         "caption": "Fort de Soto State Park, FL",
         "date": "2017:04:08 17:49:17",
-        "full_image_path": "images/full/DSCF1092_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1092_2400x1600.JPG",
         "original_path": "DSCF1092.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSCF1092_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1092_400x400.JPG"
     },
     "DSCF1117.JPG": {
         "caption": "Easter basket reflected in glass",
         "date": "2017:04:16 11:04:58",
-        "full_image_path": "images/full/DSCF1117_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1117_2400x1600.JPG",
         "original_path": "DSCF1117.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSCF1117_400x400.JPG"
-    },
-    "DSCF1125.JPG": {
-        "caption": "White Bread - recipe from FWSY",
-        "date": "2017:04:24 19:03:14",
-        "full_image_path": "images/full/DSCF1125_2400x1600.JPG",
-        "original_path": "DSCF1125.JPG",
-        "tags": [
-            "food"
-        ],
-        "thumbnail_path": "images/thumbs/DSCF1125_400x400.JPG"
-    },
-    "DSCF1144.JPG": {
-        "caption": "Fancy eggplant dinner",
-        "date": "2017:04:24 19:49:30",
-        "full_image_path": "images/full/DSCF1144_2400x1600.JPG",
-        "original_path": "DSCF1144.JPG",
-        "tags": [
-            "food"
-        ],
-        "thumbnail_path": "images/thumbs/DSCF1144_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1117_400x400.JPG"
     },
     "DSCF1256.JPG": {
         "caption": "Blue Springs, FL",
         "date": "2017:04:29 12:40:03",
-        "full_image_path": "images/full/DSCF1256_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1256_2400x1600.JPG",
         "original_path": "DSCF1256.JPG",
         "tags": [
             "plant"
         ],
-        "thumbnail_path": "images/thumbs/DSCF1256_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1256_400x400.JPG"
     },
     "DSCF1417.JPG": {
         "caption": "Seward Highway, AK",
         "date": "2017:05:14 22:24:05",
-        "full_image_path": "images/full/DSCF1417_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1417_2400x1600.JPG",
         "original_path": "DSCF1417.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSCF1417_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1417_400x400.JPG"
     },
     "DSCF1464.JPG": {
         "caption": "View from the top of Flattop Mountain<br>Anchorage, AK",
         "date": "2017:05:15 14:10:39",
-        "full_image_path": "images/full/DSCF1464_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1464_2400x1600.JPG",
         "original_path": "DSCF1464.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSCF1464_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1464_400x400.JPG"
     },
     "DSCF1470.JPG": {
         "caption": "Me on the top of Flattop mountain<br>Anchorage, AK",
         "date": "2017:05:15 14:11:22",
-        "full_image_path": "images/full/DSCF1470_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1470_2400x1600.JPG",
         "original_path": "DSCF1470.JPG",
         "tags": [
             "travel",
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF1470_400x400.JPG"
-    },
-    "DSCF1489.JPG": {
-        "caption": "Our cabin in K'esugi Ken Campground<br>Denali State Park, AK",
-        "date": "2017:05:16 19:46:02",
-        "full_image_path": "images/full/DSCF1489_2400x1600.JPG",
-        "original_path": "DSCF1489.JPG",
-        "tags": [
-            "travel"
-        ],
-        "thumbnail_path": "images/thumbs/DSCF1489_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1470_400x400.JPG"
     },
     "DSCF1520.JPG": {
         "caption": "View of Denali from our cabin<br>Denali State Park, AK",
         "date": "2017:05:16 23:07:31",
-        "full_image_path": "images/full/DSCF1520_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1520_2400x1600.JPG",
         "original_path": "DSCF1520.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSCF1520_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1520_400x400.JPG"
     },
     "DSCF1648.JPG": {
         "caption": "Church<br>Savannah, GA",
         "date": "2017:06:18 10:55:46",
-        "full_image_path": "images/full/DSCF1648_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1648_2400x1600.JPG",
         "original_path": "DSCF1648.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSCF1648_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1648_400x400.JPG"
     },
     "DSCF1677.JPG": {
         "caption": "Vine wall<br>Savannah, GA",
         "date": "2017:06:18 11:51:53",
-        "full_image_path": "images/full/DSCF1677_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1677_2400x1600.JPG",
         "original_path": "DSCF1677.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSCF1677_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1677_400x400.JPG"
     },
     "DSCF1683.JPG": {
         "caption": "Savannah, GA",
         "date": "2017:06:18 11:58:45",
-        "full_image_path": "images/full/DSCF1683_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSCF1683_2400x1600.JPG",
         "original_path": "DSCF1683.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSCF1683_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1683_400x400.JPG"
     },
-    "DSCF1696.JPG": {
-        "caption": "Zora interrupted my bread photo shoot",
-        "date": "2017:07:02 18:05:36",
-        "full_image_path": "images/full/DSCF1696_2400x1600.JPG",
-        "original_path": "DSCF1696.JPG",
+    "DSCF1833.jpg": {
+        "caption": "Flight over California",
+        "date": "2017:08:13 12:17:17",
+        "full_image_path": "images/downsampled/all/full/DSCF1833_1600x2400.jpg",
+        "original_path": "DSCF1833.jpg",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSCF1696_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1833_400x400.jpg"
     },
-    "DSCF1723.JPG": {
-        "caption": "Tomato and Almond Tart",
-        "date": "2017:07:13 20:07:13",
-        "full_image_path": "images/full/DSCF1723_2400x1600.JPG",
-        "original_path": "DSCF1723.JPG",
+    "DSCF1846.jpg": {
+        "caption": "San Francisco",
+        "date": "2017:08:13 16:38:42",
+        "full_image_path": "images/downsampled/all/full/DSCF1846_2400x1600.jpg",
+        "original_path": "DSCF1846.jpg",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSCF1723_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSCF1846_400x400.jpg"
+    },
+    "DSCF1849.jpg": {
+        "caption": "Indian Laurel Fig Tree<br>San Francisco",
+        "date": "2017:08:13 16:40:52",
+        "full_image_path": "images/downsampled/all/full/DSCF1849_2400x1600.jpg",
+        "original_path": "DSCF1849.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1849_400x400.jpg"
+    },
+    "DSCF1851.jpg": {
+        "caption": "San Francisco",
+        "date": "2017:08:13 16:51:31",
+        "full_image_path": "images/downsampled/all/full/DSCF1851_2400x1600.jpg",
+        "original_path": "DSCF1851.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1851_400x400.jpg"
+    },
+    "DSCF1863.jpg": {
+        "caption": "Us at the San Francisco Wharf",
+        "date": "2017:08:13 17:10:13",
+        "full_image_path": "images/downsampled/all/full/DSCF1863_2400x1600.jpg",
+        "original_path": "DSCF1863.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1863_400x400.jpg"
+    },
+    "DSCF1883.jpg": {
+        "caption": "Take that Ryan<br>San Francisco City Hall",
+        "date": "2017:08:14 12:51:45",
+        "full_image_path": "images/downsampled/all/full/DSCF1883_2400x1600.jpg",
+        "original_path": "DSCF1883.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1883_400x400.jpg"
+    },
+    "DSCF1885.jpg": {
+        "caption": "San Francisco City Hall",
+        "date": "2017:08:14 13:01:27",
+        "full_image_path": "images/downsampled/all/full/DSCF1885_2400x1600.jpg",
+        "original_path": "DSCF1885.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1885_400x400.jpg"
+    },
+    "DSCF1889.jpg": {
+        "caption": "Hot Pot<br>San Francisco",
+        "date": "2017:08:14 15:11:03",
+        "full_image_path": "images/downsampled/all/full/DSCF1889_2400x1600.jpg",
+        "original_path": "DSCF1889.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1889_400x400.jpg"
+    },
+    "DSCF1890.jpg": {
+        "caption": "Munch Exhibit<br>SF MOMA",
+        "date": "2017:08:14 17:05:09",
+        "full_image_path": "images/downsampled/all/full/DSCF1890_2400x1600.jpg",
+        "original_path": "DSCF1890.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1890_400x400.jpg"
+    },
+    "DSCF1891.jpg": {
+        "caption": "Munch Exhibit<br>SF MOMA",
+        "date": "2017:08:14 17:05:33",
+        "full_image_path": "images/downsampled/all/full/DSCF1891_2400x1600.jpg",
+        "original_path": "DSCF1891.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1891_400x400.jpg"
+    },
+    "DSCF1902.jpg": {
+        "caption": "Chinatown<br>San Francisco",
+        "date": "2017:08:14 19:07:09",
+        "full_image_path": "images/downsampled/all/full/DSCF1902_2400x1736.jpg",
+        "original_path": "DSCF1902.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1902_400x400.jpg"
+    },
+    "DSCF1910.jpg": {
+        "caption": "Chinatown<br>San Francisco",
+        "date": "2017:08:14 19:14:12",
+        "full_image_path": "images/downsampled/all/full/DSCF1910_2400x1600.jpg",
+        "original_path": "DSCF1910.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1910_400x400.jpg"
+    },
+    "DSCF1911.jpg": {
+        "caption": "Chinatown<br>San Francisco",
+        "date": "2017:08:14 19:14:54",
+        "full_image_path": "images/downsampled/all/full/DSCF1911_2400x1600.jpg",
+        "original_path": "DSCF1911.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1911_400x400.jpg"
+    },
+    "DSCF1912.jpg": {
+        "caption": "Chinatown<br>San Francisco",
+        "date": "2017:08:14 19:15:24",
+        "full_image_path": "images/downsampled/all/full/DSCF1912_1600x2400.jpg",
+        "original_path": "DSCF1912.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1912_400x400.jpg"
+    },
+    "DSCF1930.jpg": {
+        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
+        "date": "2017:08:15 12:30:55",
+        "full_image_path": "images/downsampled/all/full/DSCF1930_2400x1600.jpg",
+        "original_path": "DSCF1930.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1930_400x400.jpg"
+    },
+    "DSCF1933.jpg": {
+        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
+        "date": "2017:08:15 12:35:21",
+        "full_image_path": "images/downsampled/all/full/DSCF1933_2400x1600.jpg",
+        "original_path": "DSCF1933.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1933_400x400.jpg"
+    },
+    "DSCF1937.jpg": {
+        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
+        "date": "2017:08:15 12:37:18",
+        "full_image_path": "images/downsampled/all/full/DSCF1937_2400x1600.jpg",
+        "original_path": "DSCF1937.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1937_400x400.jpg"
+    },
+    "DSCF1938.jpg": {
+        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
+        "date": "2017:08:15 12:39:02",
+        "full_image_path": "images/downsampled/all/full/DSCF1938_2400x1599.jpg",
+        "original_path": "DSCF1938.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1938_400x400.jpg"
+    },
+    "DSCF1951.jpg": {
+        "caption": "Conservatory of Flowers<br>Golden Gate Park, San Francisco",
+        "date": "2017:08:15 13:03:56",
+        "full_image_path": "images/downsampled/all/full/DSCF1951_2400x1600.jpg",
+        "original_path": "DSCF1951.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1951_400x400.jpg"
+    },
+    "DSCF1963.jpg": {
+        "caption": "Conservatory of Flowers<br>Golden Gate Park, San Francisco",
+        "date": "2017:08:15 13:10:46",
+        "full_image_path": "images/downsampled/all/full/DSCF1963_2400x1600.jpg",
+        "original_path": "DSCF1963.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1963_400x400.jpg"
+    },
+    "DSCF1966.jpg": {
+        "caption": "Conservatory of Flowers<br>Golden Gate Park, San Francisco",
+        "date": "2017:08:15 13:12:56",
+        "full_image_path": "images/downsampled/all/full/DSCF1966_2400x1600.jpg",
+        "original_path": "DSCF1966.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1966_400x400.jpg"
+    },
+    "DSCF1991.jpg": {
+        "caption": "Conservatory of Flowers<br>Golden Gate Park, San Francisco",
+        "date": "2017:08:15 13:50:56",
+        "full_image_path": "images/downsampled/all/full/DSCF1991_2400x1599.jpg",
+        "original_path": "DSCF1991.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF1991_400x400.jpg"
+    },
+    "DSCF2009.jpg": {
+        "caption": "San Francisco",
+        "date": "2017:08:15 18:32:51",
+        "full_image_path": "images/downsampled/all/full/DSCF2009_2400x1600.jpg",
+        "original_path": "DSCF2009.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2009_400x400.jpg"
+    },
+    "DSCF2030.jpg": {
+        "caption": "Golden Gate Bridge<br>San Francisco",
+        "date": "2017:08:15 19:49:22",
+        "full_image_path": "images/downsampled/all/full/DSCF2030_2400x1600.jpg",
+        "original_path": "DSCF2030.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2030_400x400.jpg"
+    },
+    "DSCF2085.jpg": {
+        "caption": "Pacific Coast Highway, CA",
+        "date": "2017:08:16 15:52:13",
+        "full_image_path": "images/downsampled/all/full/DSCF2085_2400x1600.jpg",
+        "original_path": "DSCF2085.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2085_400x400.jpg"
+    },
+    "DSCF2107.jpg": {
+        "caption": "Pismo Beach, CA",
+        "date": "2017:08:17 00:34:22",
+        "full_image_path": "images/downsampled/all/full/DSCF2107_2400x1600.jpg",
+        "original_path": "DSCF2107.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2107_400x400.jpg"
+    },
+    "DSCF2141.jpg": {
+        "caption": "Stearns Wharf<br>Santa Barbara, CA",
+        "date": "2017:08:17 20:25:01",
+        "full_image_path": "images/downsampled/all/full/DSCF2141_2400x1600.jpg",
+        "original_path": "DSCF2141.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2141_400x400.jpg"
+    },
+    "DSCF2157.jpg": {
+        "caption": "Stearns Wharf<br>Santa Barbara, CA",
+        "date": "2017:08:17 20:54:33",
+        "full_image_path": "images/downsampled/all/full/DSCF2157_2400x1600.jpg",
+        "original_path": "DSCF2157.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2157_400x400.jpg"
+    },
+    "DSCF2164.jpg": {
+        "caption": "Stearns Wharf<br>Santa Barbara, CA",
+        "date": "2017:08:17 21:17:29",
+        "full_image_path": "images/downsampled/all/full/DSCF2164_2400x1600.jpg",
+        "original_path": "DSCF2164.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2164_400x400.jpg"
+    },
+    "DSCF2182.jpg": {
+        "caption": "Pacific Park<br>Santa Monica, CA",
+        "date": "2017:08:19 00:24:58",
+        "full_image_path": "images/downsampled/all/full/DSCF2182_2400x1600.jpg",
+        "original_path": "DSCF2182.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2182_400x400.jpg"
+    },
+    "DSCF2198.jpg": {
+        "caption": "Ocean Avenue<br>Santa Monica, CA",
+        "date": "2017:08:19 20:56:23",
+        "full_image_path": "images/downsampled/all/full/DSCF2198_2400x1600.jpg",
+        "original_path": "DSCF2198.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2198_400x400.jpg"
+    },
+    "DSCF2201.jpg": {
+        "caption": "Ocean Avenue<br>Santa Monica, CA",
+        "date": "2017:08:19 21:00:34",
+        "full_image_path": "images/downsampled/all/full/DSCF2201_1600x2400.jpg",
+        "original_path": "DSCF2201.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2201_400x400.jpg"
+    },
+    "DSCF2205.jpg": {
+        "caption": "Pacific Coast Highway<br>Santa Monica, CA",
+        "date": "2017:08:19 21:04:22",
+        "full_image_path": "images/downsampled/all/full/DSCF2205_2400x1599.jpg",
+        "original_path": "DSCF2205.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2205_400x400.jpg"
+    },
+    "DSCF2206.jpg": {
+        "caption": "Santa Monica Beach<br>Santa Monica, CA",
+        "date": "2017:08:19 21:07:31",
+        "full_image_path": "images/downsampled/all/full/DSCF2206_2400x1600.jpg",
+        "original_path": "DSCF2206.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2206_400x400.jpg"
+    },
+    "DSCF2217.jpg": {
+        "caption": "Santa Monica Beach<br>Santa Monica, CA",
+        "date": "2017:08:19 21:27:12",
+        "full_image_path": "images/downsampled/all/full/DSCF2217_2400x1600.jpg",
+        "original_path": "DSCF2217.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2217_400x400.jpg"
+    },
+    "DSCF2230.jpg": {
+        "caption": "Joshua Tree National Park",
+        "date": "2017:08:20 16:48:00",
+        "full_image_path": "images/downsampled/all/full/DSCF2230_2400x1600.jpg",
+        "original_path": "DSCF2230.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2230_400x400.jpg"
+    },
+    "DSCF2239.jpg": {
+        "caption": "Joshua Tree National Park",
+        "date": "2017:08:20 17:09:25",
+        "full_image_path": "images/downsampled/all/full/DSCF2239_2400x1600.jpg",
+        "original_path": "DSCF2239.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2239_400x400.jpg"
+    },
+    "DSCF2246.jpg": {
+        "caption": "Joshua Tree National Park",
+        "date": "2017:08:20 17:19:03",
+        "full_image_path": "images/downsampled/all/full/DSCF2246_2400x1600.jpg",
+        "original_path": "DSCF2246.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2246_400x400.jpg"
+    },
+    "DSCF2257.jpg": {
+        "caption": "Joshua Tree National Park",
+        "date": "2017:08:20 17:39:06",
+        "full_image_path": "images/downsampled/all/full/DSCF2257_2400x1600.jpg",
+        "original_path": "DSCF2257.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2257_400x400.jpg"
+    },
+    "DSCF2261.jpg": {
+        "caption": "Joshua Tree National Park",
+        "date": "2017:08:20 17:41:04",
+        "full_image_path": "images/downsampled/all/full/DSCF2261_2400x1600.jpg",
+        "original_path": "DSCF2261.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2261_400x400.jpg"
+    },
+    "DSCF2269.jpg": {
+        "caption": "Joshua Tree National Park",
+        "date": "2017:08:20 17:43:00",
+        "full_image_path": "images/downsampled/all/full/DSCF2269_2400x1600.jpg",
+        "original_path": "DSCF2269.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2269_400x400.jpg"
+    },
+    "DSCF2292.jpg": {
+        "caption": "Joshua Tree National Park",
+        "date": "2017:08:20 19:30:13",
+        "full_image_path": "images/downsampled/all/full/DSCF2292_2400x1600.jpg",
+        "original_path": "DSCF2292.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2292_400x400.jpg"
+    },
+    "DSCF2295.jpg": {
+        "caption": "Joshua Tree National Park",
+        "date": "2017:08:20 19:31:59",
+        "full_image_path": "images/downsampled/all/full/DSCF2295_1600x2400.jpg",
+        "original_path": "DSCF2295.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2295_400x400.jpg"
+    },
+    "DSCF2316.jpg": {
+        "caption": "Milky Way<br>Palm Springs, CA",
+        "date": "2017:08:20 23:51:32",
+        "full_image_path": "images/downsampled/all/full/DSCF2316_2400x1600.jpg",
+        "original_path": "DSCF2316.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2316_400x400.jpg"
+    },
+    "DSCF2334.jpg": {
+        "caption": "Big Tree<br>Sequoia National Park, CA",
+        "date": "2017:08:21 20:36:50",
+        "full_image_path": "images/downsampled/all/full/DSCF2334_2400x1600.jpg",
+        "original_path": "DSCF2334.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2334_400x400.jpg"
+    },
+    "DSCF2364.jpg": {
+        "caption": "Cooking Breakfast<br>Sequoia National Park, CA",
+        "date": "2017:08:22 10:38:48",
+        "full_image_path": "images/downsampled/all/full/DSCF2364_2400x1600.jpg",
+        "original_path": "DSCF2364.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2364_400x400.jpg"
+    },
+    "DSCF2370.jpg": {
+        "caption": "Sequoia National Park, CA",
+        "date": "2017:08:22 14:29:04",
+        "full_image_path": "images/downsampled/all/full/DSCF2370_2400x1600.jpg",
+        "original_path": "DSCF2370.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2370_400x400.jpg"
+    },
+    "DSCF2382.jpg": {
+        "caption": "Sequoia National Park, CA",
+        "date": "2017:08:22 14:43:51",
+        "full_image_path": "images/downsampled/all/full/DSCF2382_2400x1600.jpg",
+        "original_path": "DSCF2382.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2382_400x400.jpg"
+    },
+    "DSCF2385.jpg": {
+        "caption": "Sequoia National Park, CA",
+        "date": "2017:08:22 14:54:26",
+        "full_image_path": "images/downsampled/all/full/DSCF2385_1600x2400.jpg",
+        "original_path": "DSCF2385.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2385_400x400.jpg"
+    },
+    "DSCF2421.jpg": {
+        "caption": "Sequoia National Park, CA",
+        "date": "2017:08:22 17:51:21",
+        "full_image_path": "images/downsampled/all/full/DSCF2421_2400x1600.jpg",
+        "original_path": "DSCF2421.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2421_400x400.jpg"
+    },
+    "DSCF2441.jpg": {
+        "caption": "Milky Way<br>Sequoia National Park, CA",
+        "date": "2017:08:23 00:44:26",
+        "full_image_path": "images/downsampled/all/full/DSCF2441_2400x1600.jpg",
+        "original_path": "DSCF2441.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2441_400x400.jpg"
+    },
+    "DSCF2498.jpg": {
+        "caption": "Yosemite National Park, CA",
+        "date": "2017:08:24 15:02:40",
+        "full_image_path": "images/downsampled/all/full/DSCF2498_2400x1600.jpg",
+        "original_path": "DSCF2498.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2498_400x400.jpg"
+    },
+    "DSCF2505.jpg": {
+        "caption": "El Capitan<br>Yosemite National Park, CA",
+        "date": "2017:08:24 18:26:04",
+        "full_image_path": "images/downsampled/all/full/DSCF2505_1600x2400.jpg",
+        "original_path": "DSCF2505.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2505_400x400.jpg"
+    },
+    "DSCF2508.jpg": {
+        "caption": "Yosemite National Park, CA",
+        "date": "2017:08:24 18:27:36",
+        "full_image_path": "images/downsampled/all/full/DSCF2508_2400x1600.jpg",
+        "original_path": "DSCF2508.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2508_400x400.jpg"
+    },
+    "DSCF2512.jpg": {
+        "caption": "Yosemite Falls and Half Dome<br>Yosemite National Park, CA",
+        "date": "2017:08:25 16:00:17",
+        "full_image_path": "images/downsampled/all/full/DSCF2512_2400x1600.jpg",
+        "original_path": "DSCF2512.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/all/DSCF2512_400x400.jpg"
+    },
+    "DSCF2859.jpg": {
+        "caption": "Prepping for a hike<br>Amicalola Falls State Park, GA",
+        "date": "2017:11:04 07:26:16",
+        "full_image_path": "images/downsampled/recent/full/DSCF2859_2400x1600.jpg",
+        "original_path": "DSCF2859.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF2859_400x400.jpg"
+    },
+    "DSCF2887.jpg": {
+        "caption": "It's a long ways to the top<br>Amicalola Falls State Park, GA",
+        "date": "2017:11:04 08:08:40",
+        "full_image_path": "images/downsampled/recent/full/DSCF2887_2400x1600.jpg",
+        "original_path": "DSCF2887.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF2887_400x400.jpg"
+    },
+    "DSCF2900.jpg": {
+        "caption": "View from the top of the waterfall<br>Amicalola Falls State Park, GA",
+        "date": "2017:11:04 08:24:31",
+        "full_image_path": "images/downsampled/recent/full/DSCF2900_1600x2400.jpg",
+        "original_path": "DSCF2900.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF2900_400x400.jpg"
+    },
+    "DSCF2911.jpg": {
+        "caption": "Jonathan taking a break",
+        "date": "2017:11:04 13:51:09",
+        "full_image_path": "images/downsampled/recent/full/DSCF2911_2400x1600.jpg",
+        "original_path": "DSCF2911.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF2911_400x400.jpg"
+    },
+    "DSCF3032.jpg": {
+        "caption": "Zora kills the webbies",
+        "date": "2017:11:10 21:08:27",
+        "full_image_path": "images/downsampled/recent/full/DSCF3032_2400x1600.jpg",
+        "original_path": "DSCF3032.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3032_400x400.jpg"
+    },
+    "DSCF3084.jpg": {
+        "caption": "Glass candle holder from the local craft festival",
+        "date": "2017:11:11 17:47:31",
+        "full_image_path": "images/downsampled/recent/full/DSCF3084_2400x1600.jpg",
+        "original_path": "DSCF3084.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3084_400x400.jpg"
+    },
+    "DSCF3095.jpg": {
+        "caption": "Pistachio and rose cake",
+        "date": "2017:11:11 21:42:52",
+        "full_image_path": "images/downsampled/recent/full/DSCF3095_2400x1600.jpg",
+        "original_path": "DSCF3095.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3095_400x400.jpg"
+    },
+    "DSCF3110.jpg": {
+        "caption": "Potatoes au gratin",
+        "date": "2017:11:17 08:41:47",
+        "full_image_path": "images/downsampled/recent/full/DSCF3110_2400x1600.jpg",
+        "original_path": "DSCF3110.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3110_400x400.jpg"
+    },
+    "DSCF3209.jpg": {
+        "caption": "Sorrento Boys",
+        "date": "2017:12:01 17:03:37",
+        "full_image_path": "images/downsampled/recent/full/DSCF3209_2399x1455.jpg",
+        "original_path": "DSCF3209.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3209_400x400.jpg"
+    },
+    "DSCF3251.jpg": {
+        "caption": "Hanging out in the the Everglades<br>Big Cypress National Preserve, FL",
+        "date": "2017:12:01 20:36:25",
+        "full_image_path": "images/downsampled/recent/full/DSCF3251_2400x1599.jpg",
+        "original_path": "DSCF3251.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3251_400x400.jpg"
+    },
+    "DSCF3257.jpg": {
+        "caption": "The moon was so bright night looked like day<br>Big Cypress National Preserve, FL",
+        "date": "2017:12:01 20:43:29",
+        "full_image_path": "images/downsampled/recent/full/DSCF3257_1600x2400.jpg",
+        "original_path": "DSCF3257.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3257_400x400.jpg"
+    },
+    "DSCF3267.jpg": {
+        "caption": "Stars and Moon<br>Big Cypress National Preserve, FL",
+        "date": "2017:12:01 21:04:32",
+        "full_image_path": "images/downsampled/recent/full/DSCF3267_2400x1600.jpg",
+        "original_path": "DSCF3267.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3267_400x400.jpg"
+    },
+    "DSCF3278.jpg": {
+        "caption": "More stars<br>Big Cypress National Preserve, FL",
+        "date": "2017:12:01 21:25:51",
+        "full_image_path": "images/downsampled/recent/full/DSCF3278_2400x1600.jpg",
+        "original_path": "DSCF3278.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3278_400x400.jpg"
+    },
+    "DSCF3284.jpg": {
+        "caption": "It's meating time<br>Big Cypress National Preserve, FL",
+        "date": "2017:12:01 21:52:17",
+        "full_image_path": "images/downsampled/recent/full/DSCF3284_2400x1600.jpg",
+        "original_path": "DSCF3284.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3284_400x400.jpg"
+    },
+    "DSCF3301.jpg": {
+        "caption": "Is this a big cypress?",
+        "date": "2017:12:02 08:08:28",
+        "full_image_path": "images/downsampled/recent/full/DSCF3301_1600x2400.jpg",
+        "original_path": "DSCF3301.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3301_400x400.jpg"
+    },
+    "DSCF3319.jpg": {
+        "caption": "",
+        "date": "2017:12:02 16:41:05",
+        "full_image_path": "images/downsampled/recent/full/DSCF3319_2400x1600.jpg",
+        "original_path": "DSCF3319.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3319_400x400.jpg"
+    },
+    "DSCF3339.jpg": {
+        "caption": "",
+        "date": "2017:12:02 17:10:29",
+        "full_image_path": "images/downsampled/recent/full/DSCF3339_2400x1600.jpg",
+        "original_path": "DSCF3339.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3339_400x400.jpg"
+    },
+    "DSCF3350.jpg": {
+        "caption": "Monument Lake<br>Big Cypress National Preserve, FL",
+        "date": "2017:12:02 17:30:53",
+        "full_image_path": "images/downsampled/recent/full/DSCF3350_2400x1600.jpg",
+        "original_path": "DSCF3350.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3350_400x400.jpg"
+    },
+    "DSCF3524.jpg": {
+        "caption": "Fort De Soto State Park, FL",
+        "date": "2017:12:23 17:57:47",
+        "full_image_path": "images/downsampled/recent/full/DSCF3524_2400x1600.jpg",
+        "original_path": "DSCF3524.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3524_400x400.jpg"
+    },
+    "DSCF3551.jpg": {
+        "caption": "A E S T H E T I C",
+        "date": "2017:12:24 16:34:10",
+        "full_image_path": "images/downsampled/recent/full/DSCF3551_2400x1600.jpg",
+        "original_path": "DSCF3551.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3551_400x400.jpg"
+    },
+    "DSCF3566.jpg": {
+        "caption": "Chocolate and pecan tarts x24. Merry Christmas!",
+        "date": "2017:12:24 16:39:01",
+        "full_image_path": "images/downsampled/recent/full/DSCF3566_2400x1667.jpg",
+        "original_path": "DSCF3566.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3566_400x400.jpg"
+    },
+    "DSCF3595.jpg": {
+        "caption": "Pancake time!",
+        "date": "2017:12:31 11:16:23",
+        "full_image_path": "images/downsampled/recent/full/DSCF3595_2400x1600.jpg",
+        "original_path": "DSCF3595.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3595_400x400.jpg"
+    },
+    "DSCF3637.jpg": {
+        "caption": "Red (actually brown) velvet cake",
+        "date": "2018:01:01 21:31:53",
+        "full_image_path": "images/downsampled/recent/full/DSCF3637_2400x2400.jpg",
+        "original_path": "DSCF3637.jpg",
+        "tags": [],
+        "thumbnail_path": "images/downsampled/recent/DSCF3637_400x400.jpg"
     },
     "DSC_0043.JPG": {
         "caption": "Bioshock New Years decorations",
         "date": "2015:01:01 11:44:52",
-        "full_image_path": "images/full/DSC_0043_1600x2400.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_0043_1600x2400.JPG",
         "original_path": "DSC_0043.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_0043_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_0043_400x400.JPG"
     },
     "DSC_0044.JPG": {
         "caption": "Get your salts here",
         "date": "2015:01:01 11:45:28",
-        "full_image_path": "images/full/DSC_0044_1600x2400.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_0044_1600x2400.JPG",
         "original_path": "DSC_0044.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_0044_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_0044_400x400.JPG"
     },
     "DSC_0778.JPG": {
         "caption": "Opening ceremonies for the first annual SwampHacks",
-        "date": "2015:03:15 20:54:01",
-        "full_image_path": "images/full/DSC_0778_1500x1000.JPG",
+        "date": "2015:03:13 18:33:11",
+        "full_image_path": "images/downsampled/all/full/DSC_0778_1500x1000.JPG",
         "original_path": "DSC_0778.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_0778_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_0778_400x400.JPG"
     },
     "DSC_1622.JPG": {
         "caption": "Pretty cathedral<br>Barcelona",
         "date": "2015:05:07 11:14:56",
-        "full_image_path": "images/full/DSC_1622_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_1622_2400x1600.JPG",
         "original_path": "DSC_1622.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_1622_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_1622_400x400.JPG"
     },
     "DSC_1638.JPG": {
         "caption": "Sunset from our apartment<br>Barcelona",
-        "date": "2015:06:30 20:51:59",
-        "full_image_path": "images/full/DSC_1638_2400x1600.JPG",
+        "date": "2015:05:07 14:53:51",
+        "full_image_path": "images/downsampled/all/full/DSC_1638_2400x1600.JPG",
         "original_path": "DSC_1638.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_1638_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_1638_400x400.JPG"
     },
     "DSC_1765.JPG": {
         "caption": "Cactus Gardens of Montjuic<br>Barcelona",
         "date": "2015:05:08 17:45:42",
-        "full_image_path": "images/full/DSC_1765_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_1765_2400x1600.JPG",
         "original_path": "DSC_1765.JPG",
         "tags": [
             "plant"
         ],
-        "thumbnail_path": "images/thumbs/DSC_1765_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_1765_400x400.JPG"
     },
     "DSC_1938.JPG": {
         "caption": "Jessica in front of the pants<br>Barcelona",
         "date": "2015:05:10 14:20:38",
-        "full_image_path": "images/full/DSC_1938_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_1938_2400x1600.JPG",
         "original_path": "DSC_1938.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSC_1938_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_1938_400x400.JPG"
     },
     "DSC_2348.JPG": {
         "caption": "Amaze<br>The Louvre, Paris",
         "date": "2015:05:15 13:00:48",
-        "full_image_path": "images/full/DSC_2348_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_2348_2400x1600.JPG",
         "original_path": "DSC_2348.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_2348_400x400.JPG"
-    },
-    "DSC_2578.JPG": {
-        "caption": "Sacre-Couer<br>Paris",
-        "date": "2015:05:17 16:47:32",
-        "full_image_path": "images/full/DSC_2578_2400x1600.JPG",
-        "original_path": "DSC_2578.JPG",
-        "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_2578_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_2348_400x400.JPG"
     },
     "DSC_2713.JPG": {
         "caption": "Hiking<br>Norway",
         "date": "2015:05:22 10:16:39",
-        "full_image_path": "images/full/DSC_2713_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_2713_2400x1600.JPG",
         "original_path": "DSC_2713.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSC_2713_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_2713_400x400.JPG"
     },
     "DSC_2843.JPG": {
         "caption": "Fjords<br>Norway",
         "date": "2015:05:23 12:49:50",
-        "full_image_path": "images/full/DSC_2843_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_2843_2400x1600.JPG",
         "original_path": "DSC_2843.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_2843_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_2843_400x400.JPG"
     },
     "DSC_2992.JPG": {
         "caption": "Houses<br>Norway",
         "date": "2015:05:24 18:16:14",
-        "full_image_path": "images/full/DSC_2992_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_2992_2400x1600.JPG",
         "original_path": "DSC_2992.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_2992_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_2992_400x400.JPG"
     },
     "DSC_3069.JPG": {
         "caption": "Tiny things<br>Minatur Wunderland, Hamburg",
         "date": "2015:05:28 16:14:10",
-        "full_image_path": "images/full/DSC_3069_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_3069_2400x1600.JPG",
         "original_path": "DSC_3069.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_3069_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3069_400x400.JPG"
     },
     "DSC_3112.JPG": {
         "caption": "Berlin Cathedral<br>Berlin",
         "date": "2015:05:31 15:51:02",
-        "full_image_path": "images/full/DSC_3112_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_3112_2400x1600.JPG",
         "original_path": "DSC_3112.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_3112_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3112_400x400.JPG"
     },
     "DSC_3157.JPG": {
         "caption": "Jessica looking all witch-y",
         "date": "2015:06:02 15:47:10",
-        "full_image_path": "images/full/DSC_3157_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_3157_2400x1600.JPG",
         "original_path": "DSC_3157.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSC_3157_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3157_400x400.JPG"
     },
     "DSC_3232.JPG": {
         "caption": "Windmill<br>Berlin",
         "date": "2015:06:02 17:33:29",
-        "full_image_path": "images/full/DSC_3232_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_3232_2400x1600.JPG",
         "original_path": "DSC_3232.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_3232_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3232_400x400.JPG"
     },
     "DSC_3248.JPG": {
         "caption": "Gardens<br>Berlin",
         "date": "2015:06:02 17:40:27",
-        "full_image_path": "images/full/DSC_3248_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_3248_2400x1600.JPG",
         "original_path": "DSC_3248.JPG",
         "tags": [
             "plant"
         ],
-        "thumbnail_path": "images/thumbs/DSC_3248_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3248_400x400.JPG"
     },
     "DSC_3419_v1.JPG": {
         "caption": "The Bean<br>Chicago",
         "date": "2015:09:06 14:54:52",
-        "full_image_path": "images/full/DSC_3419_v1_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_3419_v1_2400x1600.JPG",
         "original_path": "DSC_3419_v1.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_3419_v1_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3419_v1_400x400.JPG"
     },
     "DSC_3444_v1.JPG": {
         "caption": "Beans and Bros<br>Chicago",
         "date": "2015:09:06 15:06:52",
-        "full_image_path": "images/full/DSC_3444_v1_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_3444_v1_2400x1600.JPG",
         "original_path": "DSC_3444_v1.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSC_3444_v1_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3444_v1_400x400.JPG"
     },
     "DSC_3733.JPG": {
         "caption": "Big Creek Loop, Great Smoky Mountains, GA",
         "date": "2016:03:04 14:57:38",
-        "full_image_path": "images/full/DSC_3733_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_3733_2400x1600.JPG",
         "original_path": "DSC_3733.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_3733_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3733_400x400.JPG"
     },
     "DSC_3739.JPG": {
         "caption": "Jonathan on a hike<br>Great Smoky Mountains, GA",
         "date": "2016:03:04 15:02:37",
-        "full_image_path": "images/full/DSC_3739_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_3739_2400x1600.JPG",
         "original_path": "DSC_3739.JPG",
         "tags": [
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSC_3739_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3739_400x400.JPG"
     },
     "DSC_3785.JPG": {
         "caption": "Fire Tower<br>Great Smoky Mountains, GA",
-        "date": "2016:03:05 18:05:26",
-        "full_image_path": "images/full/DSC_3785_2400x1600.JPG",
+        "date": "2016:03:05 18:05:24",
+        "full_image_path": "images/downsampled/all/full/DSC_3785_2400x1600.JPG",
         "original_path": "DSC_3785.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_3785_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_3785_400x400.JPG"
     },
     "DSC_4240.JPG": {
         "caption": "The Green River at Mineral Bottom<br>Canyonlands, UT",
         "date": "2016:10:02 11:34:28",
-        "full_image_path": "images/full/DSC_4240_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_4240_2400x1600.JPG",
         "original_path": "DSC_4240.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSC_4240_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_4240_400x400.JPG"
     },
     "DSC_4275.JPG": {
         "caption": "Milky Way<br>Canyonlands, UT",
         "date": "2016:10:02 21:47:50",
-        "full_image_path": "images/full/DSC_4275_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_4275_2400x1600.JPG",
         "original_path": "DSC_4275.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSC_4275_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_4275_400x400.JPG"
     },
     "DSC_4310.JPG": {
         "caption": "Some buttes viewed through a cabin<br>Canyonlands, UT",
         "date": "2016:10:03 12:36:50",
-        "full_image_path": "images/full/DSC_4310_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_4310_2400x1600.JPG",
         "original_path": "DSC_4310.JPG",
         "tags": [],
-        "thumbnail_path": "images/thumbs/DSC_4310_400x400.JPG"
-    },
-    "DSC_4337.JPG": {
-        "caption": "Awesome rock in Holeman Canyon<br>Canyonlands, UT",
-        "date": "2016:10:03 18:55:53",
-        "full_image_path": "images/full/DSC_4337_2400x1600.JPG",
-        "original_path": "DSC_4337.JPG",
-        "tags": [
-            "travel"
-        ],
-        "thumbnail_path": "images/thumbs/DSC_4337_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_4310_400x400.JPG"
     },
     "DSC_4381.JPG": {
         "caption": "Our transportation for the week<br>Canyonlands, UT",
-        "date": "2016:10:04 08:49:58",
-        "full_image_path": "images/full/DSC_4381_2400x1600.JPG",
+        "date": "2016:10:04 08:49:56",
+        "full_image_path": "images/downsampled/all/full/DSC_4381_2400x1600.JPG",
         "original_path": "DSC_4381.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSC_4381_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_4381_400x400.JPG"
     },
     "DSC_4430.JPG": {
         "caption": "Overlook of Spanish Bottom<br>Canyonlands, UT",
         "date": "2016:10:05 16:01:01",
-        "full_image_path": "images/full/DSC_4430_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_4430_2400x1600.JPG",
         "original_path": "DSC_4430.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSC_4430_400x400.JPG"
-    },
-    "DSC_4447.JPG": {
-        "caption": "Doll House<br>Canyonlands, UT",
-        "date": "2016:10:05 17:14:18",
-        "full_image_path": "images/full/DSC_4447_2400x1600.JPG",
-        "original_path": "DSC_4447.JPG",
-        "tags": [
-            "travel"
-        ],
-        "thumbnail_path": "images/thumbs/DSC_4447_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_4430_400x400.JPG"
     },
     "DSC_4578.JPG": {
         "caption": "Me at Delicate Arch<br>Arches National Park, UT",
         "date": "2016:10:07 10:34:27",
-        "full_image_path": "images/full/DSC_4578_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_4578_2400x1600.JPG",
         "original_path": "DSC_4578.JPG",
         "tags": [
             "travel",
             "people"
         ],
-        "thumbnail_path": "images/thumbs/DSC_4578_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_4578_400x400.JPG"
     },
     "DSC_4614.JPG": {
         "caption": "Salt Lake City, UT",
         "date": "2016:10:08 15:39:45",
-        "full_image_path": "images/full/DSC_4614_2400x1600.JPG",
+        "full_image_path": "images/downsampled/all/full/DSC_4614_2400x1600.JPG",
         "original_path": "DSC_4614.JPG",
         "tags": [
             "travel"
         ],
-        "thumbnail_path": "images/thumbs/DSC_4614_400x400.JPG"
+        "thumbnail_path": "images/downsampled/all/DSC_4614_400x400.JPG"
     },
     "IMG_20150906_183702832.jpg": {
         "caption": "Chicago from the river",
         "date": "2015:09:06 18:37:03",
-        "full_image_path": "images/full/IMG_20150906_183702832_2400x1351.jpg",
+        "full_image_path": "images/downsampled/all/full/IMG_20150906_183702832_2400x1351.jpg",
         "original_path": "IMG_20150906_183702832.jpg",
         "tags": [],
-        "thumbnail_path": "images/thumbs/IMG_20150906_183702832_400x400.jpg"
+        "thumbnail_path": "images/downsampled/all/IMG_20150906_183702832_400x400.jpg"
     },
     "simon_nick_utah_chair.jpg": {
         "caption": "Looking out over the Green River<br>Canyonlands, UT",
-        "date": "",
-        "full_image_path": "images/full/simon_nick_utah_chair_2048x1536.jpg",
+        "date": "2016:10:04 00:00:00",
+        "full_image_path": "images/downsampled/all/full/simon_nick_utah_chair_2048x1536.jpg",
         "original_path": "simon_nick_utah_chair.jpg",
         "tags": [
             "travel",
             "people"
         ],
-        "thumbnail_path": "images/thumbs/simon_nick_utah_chair_400x400.jpg"
-    },
-    "DSCF1833.jpg": {
-        "caption": "Flight over California",
-        "date": "2017:09:16 15:05:07",
-        "full_image_path": "images/downsampled/recent/full/DSCF1833_1600x2400.jpg",
-        "original_path": "DSCF1833.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1833_400x400.jpg"
-    },
-    "DSCF1846.jpg": {
-        "caption": "San Francisco",
-        "date": "2017:09:16 15:05:09",
-        "full_image_path": "images/downsampled/recent/full/DSCF1846_2400x1600.jpg",
-        "original_path": "DSCF1846.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1846_400x400.jpg"
-    },
-    "DSCF1849.jpg": {
-        "caption": "Indian Laurel Fig Tree<br>San Francisco",
-        "date": "2017:09:16 15:05:06",
-        "full_image_path": "images/downsampled/recent/full/DSCF1849_2400x1600.jpg",
-        "original_path": "DSCF1849.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1849_400x400.jpg"
-    },
-    "DSCF1851.jpg": {
-        "caption": "San Francisco",
-        "date": "2017:09:16 15:05:19",
-        "full_image_path": "images/downsampled/recent/full/DSCF1851_2400x1600.jpg",
-        "original_path": "DSCF1851.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1851_400x400.jpg"
-    },
-    "DSCF1863.jpg": {
-        "caption": "Us at the San Francisco Wharf",
-        "date": "2017:09:16 15:05:23",
-        "full_image_path": "images/downsampled/recent/full/DSCF1863_2400x1600.jpg",
-        "original_path": "DSCF1863.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1863_400x400.jpg"
-    },
-    "DSCF1883.jpg": {
-        "caption": "Take that Ryan<br>San Francisco City Hall",
-        "date": "2017:09:16 15:05:25",
-        "full_image_path": "images/downsampled/recent/full/DSCF1883_2400x1600.jpg",
-        "original_path": "DSCF1883.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1883_400x400.jpg"
-    },
-    "DSCF1885.jpg": {
-        "caption": "San Francisco City Hall",
-        "date": "2017:09:16 15:05:38",
-        "full_image_path": "images/downsampled/recent/full/DSCF1885_2400x1600.jpg",
-        "original_path": "DSCF1885.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1885_400x400.jpg"
-    },
-    "DSCF1889.jpg": {
-        "caption": "Hot Pot<br>San Francisco",
-        "date": "2017:09:16 15:05:43",
-        "full_image_path": "images/downsampled/recent/full/DSCF1889_2400x1600.jpg",
-        "original_path": "DSCF1889.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1889_400x400.jpg"
-    },
-    "DSCF1890.jpg": {
-        "caption": "Munch Exhibit<br>SF MOMA",
-        "date": "2017:09:16 15:05:37",
-        "full_image_path": "images/downsampled/recent/full/DSCF1890_2400x1600.jpg",
-        "original_path": "DSCF1890.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1890_400x400.jpg"
-    },
-    "DSCF1891.jpg": {
-        "caption": "Munch Exhibit<br>SF MOMA",
-        "date": "2017:09:16 15:05:48",
-        "full_image_path": "images/downsampled/recent/full/DSCF1891_2400x1600.jpg",
-        "original_path": "DSCF1891.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1891_400x400.jpg"
-    },
-    "DSCF1902.jpg": {
-        "caption": "Chinatown<br>San Francisco",
-        "date": "2017:09:16 15:05:54",
-        "full_image_path": "images/downsampled/recent/full/DSCF1902_2400x1736.jpg",
-        "original_path": "DSCF1902.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1902_400x400.jpg"
-    },
-    "DSCF1910.jpg": {
-        "caption": "Chinatown<br>San Francisco",
-        "date": "2017:09:16 15:05:54",
-        "full_image_path": "images/downsampled/recent/full/DSCF1910_2400x1600.jpg",
-        "original_path": "DSCF1910.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1910_400x400.jpg"
-    },
-    "DSCF1911.jpg": {
-        "caption": "Chinatown<br>San Francisco",
-        "date": "2017:09:16 15:05:54",
-        "date": "2017:09:16 15:06:03",
-        "full_image_path": "images/downsampled/recent/full/DSCF1911_2400x1600.jpg",
-        "original_path": "DSCF1911.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1911_400x400.jpg"
-    },
-    "DSCF1912.jpg": {
-        "caption": "Chinatown<br>San Francisco",
-        "date": "2017:09:16 15:06:06",
-        "full_image_path": "images/downsampled/recent/full/DSCF1912_1600x2400.jpg",
-        "original_path": "DSCF1912.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1912_400x400.jpg"
-    },
-    "DSCF1930.jpg": {
-        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:11",
-        "full_image_path": "images/downsampled/recent/full/DSCF1930_2400x1600.jpg",
-        "original_path": "DSCF1930.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1930_400x400.jpg"
-    },
-    "DSCF1933.jpg": {
-        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:19",
-        "full_image_path": "images/downsampled/recent/full/DSCF1933_2400x1600.jpg",
-        "original_path": "DSCF1933.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1933_400x400.jpg"
-    },
-    "DSCF1937.jpg": {
-        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:24",
-        "full_image_path": "images/downsampled/recent/full/DSCF1937_2400x1600.jpg",
-        "original_path": "DSCF1937.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1937_400x400.jpg"
-    },
-    "DSCF1938.jpg": {
-        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:25",
-        "full_image_path": "images/downsampled/recent/full/DSCF1938_2400x1599.jpg",
-        "original_path": "DSCF1938.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1938_400x400.jpg"
-    },
-    "DSCF1941.jpg": {
-        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:34",
-        "full_image_path": "images/downsampled/recent/full/DSCF1941_2400x2290.jpg",
-        "original_path": "DSCF1941.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1941_400x400.jpg"
-    },
-    "DSCF1946.jpg": {
-        "caption": "Dahlia Garden<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:38",
-        "full_image_path": "images/downsampled/recent/full/DSCF1946_2400x1600.jpg",
-        "original_path": "DSCF1946.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1946_400x400.jpg"
-    },
-    "DSCF1951.jpg": {
-        "caption": "Conservatory of Flowers<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:42",
-        "full_image_path": "images/downsampled/recent/full/DSCF1951_2400x1600.jpg",
-        "original_path": "DSCF1951.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1951_400x400.jpg"
-    },
-    "DSCF1963.jpg": {
-        "caption": "Conservatory of Flowers<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:51",
-        "full_image_path": "images/downsampled/recent/full/DSCF1963_2400x1600.jpg",
-        "original_path": "DSCF1963.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1963_400x400.jpg"
-    },
-    "DSCF1966.jpg": {
-        "caption": "Conservatory of Flowers<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:56",
-        "full_image_path": "images/downsampled/recent/full/DSCF1966_2400x1600.jpg",
-        "original_path": "DSCF1966.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1966_400x400.jpg"
-    },
-    "DSCF1991.jpg": {
-        "caption": "Conservatory of Flowers<br>Golden Gate Park, San Francisco",
-        "date": "2017:09:16 15:06:56",
-        "full_image_path": "images/downsampled/recent/full/DSCF1991_2400x1599.jpg",
-        "original_path": "DSCF1991.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF1991_400x400.jpg"
-    },
-    "DSCF2009.jpg": {
-        "caption": "San Francisco",
-        "date": "2017:09:16 15:07:07",
-        "full_image_path": "images/downsampled/recent/full/DSCF2009_2400x1600.jpg",
-        "original_path": "DSCF2009.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2009_400x400.jpg"
-    },
-    "DSCF2030.jpg": {
-        "caption": "Golden Gate Bridge<br>San Francisco",
-        "date": "2017:09:16 15:07:13",
-        "full_image_path": "images/downsampled/recent/full/DSCF2030_2400x1600.jpg",
-        "original_path": "DSCF2030.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2030_400x400.jpg"
-    },
-    "DSCF2085.jpg": {
-        "caption": "Pacific Coast Highway, CA",
-        "date": "2017:09:16 15:07:07",
-        "full_image_path": "images/downsampled/recent/full/DSCF2085_2400x1600.jpg",
-        "original_path": "DSCF2085.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2085_400x400.jpg"
-    },
-    "DSCF2107.jpg": {
-        "caption": "Pismo Beach, CA",
-        "date": "2017:09:16 15:07:21",
-        "full_image_path": "images/downsampled/recent/full/DSCF2107_2400x1600.jpg",
-        "original_path": "DSCF2107.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2107_400x400.jpg"
-    },
-    "DSCF2141.jpg": {
-        "caption": "Stearns Wharf<br>Santa Barbara, CA",
-        "date": "2017:09:16 15:07:26",
-        "full_image_path": "images/downsampled/recent/full/DSCF2141_2400x1600.jpg",
-        "original_path": "DSCF2141.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2141_400x400.jpg"
-    },
-    "DSCF2157.jpg": {
-        "caption": "Stearns Wharf<br>Santa Barbara, CA",
-        "date": "2017:09:16 15:07:41",
-        "full_image_path": "images/downsampled/recent/full/DSCF2157_2400x1600.jpg",
-        "original_path": "DSCF2157.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2157_400x400.jpg"
-    },
-    "DSCF2164.jpg": {
-        "caption": "Stearns Wharf<br>Santa Barbara, CA",
-        "date": "2017:09:16 15:07:41",
-        "full_image_path": "images/downsampled/recent/full/DSCF2164_2400x1600.jpg",
-        "original_path": "DSCF2164.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2164_400x400.jpg"
-    },
-    "DSCF2182.jpg": {
-        "caption": "Pacific Park<br>Santa Monica, CA",
-        "date": "2017:09:16 15:07:40",
-        "full_image_path": "images/downsampled/recent/full/DSCF2182_2400x1600.jpg",
-        "original_path": "DSCF2182.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2182_400x400.jpg"
-    },
-    "DSCF2192.jpg": {
-        "caption": "Urban Light<br>Los Angeles County Museum of Art, CA",
-        "date": "2017:09:16 15:07:58",
-        "full_image_path": "images/downsampled/recent/full/DSCF2192_1956x2400.jpg",
-        "original_path": "DSCF2192.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2192_400x400.jpg"
-    },
-    "DSCF2198.jpg": {
-        "caption": "Ocean Avenue<br>Santa Monica, CA",
-        "date": "2017:09:16 15:07:57",
-        "full_image_path": "images/downsampled/recent/full/DSCF2198_2400x1600.jpg",
-        "original_path": "DSCF2198.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2198_400x400.jpg"
-    },
-    "DSCF2201.jpg": {
-        "caption": "Ocean Avenue<br>Santa Monica, CA",
-        "date": "2017:09:16 15:07:58",
-        "full_image_path": "images/downsampled/recent/full/DSCF2201_1600x2400.jpg",
-        "original_path": "DSCF2201.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2201_400x400.jpg"
-    },
-    "DSCF2205.jpg": {
-        "caption": "Pacific Coast Highway<br>Santa Monica, CA",
-        "date": "2017:09:16 15:08:13",
-        "full_image_path": "images/downsampled/recent/full/DSCF2205_2400x1599.jpg",
-        "original_path": "DSCF2205.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2205_400x400.jpg"
-    },
-    "DSCF2206.jpg": {
-        "caption": "Santa Monica Beach<br>Santa Monica, CA",
-        "date": "2017:09:16 15:08:08",
-        "full_image_path": "images/downsampled/recent/full/DSCF2206_2400x1600.jpg",
-        "original_path": "DSCF2206.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2206_400x400.jpg"
-    },
-    "DSCF2217.jpg": {
-        "caption": "Santa Monica Beach<br>Santa Monica, CA",
-        "date": "2017:09:16 15:08:14",
-        "full_image_path": "images/downsampled/recent/full/DSCF2217_2400x1600.jpg",
-        "original_path": "DSCF2217.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2217_400x400.jpg"
-    },
-    "DSCF2230.jpg": {
-        "caption": "Joshua Tree National Park",
-        "date": "2017:09:16 15:08:23",
-        "full_image_path": "images/downsampled/recent/full/DSCF2230_2400x1600.jpg",
-        "original_path": "DSCF2230.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2230_400x400.jpg"
-    },
-    "DSCF2239.jpg": {
-        "caption": "Joshua Tree National Park",
-        "date": "2017:09:16 15:08:23",
-        "full_image_path": "images/downsampled/recent/full/DSCF2239_2400x1600.jpg",
-        "original_path": "DSCF2239.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2239_400x400.jpg"
-    },
-    "DSCF2246.jpg": {
-        "caption": "Joshua Tree National Park",
-        "date": "2017:09:16 15:08:37",
-        "full_image_path": "images/downsampled/recent/full/DSCF2246_2400x1600.jpg",
-        "original_path": "DSCF2246.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2246_400x400.jpg"
-    },
-    "DSCF2257.jpg": {
-        "caption": "Joshua Tree National Park",
-        "date": "2017:09:16 15:08:37",
-        "full_image_path": "images/downsampled/recent/full/DSCF2257_2400x1600.jpg",
-        "original_path": "DSCF2257.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2257_400x400.jpg"
-    },
-    "DSCF2261.jpg": {
-        "caption": "Joshua Tree National Park",
-        "date": "2017:09:16 15:08:43",
-        "full_image_path": "images/downsampled/recent/full/DSCF2261_2400x1600.jpg",
-        "original_path": "DSCF2261.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2261_400x400.jpg"
-    },
-    "DSCF2269.jpg": {
-        "caption": "Joshua Tree National Park",
-        "date": "2017:09:16 15:08:51",
-        "full_image_path": "images/downsampled/recent/full/DSCF2269_2400x1600.jpg",
-        "original_path": "DSCF2269.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2269_400x400.jpg"
-    },
-    "DSCF2292.jpg": {
-        "caption": "Joshua Tree National Park",
-        "date": "2017:09:16 15:08:54",
-        "full_image_path": "images/downsampled/recent/full/DSCF2292_2400x1600.jpg",
-        "original_path": "DSCF2292.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2292_400x400.jpg"
-    },
-    "DSCF2295.jpg": {
-        "caption": "Joshua Tree National Park",
-        "date": "2017:09:16 15:08:57",
-        "full_image_path": "images/downsampled/recent/full/DSCF2295_1600x2400.jpg",
-        "original_path": "DSCF2295.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2295_400x400.jpg"
-    },
-    "DSCF2313.jpg": {
-        "caption": "Campsite at Palm Springs KOA<br>Palm Springs, CA",
-        "date": "2017:09:16 15:09:12",
-        "full_image_path": "images/downsampled/recent/full/DSCF2313_2400x1600.jpg",
-        "original_path": "DSCF2313.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2313_400x400.jpg"
-    },
-    "DSCF2316.jpg": {
-        "caption": "Milky Way<br>Palm Springs, CA",
-        "date": "2017:09:16 15:09:17",
-        "full_image_path": "images/downsampled/recent/full/DSCF2316_2400x1600.jpg",
-        "original_path": "DSCF2316.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2316_400x400.jpg"
-    },
-    "DSCF2334.jpg": {
-        "caption": "Big Tree<br>Sequoia National Park, CA",
-        "date": "2017:09:16 15:09:12",
-        "full_image_path": "images/downsampled/recent/full/DSCF2334_2400x1600.jpg",
-        "original_path": "DSCF2334.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2334_400x400.jpg"
-    },
-    "DSCF2364.jpg": {
-        "caption": "Cooking Breakfast<br>Sequoia National Park, CA",
-        "date": "2017:09:16 15:09:26",
-        "full_image_path": "images/downsampled/recent/full/DSCF2364_2400x1600.jpg",
-        "original_path": "DSCF2364.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2364_400x400.jpg"
-    },
-    "DSCF2370.jpg": {
-        "caption": "Sequoia National Park, CA",
-        "date": "2017:09:16 15:09:27",
-        "full_image_path": "images/downsampled/recent/full/DSCF2370_2400x1600.jpg",
-        "original_path": "DSCF2370.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2370_400x400.jpg"
-    },
-    "DSCF2382.jpg": {
-        "caption": "Sequoia National Park, CA",
-        "date": "2017:09:16 15:09:33",
-        "full_image_path": "images/downsampled/recent/full/DSCF2382_2400x1600.jpg",
-        "original_path": "DSCF2382.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2382_400x400.jpg"
-    },
-    "DSCF2385.jpg": {
-        "caption": "Sequoia National Park, CA",
-        "date": "2017:09:16 15:09:44",
-        "full_image_path": "images/downsampled/recent/full/DSCF2385_1600x2400.jpg",
-        "original_path": "DSCF2385.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2385_400x400.jpg"
-    },
-    "DSCF2421.jpg": {
-        "caption": "Sequoia National Park, CA",
-        "date": "2017:09:16 15:09:46",
-        "full_image_path": "images/downsampled/recent/full/DSCF2421_2400x1600.jpg",
-        "original_path": "DSCF2421.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2421_400x400.jpg"
-    },
-    "DSCF2441.jpg": {
-        "caption": "Milky Way<br>Sequoia National Park, CA",
-        "date": "2017:09:16 15:09:53",
-        "full_image_path": "images/downsampled/recent/full/DSCF2441_2400x1600.jpg",
-        "original_path": "DSCF2441.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2441_400x400.jpg"
-    },
-    "DSCF2498.jpg": {
-        "caption": "Yosemite National Park, CA",
-        "date": "2017:09:16 15:10:03",
-        "full_image_path": "images/downsampled/recent/full/DSCF2498_2400x1600.jpg",
-        "original_path": "DSCF2498.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2498_400x400.jpg"
-    },
-    "DSCF2505.jpg": {
-        "caption": "El Capitan<br>Yosemite National Park, CA",
-        "date": "2017:09:16 15:10:02",
-        "full_image_path": "images/downsampled/recent/full/DSCF2505_1600x2400.jpg",
-        "original_path": "DSCF2505.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2505_400x400.jpg"
-    },
-    "DSCF2508.jpg": {
-        "caption": "Yosemite National Park, CA",
-        "date": "2017:09:16 15:10:05",
-        "full_image_path": "images/downsampled/recent/full/DSCF2508_2400x1600.jpg",
-        "original_path": "DSCF2508.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2508_400x400.jpg"
-    },
-    "DSCF2512.jpg": {
-        "caption": "Yosemite Falls and Half Dome<br>Yosemite National Park, CA",
-        "date": "2017:09:16 15:10:10",
-        "full_image_path": "images/downsampled/recent/full/DSCF2512_2400x1600.jpg",
-        "original_path": "DSCF2512.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2512_400x400.jpg"
-    },
-    "DSCF2560.jpg": {
-        "caption": "Pizza Rolls",
-        "date": "2017:09:17 18:58:05",
-        "full_image_path": "images/downsampled/food/full/DSCF2560_2400x1600.jpg",
-        "original_path": "DSCF2560.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/food/DSCF2560_400x400.jpg"
-    },
-    "DSCF2639.jpg": {
-        "caption": "Tiny mushrooms<br>Kanapaha Botanical Gardens, FL",
-        "date": "2017:10:14 15:21:12",
-        "full_image_path": "images/downsampled/recent/full/DSCF2639_2400x1600.jpg",
-        "original_path": "DSCF2639.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2639_400x400.jpg"
-    },
-    "DSCF2648.jpg": {
-        "caption": "Pretty purple plant<br>Kanapaha Botanical Gardens, FL",
-        "date": "2017:10:14 15:25:00",
-        "full_image_path": "images/downsampled/recent/full/DSCF2648_2400x1600.jpg",
-        "original_path": "DSCF2648.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2648_400x400.jpg"
-    },
-    "DSCF2675.jpg": {
-        "caption": "Tree<br>Kanapaha Botanical Gardens, FL",
-        "date": "2017:10:14 16:04:15",
-        "full_image_path": "images/downsampled/recent/full/DSCF2675_2400x1600.jpg",
-        "original_path": "DSCF2675.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2675_400x400.jpg"
-    },
-    "DSCF2695.jpg": {
-        "caption": "Awesome star plant<br>Kanapaha Botanical Gardens, FL",
-        "date": "2017:10:14 16:11:44",
-        "full_image_path": "images/downsampled/recent/full/DSCF2695_2400x1600.jpg",
-        "original_path": "DSCF2695.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2695_400x400.jpg"
-    },
-    "DSCF2699.jpg": {
-        "caption": "Butterfly!<br>Kanapaha Botanical Gardens, FL",
-        "date": "2017:10:14 16:12:50",
-        "full_image_path": "images/downsampled/recent/full/DSCF2699_2400x1600.jpg",
-        "original_path": "DSCF2699.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2699_400x400.jpg"
-    },
-    "DSCF2720.jpg": {
-        "caption": "Chocolate, Rosemary and Hazelnut Tart",
-        "date": "2017:10:15 17:36:37",
-        "full_image_path": "images/downsampled/recent/full/DSCF2720_2400x1600.jpg",
-        "original_path": "DSCF2720.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2720_400x400.jpg"
-    },
-    "DSCF2747.jpg": {
-        "caption": "Pumpkins 2017",
-        "date": "2017:10:20 22:52:05",
-        "full_image_path": "images/downsampled/recent/full/DSCF2747_2400x1600.jpg",
-        "original_path": "DSCF2747.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2747_400x400.jpg"
-    },
-    "DSCF2748.jpg": {
-        "caption": "Binding of Isaac Pumpkin",
-        "date": "2017:10:20 22:52:48",
-        "full_image_path": "images/downsampled/recent/full/DSCF2748_2400x1600.jpg",
-        "original_path": "DSCF2748.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2748_400x400.jpg"
-    },
-    "DSCF2760.jpg": {
-        "caption": "Savory Sweet Potato and Green Bean Pie",
-        "date": "2017:10:22 18:58:47",
-        "full_image_path": "images/downsampled/recent/full/DSCF2760_2400x1600.jpg",
-        "original_path": "DSCF2760.jpg",
-        "tags": [],
-        "thumbnail_path": "images/downsampled/recent/DSCF2760_400x400.jpg"
+        "thumbnail_path": "images/downsampled/all/simon_nick_utah_chair_400x400.jpg"
     }
 }
