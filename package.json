@@ -1,0 +1,13 @@
+{
+  "name": "nickwebsite",
+  "version": "0.0.1",
+  "description": "Nick's website",
+  "author": "Nick Tardif",
+  "license": "FREE",
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-shell": "~2.1.0"
+  }
+}

@@ -1,22 +1,29 @@
 ## Nick's Website
+Displays photos! Uses [PhotoSwipe.js](photoswipe.com) and lots of image compression techniques.
 
-Right now it will just be hosting photos, but its scope will expand in the future.
+Live site can be found at [nicktardif.com](nicktardif.com)
 
 ## Dependencies
 ```
-pip install glue # for spritemapping
-npm install uglify-js -g
-```
+# Install nodejs
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
+---
+
+pip install glue # for spritemapping
+sudo npm install -g uglify-js grunt-cli
+npm install
+```
 
 ## How to Launch
 ```
-python -m SimpleHTTPServer 8000
-```
-
-## How to Deploy
-```
-rsync -rv --exclude 'input_images' --exclude '.git' --exclude 'node_modules' . root@138.197.91.238:/var/www/nicktardif/
+grunt
 ```
 
 Visit 127.0.0.1:8000 to visit the site
+
+## How to Deploy
+```
+grunt deploy
+```
