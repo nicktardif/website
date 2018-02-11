@@ -13,11 +13,21 @@ module.exports = function (grunt) {
           port: 8000
         }
       }
+    },
+
+    cssmin: {
+      target: {
+        files: {
+          'css/nicktardif.min.css': ['css/*.css', '!css/*.min.css']
+        }
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-shell');
   grunt.registerTask('deploy', ['shell:deploy']);
   grunt.registerTask('default', ['connect']);
+  grunt.registerTask('build', ['cssmin']);
 }

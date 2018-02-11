@@ -2,7 +2,6 @@
 
 # Clear the output dir
 mkdir -p js/min
-mkdir -p css/min
 rm -rf images/*
 mkdir -p images/sprites
 mkdir -p images/downsampled
@@ -24,4 +23,4 @@ do
 done
 
 ./minify_js.sh
-./minify_css.sh
+grunt build
