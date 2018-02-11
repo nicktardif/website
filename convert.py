@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import argparse, glob, json, os, subprocess
 
 def parse_arguments():
@@ -37,23 +37,23 @@ def calculate_dimensions(image, request_dimension, is_max):
         new_width = int(min_dimension * scale_ratio)
         new_height = int(max_dimension * scale_ratio)
 
-    new_dimensions = '{}x{}'.format(new_width, new_height)
-    return new_dimensions
+    return new_width, new_height
 
-def get_downscaled_file_name(image, output_dir, new_dimensions):
+def get_downscaled_file_name(image, output_dir, width, height):
     _, extension = os.path.splitext(image)
     basename = os.path.splitext(os.path.basename(image))[0]
-    downscaled_file = os.path.join(output_dir, basename + '_' + new_dimensions + extension)
+    full_name = '{}_{}x{}{}'.format(basename, width, height, extension)
+    downscaled_file = os.path.join(output_dir, full_name)
     return downscaled_file
 
-def create_thumbnail_file(image, output_dir, scaled_dimensions, square_dimensions):
-    downscaled_file = get_downscaled_file_name(image, output_dir, square_dimensions)
-    subprocess.check_output("convert -resize {}^ -extent {} -gravity Center \( {} -strip -resize {} \) {}".format(square_dimensions, square_dimensions, image, scaled_dimensions, downscaled_file), shell=True)
+def create_thumbnail_file(image, output_dir, scaled_width, scaled_height, square_size):
+    downscaled_file = get_downscaled_file_name(image, output_dir, square_size, square_size)
+    subprocess.check_output("convert -resize {}x{}^ -extent {}x{} -gravity Center \( {} -strip -resize {}x{} \) {}".format(square_size, square_size, square_size, square_size, image, scaled_width, scaled_height, downscaled_file), shell=True)
     return downscaled_file
 
-def create_hires_file(image, output_dir, new_dimensions):
-    downscaled_file = get_downscaled_file_name(image, output_dir, new_dimensions)
-    subprocess.check_output("convert -strip -interlace Plane -quality 85% {} -resize {} {}".format(image, new_dimensions, downscaled_file), shell=True)
+def create_hires_file(image, output_dir, width, height):
+    downscaled_file = get_downscaled_file_name(image, output_dir, width, height)
+    subprocess.check_output("convert -strip -interlace Plane -quality 85% {} -resize {}x{} {}".format(image, width, height, downscaled_file), shell=True)
     return downscaled_file
 
 def get_date(image):
@@ -81,20 +81,21 @@ def main():
         json_data = {}
 
         for image in images:
+            # Make downscaled but still large resolution image
             max_dimension = 2400
-            new_dimensions = calculate_dimensions(image, max_dimension, True)
-            print('Full image scaled dimensions: {}'.format(new_dimensions))
+            downscaled_width, downscaled_height = calculate_dimensions(image, max_dimension, True)
+            print('Downscaled image dimensions: {}x{}'.format(downscaled_width, downscaled_height))
             full_dir = os.path.join(output_root_dir, input_dir, 'full')
-            subprocess.check_output('mkdir -p {}'.format(full_dir), shell=True)
-            downscaled_file = create_hires_file(image, full_dir, new_dimensions)
+            os.makedirs(full_dir, exist_ok=True)
+            downscaled_file = create_hires_file(image, full_dir, downscaled_width, downscaled_height)
 
+            # Make thumbnail image
             min_dimension = 400
-            thumbnail_dimensions = calculate_dimensions(image, min_dimension, False)
-            print('Thumbnail image scaled dimensions: {}'.format(thumbnail_dimensions))
-            square_dimensions = '{}x{}'.format(min_dimension, min_dimension)
+            thumbnail_width, thumbnail_height = calculate_dimensions(image, min_dimension, False)
+            print('Thumbnail image dimensions: {}x{}'.format(thumbnail_width, thumbnail_height))
             thumbnail_dir = os.path.join(output_root_dir, input_dir)
-            subprocess.check_output('mkdir -p {}'.format(thumbnail_dir), shell=True)
-            thumbnail_file = create_thumbnail_file(image, thumbnail_dir, thumbnail_dimensions, square_dimensions)
+            os.makedirs(thumbnail_dir, exist_ok=True)
+            thumbnail_file = create_thumbnail_file(image, thumbnail_dir, thumbnail_width, thumbnail_height, min_dimension)
 
             print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))
             image_filename = os.path.basename(image)
@@ -103,7 +104,7 @@ def main():
             new_data =  {
                         'original_path': image_filename,
                         'full_image_path': downscaled_file,
-                        'date': date,
+                        'date': date.decode('utf-8'),
                         'thumbnail_path': thumbnail_file,
                         'caption': '',
                         'tags': []
