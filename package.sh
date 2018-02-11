@@ -1,11 +1,9 @@
 #!/usr/bin/env bash 
 
 # Clear the output dir
-mkdir -p js/min
 rm -rf images/*
 mkdir -p images/sprites
 mkdir -p images/downsampled
-rm js/min/*
 
 # Convert the images
 ./convert.py --input_root_dir input_images/ --output_root_dir images/downsampled/ --previous_json images.json
@@ -22,5 +20,4 @@ do
   sed -i -e 's/png/jpg/g' css/$category.css
 done
 
-./minify_js.sh
 grunt build
