@@ -1,7 +1,7 @@
 ## Nick's Website
-Displays photos! Uses [PhotoSwipe.js](www.photoswipe.com) and lots of image compression techniques.
+Displays photos! Uses [PhotoSwipe.js](http://www.photoswipe.com) and lots of image compression techniques.
 
-Live site can be found at [nicktardif.com](www.nicktardif.com)
+Live site can be found at [nicktardif.com](http://www.nicktardif.com)
 
 ## Dependencies
 ```
