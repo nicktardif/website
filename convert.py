@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
 import argparse, glob, json, os, subprocess
+import pyexiv2
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -10,6 +10,7 @@ def parse_arguments():
     return args
 
 def calculate_dimensions(image, request_dimension, is_max):
+    # TODO: Find a Python library to get the width and height
     width = int(subprocess.check_output("identify -format '%w' {}".format(image), shell=True))
     height = int(subprocess.check_output("identify -format '%h' {}".format(image), shell=True))
     print('width is {}'.format(width))
@@ -56,11 +57,6 @@ def create_hires_file(image, output_dir, width, height):
     subprocess.check_output("convert -strip -interlace Plane -quality 85% {} -resize {}x{} {}".format(image, width, height, downscaled_file), shell=True)
     return downscaled_file
 
-def get_date(image):
-    cmd = "exif {} | grep 'Date and Time (Orig' | head -n 1 | cut -f 2 -d '|'".format(image)
-    date = subprocess.check_output(cmd, shell=True).strip()
-    return date
-
 def get_immediate_subdirectories(a_dir):
     return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
 
@@ -81,6 +77,23 @@ def main():
         json_data = {}
 
         for image in images:
+            data = pyexiv2.metadata.ImageMetadata(image)
+            data.read()
+
+            keywords = []
+            if 'Iptc.Application2.Keywords' in data:
+                keywords = data['Iptc.Application2.Keywords'].value
+
+            caption = ''
+            if 'Exif.Image.ImageDescription' in data:
+                caption = data['Exif.Image.ImageDescription'].value
+
+            location = ''
+            if 'Iptc.Application2.SubLocation' in data:
+                location = data['Iptc.Application2.SubLocation'].value[0]
+
+            date = data['Exif.Photo.DateTimeOriginal'].value
+
             # Make downscaled but still large resolution image
             max_dimension = 2400
             downscaled_width, downscaled_height = calculate_dimensions(image, max_dimension, True)
@@ -100,30 +113,19 @@ def main():
             print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))
             image_filename = os.path.basename(image)
 
-            date = get_date(image)
-            new_data =  {
-                        'original_path': image_filename,
-                        'full_image_path': downscaled_file,
-                        'date': date.decode('utf-8'),
-                        'thumbnail_path': thumbnail_file,
-                        'caption': '',
-                        'tags': []
-                        }
+            new_data = {
+                'caption': caption,
+                'date': str(date),
+                'full_image_path': downscaled_file,
+                'location': location,
+                'original_path': image_filename,
+                'tags': keywords,
+                'thumbnail_path': thumbnail_file
+            }
             json_data[image_filename] = new_data
 
-        # Preserve the captions and tags from previous data
-        if(args.previous_json):
-            print('previous json file is: {}'.format(args.previous_json))
-            previous_data = None
-            with open(args.previous_json) as data_file:
-                previous_data = json.load(data_file)
-
-            previous_data_set = set(previous_data)
-            new_data_set = set(json_data)
-
-            for key in previous_data_set.intersection(new_data_set):
-                json_data[key]['tags'] = previous_data[key]['tags']
-                json_data[key]['caption'] = previous_data[key]['caption']
+        # Print out all the data
+        print(json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': ')))
 
         # Write out the file
         output_json = os.path.join(output_root_dir, input_dir, input_dir + '.json')
