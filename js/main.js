@@ -223,7 +223,7 @@ function compareDate(a,b) {
 }
 
 function addImages(category) {
-  var json_file = 'images/downsampled/' + category + '/' + category + '.json'
+  var json_file = 'images/downsampled/' + category + '.json'
   var request = new XMLHttpRequest();
   request.open("GET", json_file, false);
   request.send(null)

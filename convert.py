@@ -5,7 +5,6 @@ def parse_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('--input_root_dir', help='Input dir with JPG images', dest='input_root_dir', required=True)
     parser.add_argument('--output_root_dir', help='Output dir', dest='output_root_dir', required=True)
-    parser.add_argument('--previous_json', help='Previous json to get extra data from', dest='previous_json')
     args = parser.parse_args()
     return args
 
@@ -57,80 +56,90 @@ def create_hires_file(image, output_dir, width, height):
     subprocess.check_output("convert -strip -interlace Plane -quality 85% {} -resize {}x{} {}".format(image, width, height, downscaled_file), shell=True)
     return downscaled_file
 
-def get_immediate_subdirectories(a_dir):
-    return [name for name in os.listdir(a_dir) if os.path.isdir(os.path.join(a_dir, name))]
+def get_metadata(image):
+    metadata = { }
+
+    # Read the metadata from the image
+    data = pyexiv2.metadata.ImageMetadata(image)
+    data.read()
+
+    # Parse out the keywords
+    keywords = []
+    if 'Iptc.Application2.Keywords' in data:
+        keywords = data['Iptc.Application2.Keywords'].value
+    metadata['keywords'] = keywords
+
+    # Parse out the caption
+    caption = ''
+    if 'Exif.Image.ImageDescription' in data:
+        caption = data['Exif.Image.ImageDescription'].value
+    metadata['caption'] = caption
+
+    # Parse out the location
+    location = ''
+    if 'Iptc.Application2.SubLocation' in data:
+        location = data['Iptc.Application2.SubLocation'].value[0]
+    metadata['location'] = location
+
+    # Parse out the date
+    date = data['Exif.Photo.DateTimeOriginal'].value
+    metadata['date'] = date
+
+    return metadata
 
 def main():
     args = parse_arguments()
     input_root_dir = args.input_root_dir
     output_root_dir = args.output_root_dir
 
-    subdirectories = get_immediate_subdirectories(input_root_dir)
-    print('subdirectories are:')
-    print(subdirectories)
+    full_dir = os.path.join(output_root_dir, 'full')
+    os.makedirs(full_dir, exist_ok=True)
+    thumbnail_dir = os.path.join(output_root_dir)
+    os.makedirs(thumbnail_dir, exist_ok=True)
 
-    for input_dir in subdirectories:
-        images = glob.glob('{}/{}/*.jpg'.format(input_root_dir, input_dir))
-        images.extend(glob.glob('{}/{}/*.JPG'.format(input_root_dir, input_dir)))
+    images = glob.glob('{}/*.jpg'.format(input_root_dir))
+    images.extend(glob.glob('{}/*.JPG'.format(input_root_dir)))
 
-        print(images)
-        json_data = {}
+    print(images)
+    json_data = {}
 
-        for image in images:
-            data = pyexiv2.metadata.ImageMetadata(image)
-            data.read()
+    for image in images:
+        metadata = get_metadata(image)
 
-            keywords = []
-            if 'Iptc.Application2.Keywords' in data:
-                keywords = data['Iptc.Application2.Keywords'].value
+        # Make downscaled but still large resolution image
+        max_dimension = 2400
+        downscaled_width, downscaled_height = calculate_dimensions(image, max_dimension, True)
+        downscaled_file = create_hires_file(image, full_dir, downscaled_width, downscaled_height)
+        downscaled_file_relative_path = os.path.relpath(downscaled_file, output_root_dir)
 
-            caption = ''
-            if 'Exif.Image.ImageDescription' in data:
-                caption = data['Exif.Image.ImageDescription'].value
+        # Make thumbnail image
+        min_dimension = 400
+        thumbnail_width, thumbnail_height = calculate_dimensions(image, min_dimension, False)
+        thumbnail_file = create_thumbnail_file(image, thumbnail_dir, thumbnail_width, thumbnail_height, min_dimension)
+        thumbnail_file_relative_path = os.path.relpath(thumbnail_file, output_root_dir)
 
-            location = ''
-            if 'Iptc.Application2.SubLocation' in data:
-                location = data['Iptc.Application2.SubLocation'].value[0]
+        print('Downscaled image dimensions: {}x{}'.format(downscaled_width, downscaled_height))
+        print('Thumbnail image dimensions: {}x{}'.format(thumbnail_width, thumbnail_height))
+        print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))
 
-            date = data['Exif.Photo.DateTimeOriginal'].value
+        new_data = {
+            'caption': metadata['caption'],
+            'date': str(metadata['date']),
+            'full_image_path': downscaled_file_relative_path,
+            'location': metadata['location'],
+            'tags': metadata['keywords'],
+            'thumbnail_path': thumbnail_file_relative_path
+        }
+        image_filename = os.path.basename(image)
+        json_data[image_filename] = new_data
 
-            # Make downscaled but still large resolution image
-            max_dimension = 2400
-            downscaled_width, downscaled_height = calculate_dimensions(image, max_dimension, True)
-            print('Downscaled image dimensions: {}x{}'.format(downscaled_width, downscaled_height))
-            full_dir = os.path.join(output_root_dir, input_dir, 'full')
-            os.makedirs(full_dir, exist_ok=True)
-            downscaled_file = create_hires_file(image, full_dir, downscaled_width, downscaled_height)
+    # Print out all the data
+    print(json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': ')))
 
-            # Make thumbnail image
-            min_dimension = 400
-            thumbnail_width, thumbnail_height = calculate_dimensions(image, min_dimension, False)
-            print('Thumbnail image dimensions: {}x{}'.format(thumbnail_width, thumbnail_height))
-            thumbnail_dir = os.path.join(output_root_dir, input_dir)
-            os.makedirs(thumbnail_dir, exist_ok=True)
-            thumbnail_file = create_thumbnail_file(image, thumbnail_dir, thumbnail_width, thumbnail_height, min_dimension)
-
-            print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))
-            image_filename = os.path.basename(image)
-
-            new_data = {
-                'caption': caption,
-                'date': str(date),
-                'full_image_path': downscaled_file,
-                'location': location,
-                'original_path': image_filename,
-                'tags': keywords,
-                'thumbnail_path': thumbnail_file
-            }
-            json_data[image_filename] = new_data
-
-        # Print out all the data
-        print(json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': ')))
-
-        # Write out the file
-        output_json = os.path.join(output_root_dir, input_dir, input_dir + '.json')
-        with open(output_json, 'w+') as outfile:
-            json.dump(json_data, outfile, sort_keys=True, indent=4, separators=(',', ': '))
+    # Write out the file
+    output_json = os.path.join(output_root_dir, 'images.json')
+    with open(output_json, 'w+') as outfile:
+        json.dump(json_data, outfile, sort_keys=True, indent=4, separators=(',', ': '))
 
 if __name__ == "__main__":
     main()
