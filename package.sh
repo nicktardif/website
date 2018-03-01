@@ -14,7 +14,7 @@ python make_folders.py --input_json images/downsampled/images.json --output_root
 
 glue images/downsampled/ --project --cachebuster-filename-only-sprites --img images/sprites/ --css css --ratios=1,1.5,2
 
-dirs=(${PWD}/images/downsampled/*)
+dirs=(${PWD}/images/downsampled/*/)
 for i in "${dirs[@]}"
 do
   category=$(basename $i)
