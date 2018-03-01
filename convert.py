@@ -1,5 +1,6 @@
 import argparse, glob, json, os, shutil, subprocess
 import pyexiv2
+from image_info import ImageInfo
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -87,37 +88,39 @@ def get_metadata(image):
 
     return metadata
 
-def get_keywords(json_data):
+def get_keywords(image_info_list):
     # Get all the keywords
     keywords = []
-    for key in json_data:
-        image_json = json_data[key]
-        for tag in image_json['tags']:
+    for image in image_info_list:
+        for tag in image.tags:
             if tag not in keywords:
                 keywords.append(tag)
     keywords.remove('Website')
-    print(keywords)
     return keywords
 
-def copy_to_folder(json_data, original_dir, output_dir):
+def copy_to_folder(image_info_list, original_dir, output_dir):
     # Copy the files into the subfolder
-    for key in json_data:
-        image_json = json_data[key]
-        image_path = os.path.join(original_dir, image_json['thumbnail_path'])
+    for image in image_info_list:
+        image_path = os.path.join(original_dir, image.thumbnail_image_path)
         shutil.copy(image_path, output_dir)
 
 # Save the new JSON file
-def generate_json_file(filename, output_dir, json_data):
+def generate_json_file(filename, output_dir, image_info_list):
     json_filename = '{}.json'.format(filename)
     json_path = os.path.join(output_dir, json_filename)
-    with open(json_path, 'w') as outfile:
-        json.dump(json_data, outfile)
 
-def make_category_folder(category, root_dir, json_images):
+    json_list = []
+    for image in image_info_list:
+        json_list.append(image.toJSON())
+
+    with open(json_path, 'w') as outfile:
+        json.dump(json_list, outfile)
+
+def make_category_folder(category, root_dir, image_info_list):
     category_dir = os.path.join(root_dir, category)
     os.makedirs(category_dir, exist_ok=True)
-    copy_to_folder(json_images, root_dir, category_dir)
-    generate_json_file(category, root_dir, json_images)
+    copy_to_folder(image_info_list, root_dir, category_dir)
+    generate_json_file(category, root_dir, image_info_list)
 
 def main():
     args = parse_arguments()
@@ -133,7 +136,7 @@ def main():
     images.extend(glob.glob('{}/*.JPG'.format(input_root_dir)))
 
     print(images)
-    json_data = {}
+    image_info_list = []
 
     for image in images:
         metadata = get_metadata(image)
@@ -154,35 +157,31 @@ def main():
         print('Thumbnail image dimensions: {}x{}'.format(thumbnail_width, thumbnail_height))
         print('downscaled file is: {}, thumbnail file is: {}'.format(downscaled_file, thumbnail_file))
 
-        new_data = {
-            'caption': metadata['caption'],
-            'date': str(metadata['date']),
-            'full_image_path': downscaled_file_relative_path,
-            'location': metadata['location'],
-            'tags': metadata['keywords'],
-            'thumbnail_path': thumbnail_file_relative_path
-        }
-        image_filename = os.path.basename(image)
-        json_data[image_filename] = new_data
+        image_info = ImageInfo(
+                downscaled_file_relative_path,
+                thumbnail_file_relative_path,
+                metadata['caption'],
+                metadata['date'],
+                metadata['location'],
+                metadata['keywords'])
+        image_info_list.append(image_info)
 
     # --- Copy the images into folders categories for spritemapping --- #
 
     # Make a category for all of the images
-    make_category_folder('All', output_root_dir, json_data)
+    make_category_folder('All', output_root_dir, image_info_list)
 
     # Copy the images into categories for each of their keywords
-    keywords = get_keywords(json_data)
+    keywords = get_keywords(image_info_list)
     for keyword in keywords:
-        # Filter the JSON file by images that match the keyword
-        keyword_json_data = { key: json_data[key] for key in json_data if keyword in json_data[key]['tags'] }
-        make_category_folder(keyword, output_root_dir, keyword_json_data)
+        keyword_image_list = [ image for image in image_info_list if keyword in image.tags ]
+        make_category_folder(keyword, output_root_dir, keyword_image_list)
 
     # Make a category for n most recent images - for homepage
-    time_sorted_list = sorted(json_data, key=lambda j: json_data[j]['date'], reverse=True)
+    time_sorted_list = sorted(image_info_list, key=lambda x: x.date, reverse=True)
     recent_count = 30
     time_sorted_list = time_sorted_list[:recent_count]
-    time_sorted_json = { key: json_data[key] for key in json_data}
-    make_category_folder('Recent', output_root_dir, time_sorted_json)
+    make_category_folder('Recent', output_root_dir, time_sorted_list)
 
 if __name__ == "__main__":
     main()

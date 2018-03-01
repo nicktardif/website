@@ -229,10 +229,10 @@ function addImages(category) {
   request.send(null)
   var images_json_dict = JSON.parse(request.responseText); 
 
-  for(var key in images_json_dict) {
-    image_json_data = images_json_dict[key]
-    image_json_data['css_category'] = category
-    images_json_array.push(image_json_data)
+  for(var idx in images_json_dict) {
+    image = images_json_dict[idx]
+    image['css_category'] = category
+    images_json_array.push(image)
   }
 }
 
