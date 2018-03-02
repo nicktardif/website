@@ -88,13 +88,13 @@ def get_metadata(image):
 
     return metadata
 
+# Get all the keywords in the input images
 def get_keywords(image_info_list):
-    # Get all the keywords
     keywords = []
     for image in image_info_list:
         for tag in image.tags:
-            if tag not in keywords:
-                keywords.append(tag)
+            keywords.append(tag)
+    keywords = list(set(keywords)) # Parse out duplicates
     keywords.remove('Website')
     return keywords
 
@@ -180,8 +180,8 @@ def main():
     # Make a category for n most recent images - for homepage
     time_sorted_list = sorted(image_info_list, key=lambda x: x.date, reverse=True)
     recent_count = 30
-    time_sorted_list = time_sorted_list[:recent_count]
-    make_category_folder('Recent', output_root_dir, time_sorted_list)
+    recent_images = time_sorted_list[:recent_count]
+    make_category_folder('Recent', output_root_dir, recent_images)
 
 if __name__ == "__main__":
     main()

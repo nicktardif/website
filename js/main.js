@@ -232,6 +232,7 @@ function addImages(category) {
   for(var idx in images_json_dict) {
     image = images_json_dict[idx]
     image['css_category'] = category
+    image['full_image_path'] = 'images/downsampled/' + image['full_image_path'] // XXX
     images_json_array.push(image)
   }
 }
@@ -246,6 +247,7 @@ function displayGallery(galleryId) {
     full_image_path = element['full_image_path'];
     thumbnail_path = element['thumbnail_path'];
     caption = element['caption'];
+    image_location = element['location'];
     css_category = element['css_category'];
     image_basename = baseName(full_image_path);
     thumb_basename = baseName(thumbnail_path)
@@ -275,7 +277,7 @@ function displayGallery(galleryId) {
           '<a href="' + full_image_path + '" itemprop="contentUrl" data-size="' + size + '">' +
             '<div class="' + sprite_class + '" itemprop="thumbnail" />' +
           '</a>' +
-          '<figcaption itemprop="caption description">' + caption + '</figcaption>' +
+          '<figcaption itemprop="caption description">' + caption + '<br/>' + image_location + '</figcaption>' +
         '</figure>';
     var gallery = document.getElementById(galleryId);
     gallery.insertAdjacentHTML('beforeend', html);
