@@ -1,5 +1,5 @@
 window.addEventListener('load', function(event) {
-  addImages('recent');
+  addImages('Recent');
 
   galleryId = 'my-gallery';
   displayGallery(galleryId);
