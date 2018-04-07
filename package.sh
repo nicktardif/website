@@ -7,7 +7,7 @@ mkdir -p images/downsampled
 mkdir -p css/categories/
 
 # Convert the images
-python convert.py --input_root_dir test_input/ --output_root_dir images/downsampled/
+python convert.py --input_root_dir "/media/tick/Seagate Backup Plus Drive/Pictures/website/processed" --output_root_dir images/downsampled/
 
 glue images/downsampled/ --project --cachebuster-filename-only-sprites --img images/sprites/ --css css/categories --ratios=1,1.5,2
 

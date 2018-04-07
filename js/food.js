@@ -1,5 +1,5 @@
 window.addEventListener('load', function(event) {
-  addImages('food');
+  addImages('Food');
 
   galleryId = 'my-gallery';
   displayGallery(galleryId);

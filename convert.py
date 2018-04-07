@@ -11,8 +11,8 @@ def parse_arguments():
 
 def calculate_dimensions(image, request_dimension, is_max):
     # TODO: Find a Python library to get the width and height
-    width = int(subprocess.check_output("identify -format '%w' {}".format(image), shell=True))
-    height = int(subprocess.check_output("identify -format '%h' {}".format(image), shell=True))
+    width = int(subprocess.check_output("identify -format '%w' \"{}\"".format(image), shell=True))
+    height = int(subprocess.check_output("identify -format '%h' \"{}\"".format(image), shell=True))
     print('width is {}'.format(width))
     print('height is {}'.format(height))
 
@@ -49,12 +49,12 @@ def get_downscaled_file_name(image, output_dir, width, height):
 
 def create_thumbnail_file(image, output_dir, scaled_width, scaled_height, square_size):
     downscaled_file = get_downscaled_file_name(image, output_dir, square_size, square_size)
-    subprocess.check_output("convert -resize {}x{}^ -extent {}x{} -gravity Center \( {} -strip -resize {}x{} \) {}".format(square_size, square_size, square_size, square_size, image, scaled_width, scaled_height, downscaled_file), shell=True)
+    subprocess.check_output("convert -resize {}x{}^ -extent {}x{} -gravity Center \( \"{}\" -strip -resize {}x{} \) \"{}\"".format(square_size, square_size, square_size, square_size, image, scaled_width, scaled_height, downscaled_file), shell=True)
     return downscaled_file
 
 def create_hires_file(image, output_dir, width, height):
     downscaled_file = get_downscaled_file_name(image, output_dir, width, height)
-    subprocess.check_output("convert -strip -interlace Plane -quality 85% {} -resize {}x{} {}".format(image, width, height, downscaled_file), shell=True)
+    subprocess.check_output("convert -strip -interlace Plane -quality 85% \"{}\" -resize {}x{} \"{}\"".format(image, width, height, downscaled_file), shell=True)
     return downscaled_file
 
 def get_metadata(image):
