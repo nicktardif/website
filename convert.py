@@ -1,6 +1,13 @@
 import argparse, glob, json, os, shutil, subprocess
 import pyexiv2
 from image_info import ImageInfo
+from jinja2 import Environment, FileSystemLoader
+
+class Category:
+    def __init__(self, name, pretty_name, images):
+        self.name = name
+        self.pretty_name = pretty_name
+        self.images = images
 
 def parse_arguments():
     parser = argparse.ArgumentParser()
@@ -116,11 +123,15 @@ def generate_json_file(filename, output_dir, image_info_list):
     with open(json_path, 'w') as outfile:
         json.dump(json_list, outfile)
 
-def make_category_folder(category, root_dir, image_info_list):
-    category_dir = os.path.join(root_dir, category)
+def make_category_folders(categories, output_dir):
+    for category in categories:
+        make_category_folder(category, output_dir)
+
+def make_category_folder(category, root_dir):
+    category_dir = os.path.join(root_dir, category.name)
     os.makedirs(category_dir, exist_ok=True)
-    copy_to_folder(image_info_list, root_dir, category_dir)
-    generate_json_file(category, root_dir, image_info_list)
+    copy_to_folder(category.images, root_dir, category_dir)
+    generate_json_file(category.name, root_dir, category.images)
 
 def main():
     args = parse_arguments()
@@ -168,20 +179,37 @@ def main():
 
     # --- Copy the images into folders categories for spritemapping --- #
 
+
     # Make a category for all of the images
-    make_category_folder('All', output_root_dir, image_info_list)
+    categories = []
+    categories.append(Category('all', 'All', image_info_list))
 
     # Copy the images into categories for each of their keywords
     keywords = get_keywords(image_info_list)
     for keyword in keywords:
         keyword_image_list = [ image for image in image_info_list if keyword in image.tags ]
-        make_category_folder(keyword, output_root_dir, keyword_image_list)
+        categories.append(Category(keyword, keyword, keyword_image_list))
 
     # Make a category for n most recent images - for homepage
     time_sorted_list = sorted(image_info_list, key=lambda x: x.date, reverse=True)
     recent_count = 30
     recent_images = time_sorted_list[:recent_count]
-    make_category_folder('Recent', output_root_dir, recent_images)
+    categories.append(Category('index', 'Recent', recent_images))
+
+    make_category_folders(categories, output_root_dir)
+
+    # For each category, render an HTML page
+    for category in categories:
+        env = Environment(loader=FileSystemLoader('templates'))
+        template = env.get_template('gallery_template.html')
+
+        categories_sorted = sorted(categories, key=lambda x: x.pretty_name)
+        names = [c.name for c in categories]
+        output_from_parsed_template = template.render(current_category=category, categories=categories_sorted)
+
+        # Write out the HTML file
+        with open('{}.html'.format(category.name), 'w') as f:
+            f.write(output_from_parsed_template)
 
 if __name__ == "__main__":
     main()

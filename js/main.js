@@ -318,6 +318,15 @@ window.addEventListener('load', function(event) {
   document.getElementById("opennav").onclick = function() { 
     openNav(); 
   };
+
+  // Dynamically load the gallery based on the category name
+  categoryName = document.getElementById('category_name').innerHTML;
+  addImages(categoryName);
+
+  galleryId = 'my-gallery';
+  displayGallery(galleryId);
+
+  setMenuLeftPadding();
 });
 
 window.addEventListener('resize', function(event) {
