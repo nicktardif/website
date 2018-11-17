@@ -7,18 +7,20 @@ Live site can be found at [nicktardif.com](http://www.nicktardif.com)
 ```
 # Install nodejs
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get install -y nodejs node-grunt-cli
 
-# For py3exiv2
-sudo apt-get install python3.5-dev python-all-dev libboost-python-dev libexiv2-dev
+sudo apt-get install python3.5-dev python-all-dev libboost-python-dev libexiv2-dev imagemagick
 
 ---
-
-pip install glue pillow # for spritemapping
 
 sudo npm install -g uglify-js grunt-cli
 npm install
 pipenv install
+```
+
+## Building
+```
+./package.sh <image_dir>
 ```
 
 ## How to Launch

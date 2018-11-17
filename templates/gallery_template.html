@@ -1,8 +1,7 @@
 <head>
   <link rel="stylesheet" href="css/nicktardif.min.css">
-  <link rel="stylesheet" href="css/categories/Recent.css">
+  <link rel="stylesheet" href="css/categories/{{ current_category.name }}.css">
   <script src="js/nicktardif.min.js"></script>
-  <script src="js/index.js"></script>
   <script>
     WebFont.load({
       google: {
@@ -20,10 +19,9 @@
     <div id="sidenav" class="sidenav">
       <a id="closenavbtn" class="closebtn">&times;</a>
       <p class="navheader">Photos</p>
-      <a href="index.html">Home</a>
-      <a href="food.html">Food</a>
-      <a href="plants.html">Plants</a>
-      <a href="all.html">All Photos</a>
+      {% for category in categories %}
+      <a href="{{ category.name }}.html">{{ category.pretty_name }}</a>
+      {% endfor %}
       
       <!-- <a class="navheader" href="about.html">About</a> -->
     </div>
@@ -101,4 +99,5 @@
       </div>
     </div>
   </div>
+  <div id="category_name" style="display:none">{{ current_category.name }}</div>
 </body>
