@@ -226,6 +226,11 @@ function addImages(category) {
   var json_file = 'images/downsampled/' + category + '.json'
   var request = new XMLHttpRequest();
   request.open("GET", json_file, false);
+  request.setRequestHeader('cache-control', 'no-cache, must-revalidate, post-check=0, pre-check=0');
+  request.setRequestHeader('cache-control', 'max-age=0');
+  request.setRequestHeader('expires', '0');
+  request.setRequestHeader('expires', 'Tue, 01 Jan 1980 1:00:00 GMT');
+  request.setRequestHeader('pragma', 'no-cache');
   request.send(null)
   var images_json_dict = JSON.parse(request.responseText); 
 
