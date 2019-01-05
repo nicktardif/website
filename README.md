@@ -33,4 +33,5 @@ Visit `127.0.0.1:8000` to visit the site
 ## How to Deploy
 ```
 pipenv run grunt deploy
+# You may need to run the `windows_10_rsync_fix.sh` in another shell so that `rsync` works correctly
 ```
