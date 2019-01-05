@@ -2,7 +2,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     shell: {
       deploy: {
-        command: "rsync -rv --progress --exclude 'input_images' --exclude '.git' --exclude 'node_modules' . nick-website:/var/www/nicktardif/"
+        command: "rsync -rv --progress --exclude 'input_images' --exclude '*.png' --exclude '.git' --exclude 'node_modules' . nick-website:/var/www/nicktardif/"
       }
     },
 
