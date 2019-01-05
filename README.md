@@ -23,15 +23,14 @@ pipenv install
 ./package.sh <image_dir>
 ```
 
-## How to Launch
+## How to Launch Local Server
 ```
-pipenv shell
-grunt
+pipenv run grunt
 ```
 
-Visit 127.0.0.1:8000 to visit the site
+Visit `127.0.0.1:8000` to visit the site
 
 ## How to Deploy
 ```
-grunt deploy
+pipenv run grunt deploy
 ```
