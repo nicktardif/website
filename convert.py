@@ -1,15 +1,20 @@
+"""
+Usage:
+    convert.py (INPUT_DIR OUTPUT_DIR)
+    convert.py (-h | --help)
+
+Arguments:
+    INPUT_DIR   Directory to retrieve input images
+    OUTPUT_DIR  Directory to create the build in
+
+Options:
+    -h --help  Show this screen
+"""
 from category import Category
+from docopt import docopt
 from image import Image
-import argparse
 import glob
 import os
-
-def parse_arguments():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--input_root_dir', help='Input dir with JPG images', dest='input_root_dir', required=True)
-    parser.add_argument('--output_root_dir', help='Output dir', dest='output_root_dir', required=True)
-    args = parser.parse_args()
-    return args
 
 def get_all_images(directory):
     image_paths = glob.glob('{}/*.jpg'.format(directory))
@@ -49,9 +54,9 @@ def generate_categories(images):
     return categories
 
 def main():
-    args = parse_arguments()
-    input_root_dir = args.input_root_dir
-    output_root_dir = args.output_root_dir
+    args = docopt(__doc__)
+    input_root_dir = args['INPUT_DIR']
+    output_root_dir = args['OUTPUT_DIR']
 
     # Create the top-level directories for the images to go in
     full_dir = os.path.join(output_root_dir, 'full')
