@@ -3,6 +3,7 @@
 *.html
 *.JPG
 *.jpg
+*.pyc
 images/sprites/
 images/
 
