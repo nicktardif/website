@@ -33,8 +33,6 @@ def calculate_dimensions(image, request_dimension, is_max):
     # TODO: Find a Python library to get the width and height
     width = int(subprocess.check_output("identify -format '%w' \"{}\"".format(image), shell=True))
     height = int(subprocess.check_output("identify -format '%h' \"{}\"".format(image), shell=True))
-    print('width is {}'.format(width))
-    print('height is {}'.format(height))
 
     aspect_ratio = float(width) / float(height)
     max_dimension = max(width, height)
@@ -67,11 +65,11 @@ class ImageGenerator:
     def create_hires(self, image_path, max_dimension, destination_dir):
         width, height = calculate_dimensions(image_path, max_dimension, True)
         downscaled_file = create_hires_file(image_path, destination_dir, width, height)
-        print('Downscaled image dimensions: {}x{}, location: {}'.format(width, height, downscaled_file))
+        print('Downscaled: {}x{}, Destination: {}'.format(width, height, downscaled_file))
         return downscaled_file
 
     def create_thumbnail(self, image_path, min_dimension, destination_dir):
         width, height = calculate_dimensions(image_path, min_dimension, False)
         thumbnail_file = create_thumbnail_file(image_path, destination_dir, width, height, min_dimension)
-        print('Thumbnail image dimensions: {}x{}, location: {}'.format(width, height, thumbnail_file))
+        print('Thumbnail:  {}x{},   Destination: {}'.format(width, height, thumbnail_file))
         return thumbnail_file

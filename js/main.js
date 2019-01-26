@@ -223,7 +223,7 @@ function compareDate(a,b) {
 }
 
 function addImages(category) {
-  var json_file = 'images/downsampled/' + category + '.json'
+  var json_file = 'thumbnails/' + category + '.json'
   var request = new XMLHttpRequest();
   request.open("GET", json_file, false);
   request.setRequestHeader('cache-control', 'no-cache, must-revalidate, post-check=0, pre-check=0');
@@ -237,7 +237,6 @@ function addImages(category) {
   for(var idx in images_json_dict) {
     image = images_json_dict[idx]
     image['css_category'] = category
-    image['full_image_path'] = 'images/downsampled/' + image['full_image_path'] // XXX
     images_json_array.push(image)
   }
 }

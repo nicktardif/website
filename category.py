@@ -39,13 +39,14 @@ class Category:
 
         json_list = []
         for image in self.images:
-            json_list.append(image.to_json())
+            root_build_dir = os.path.dirname(output_dir)
+            json_list.append(image.to_json(root_build_dir))
 
         with open(json_path, 'w') as outfile:
             json.dump(json_list, outfile)
 
     # For each category, render an HTML page
-    def generate_html(self, sorted_categories):
+    def generate_html(self, sorted_categories, directory):
         env = Environment(loader=FileSystemLoader('templates'))
         template = env.get_template('gallery_template.html')
 
@@ -53,7 +54,7 @@ class Category:
                 current_category=self,
                 categories=sorted_categories)
 
-        # XXX: It's not explicit where these HTML files are written to
         # Write out the HTML file
-        with open('{}.html'.format(self.name), 'w') as f:
+        html_file = os.path.join(directory, '{}.html'.format(self.name))
+        with open(html_file, 'w') as f:
             f.write(output_from_parsed_template)

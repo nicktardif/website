@@ -6,6 +6,7 @@
 *.pyc
 images/sprites/
 images/
+build/
 
 css/nicktardif.min.css
 css/thumbs.css

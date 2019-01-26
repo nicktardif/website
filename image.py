@@ -1,5 +1,6 @@
 from image_generator import ImageGenerator
 import json
+import os
 import pyexiv2
 
 class Image:
@@ -40,14 +41,18 @@ class Image:
             self.__parse_metadata()
         return self.__keywords
 
-    def to_json(self):
+    def to_json(self, root_path):
+        # Save the JSON with relative paths to the build directory
+        relative_downsampled_path = os.path.relpath(self.downsampled_path, root_path)
+        relative_thumbnail_path = os.path.relpath(self.thumbnail_path, root_path)
+
         valid_json_dictionary = {
             'caption': self.__caption,
             'date': str(self.__date),
             'location': self.__location,
             'tags': self.__keywords,
-            'full_image_path': self.downsampled_path,
-            'thumbnail_path': self.thumbnail_path
+            'full_image_path': relative_downsampled_path,
+            'thumbnail_path': relative_thumbnail_path
         }
         return valid_json_dictionary
 
