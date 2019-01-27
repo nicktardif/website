@@ -65,11 +65,11 @@ class ImageGenerator:
     def create_hires(self, image_path, max_dimension, destination_dir):
         width, height = calculate_dimensions(image_path, max_dimension, True)
         downscaled_file = create_hires_file(image_path, destination_dir, width, height)
-        print('Downscaled: {}x{}, Destination: {}'.format(width, height, downscaled_file))
+        #print('Downscaled: {}x{}, Destination: {}'.format(width, height, downscaled_file))
         return downscaled_file
 
     def create_thumbnail(self, image_path, min_dimension, destination_dir):
         width, height = calculate_dimensions(image_path, min_dimension, False)
         thumbnail_file = create_thumbnail_file(image_path, destination_dir, width, height, min_dimension)
-        print('Thumbnail:  {}x{},   Destination: {}'.format(width, height, thumbnail_file))
+        #print('Thumbnail:  {}x{},   Destination: {}'.format(width, height, thumbnail_file))
         return thumbnail_file

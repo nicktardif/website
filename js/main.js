@@ -1,9 +1,6 @@
-filters = []
-images_json_array = []
-
 function initPhotoSwipeFromDOM(gallerySelector) {
 
-    // parse slide data (url, title, size ...) from DOM elements 
+    // parse slide data (url, title, size ...) from DOM elements
     // (children of gallerySelector)
     var parseThumbnailElements = function(el) {
         var thumbElements = el.childNodes,
@@ -18,7 +15,7 @@ function initPhotoSwipeFromDOM(gallerySelector) {
 
             figureEl = thumbElements[i]; // <figure> element
 
-            // include only element nodes 
+            // include only element nodes
             if(figureEl.nodeType !== 1) {
                 continue;
             }
@@ -35,13 +32,13 @@ function initPhotoSwipeFromDOM(gallerySelector) {
 
             if(figureEl.children.length > 1) {
                 // <figcaption> content
-                item.title = figureEl.children[1].innerHTML; 
+                item.title = figureEl.children[1].innerHTML;
             }
 
             if(linkEl.children.length > 0) {
                 // <img> thumbnail element, retrieving thumbnail url
                 //item.msrc = linkEl.children[0].getAttribute('src');
-            } 
+            }
 
             item.el = figureEl; // save link to element for getThumbBoundsFn
             items.push(item);
@@ -79,8 +76,8 @@ function initPhotoSwipeFromDOM(gallerySelector) {
             index;
 
         for (var i = 0; i < numChildNodes; i++) {
-            if(childNodes[i].nodeType !== 1) { 
-                continue; 
+            if(childNodes[i].nodeType !== 1) {
+                continue;
             }
 
             if(childNodes[i] === clickedListItem) {
@@ -111,10 +108,10 @@ function initPhotoSwipeFromDOM(gallerySelector) {
             if(!vars[i]) {
                 continue;
             }
-            var pair = vars[i].split('=');  
+            var pair = vars[i].split('=');
             if(pair.length < 2) {
                 continue;
-            }           
+            }
             params[pair[0]] = pair[1];
         }
 
@@ -155,7 +152,7 @@ function initPhotoSwipeFromDOM(gallerySelector) {
         // PhotoSwipe opened from URL
         if(fromURL) {
             if(options.galleryPIDs) {
-                // parse real index when custom PIDs are used 
+                // parse real index when custom PIDs are used
                 // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
                 for(var j = 0; j < items.length; j++) {
                     if(items[j].pid == index) {
@@ -200,96 +197,6 @@ function initPhotoSwipeFromDOM(gallerySelector) {
     }
 };
 
-function baseName(str)
-{
-  var base = new String(str).substring(str.lastIndexOf('/') + 1); 
-  if(base.lastIndexOf(".") != -1)       
-    base = base.substring(0, base.lastIndexOf("."));
-  return base;
-}
-
-function getSize(filename) {
-  basename = baseName(filename)
-  dimension_string = basename.split('_').pop()
-  return dimension_string
-};
-
-function compareDate(a,b) {
-  if (a['date'] < b['date'])
-    return 1;
-  if (a['date'] > b['date'])
-    return -1;
-  return 0;
-}
-
-function addImages(category) {
-  var json_file = 'thumbnails/' + category + '.json'
-  var request = new XMLHttpRequest();
-  request.open("GET", json_file, false);
-  request.setRequestHeader('cache-control', 'no-cache, must-revalidate, post-check=0, pre-check=0');
-  request.setRequestHeader('cache-control', 'max-age=0');
-  request.setRequestHeader('expires', '0');
-  request.setRequestHeader('expires', 'Tue, 01 Jan 1980 1:00:00 GMT');
-  request.setRequestHeader('pragma', 'no-cache');
-  request.send(null)
-  var images_json_dict = JSON.parse(request.responseText); 
-
-  for(var idx in images_json_dict) {
-    image = images_json_dict[idx]
-    image['css_category'] = category
-    images_json_array.push(image)
-  }
-}
-
-function displayGallery(galleryId) {
-  images_json_array.sort(compareDate);
-
-  previous_image_basename = ''
-
-  images_json_array.forEach(function(element) {
-    size = getSize(element['full_image_path']);
-    full_image_path = element['full_image_path'];
-    thumbnail_path = element['thumbnail_path'];
-    caption = element['caption'];
-    image_location = element['location'];
-    css_category = element['css_category'];
-    image_basename = baseName(full_image_path);
-    thumb_basename = baseName(thumbnail_path)
-    sprite_class = 'sprite-' + css_category + '-' + thumb_basename
-
-    // Don't display the same image twice
-    // This works because the data is already sorted
-    if(image_basename === previous_image_basename) {
-      return;
-    }
-    previous_image_basename = image_basename
-
-    if(filters.length != 0) {
-      found_match = false;
-      element['tags'].forEach(function(tag) {
-        if(filters.indexOf(tag) >= 0) {
-          found_match = true;
-        }
-      });
-      if(!found_match) {
-        return;
-      }
-    }
-
-    var html = '' +
-        '<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
-          '<a href="' + full_image_path + '" itemprop="contentUrl" data-size="' + size + '">' +
-            '<div class="' + sprite_class + '" itemprop="thumbnail" />' +
-          '</a>' +
-          '<figcaption itemprop="caption description">' + caption + '<br/>' + image_location + '</figcaption>' +
-        '</figure>';
-    var gallery = document.getElementById(galleryId);
-    gallery.insertAdjacentHTML('beforeend', html);
-  });
-
-  initPhotoSwipeFromDOM('#' + galleryId);
-}
-
 /* Set the width of the side navigation to 250px */
 function openNav() {
   document.getElementById("sidenav").style.width = "250px";
@@ -316,19 +223,15 @@ function setMenuLeftPadding() {
 }
 
 window.addEventListener('load', function(event) {
-  document.getElementById("closenavbtn").onclick = function() { 
-    closeNav(); 
+  document.getElementById("closenavbtn").onclick = function() {
+    closeNav();
   };
-  document.getElementById("opennav").onclick = function() { 
-    openNav(); 
+  document.getElementById("opennav").onclick = function() {
+    openNav();
   };
-
-  // Dynamically load the gallery based on the category name
-  categoryName = document.getElementById('category_name').innerHTML;
-  addImages(categoryName);
 
   galleryId = 'my-gallery';
-  displayGallery(galleryId);
+  initPhotoSwipeFromDOM('#my-gallery');
 
   setMenuLeftPadding();
 });

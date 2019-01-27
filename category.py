@@ -29,25 +29,9 @@ class Category:
         for image in self.images:
             shutil.copy(image.thumbnail_path, category_dir)
 
-        # Create a JSON file describing the category
-        self.__generate_json_file(output_root_dir)
-
-    # Save the new JSON file
-    def __generate_json_file(self, output_dir):
-        json_filename = '{}.json'.format(self.name)
-        json_path = os.path.join(output_dir, json_filename)
-
-        json_list = []
-        for image in self.images:
-            root_build_dir = os.path.dirname(output_dir)
-            json_list.append(image.to_json(root_build_dir))
-
-        with open(json_path, 'w') as outfile:
-            json.dump(json_list, outfile)
-
     # For each category, render an HTML page
-    def generate_html(self, sorted_categories, directory):
-        env = Environment(loader=FileSystemLoader('templates'))
+    def generate_html(self, template_dir, sorted_categories):
+        env = Environment(loader=FileSystemLoader(template_dir))
         template = env.get_template('gallery_template.html')
 
         output_from_parsed_template = template.render(
@@ -55,6 +39,6 @@ class Category:
                 categories=sorted_categories)
 
         # Write out the HTML file
-        html_file = os.path.join(directory, '{}.html'.format(self.name))
+        html_file = '{}.html'.format(self.name)
         with open(html_file, 'w') as f:
             f.write(output_from_parsed_template)

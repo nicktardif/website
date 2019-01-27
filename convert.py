@@ -73,11 +73,22 @@ def main():
     args = docopt(__doc__)
     input_root_dir = args['INPUT_DIR']
     output_root_dir = args['OUTPUT_DIR'] or 'build'
+    code_root_dir = os.getcwd()
+    template_dir = os.path.join(code_root_dir, 'templates')
+
+    # Ensure that the input and output paths are absolute
+    if not os.path.isabs(input_root_dir):
+        input_root_dir = os.path.join(os.getcwd(), input_root_dir)
+    if not os.path.isabs(output_root_dir):
+        output_root_dir = os.path.join(os.getcwd(), output_root_dir)
 
     # Cleanup and recreate the directory structure
     shutil.rmtree(output_root_dir, True)
+    os.makedirs(output_root_dir)
+    os.chdir(output_root_dir)
+
     full_dir = os.path.join(output_root_dir, 'full')
-    tmp_full_dir = 'tmp_full'
+    tmp_full_dir = os.path.join(output_root_dir, '.tmp_full')
     shutil.rmtree(tmp_full_dir, True)
     sprites_dir = os.path.join(output_root_dir, 'sprites')
     thumbnail_dir = os.path.join(output_root_dir, 'thumbnails')
@@ -98,11 +109,14 @@ def main():
     images = []
 
     # Add all images to the list, and create downsampled and thumbnail images
-    for image_path in image_paths:
+    image_count = len(image_paths)
+    for idx, image_path in enumerate(image_paths):
         image = Image(image_path)
         image.create_downsampled_image(full_dir, 2400)
         image.create_thumbnail_image(thumbnail_dir, 400)
         images.append(image)
+        percent = ((idx + 1) / image_count) * 100.0
+        print('Image Resizing: {:.2f}% - ({} of {})'.format(percent, idx + 1, image_count))
 
     # Create the categories
     categories = generate_categories(images)
@@ -112,7 +126,7 @@ def main():
         category.make_thumbnail_folder(thumbnail_dir)
 
         sorted_categories = sorted(categories, key=lambda x: x.pretty_name)
-        category.generate_html(sorted_categories, output_root_dir)
+        category.generate_html(template_dir, sorted_categories)
 
     convert_end = datetime.datetime.now()
 
@@ -121,19 +135,25 @@ def main():
 
     # Create the spritemaps
     glue_start = datetime.datetime.now()
-    glue_cmd = 'cd {} && glue {} --project --cachebuster-filename-only-sprites --img {} --css {} --ratios=2,1.5,1'.format(
-            output_root_dir,
-            os.path.relpath(thumbnail_dir, output_root_dir),
-            os.path.relpath(sprites_dir, output_root_dir),
-            os.path.relpath(css_dir, output_root_dir))
-    print(glue_cmd)
+    glue_cmd = 'glue {} --project --cachebuster-filename-only-sprites --img {} --css {} --ratios=2,1.5,1'.format(
+            thumbnail_dir,
+            sprites_dir,
+            css_dir)
+    print('Starting to generate the spritemaps')
     subprocess.check_output(glue_cmd, shell=True)
+    print('Finished spritemap generation')
     glue_end = datetime.datetime.now()
+
+    # Delete the images used to generate the spritemaps
+    old_images = get_all_images(thumbnail_dir)
+    for image in old_images:
+        os.remove(image)
 
     # Compress the spritemaps
     compress_start = datetime.datetime.now()
 
-    for category in categories:
+    print('Starting to compress spritemaps')
+    for idx, category in enumerate(categories):
         compress_2x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 25% -format jpg {}/{}@2x*.png'.format(sprites_dir, category.name)
         compress_1_5x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 45% -format jpg {}/{}@1.5x*.png'.format(sprites_dir, category.name)
         compress_1x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 65% -format jpg {}/{}_*.png'.format(sprites_dir, category.name)
@@ -145,6 +165,7 @@ def main():
         subprocess.check_output(compress_1x_cmd, shell=True)
         subprocess.check_output(sed_cmd, shell=True)
         subprocess.check_output(rm_png_cmd, shell=True)
+        print('Compressed {} category, ({} of {})'.format(category.name, idx + 1, len(categories)))
 
     compress_end = datetime.datetime.now()
 
@@ -160,11 +181,13 @@ def main():
     shutil.move(tmp_full_dir, full_dir)
 
     # Copy in the CSS and JS files
-    js_files = get_all_js('js')
-    concat_files(js_files, os.path.join(output_root_dir, 'nicktardif.min.js'))
+    js_dir = os.path.join(code_root_dir, 'js')
+    js_files = get_all_js(js_dir)
+    concat_files(js_files, 'nicktardif.min.js')
 
-    css_files = get_all_css('css')
-    concat_files(css_files, os.path.join(output_root_dir, 'nicktardif.min.css'))
+    css_dir = os.path.join(code_root_dir, 'css')
+    css_files = get_all_css(css_dir)
+    concat_files(css_files, 'nicktardif.min.css')
 
 if __name__ == "__main__":
     main()

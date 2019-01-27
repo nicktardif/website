@@ -8,7 +8,10 @@ class Image:
         self.original_path = original_path
 
         self.downsampled_path = None
+        self.downsampled_size_string = None # Needed in the Jinja template
+
         self.thumbnail_path = None
+        self.thumbnail_basename = None # Needed in the Jinja template
 
         self.__caption = None
         self.__date = None
@@ -17,9 +20,13 @@ class Image:
 
     def create_downsampled_image(self, destination_dir, max_dimension):
         self.downsampled_path = ImageGenerator().create_hires(self.original_path, max_dimension, destination_dir)
+        no_extension = os.path.splitext(self.downsampled_path)[0]
+        underscore_split = no_extension.split('_')
+        self.downsampled_size_string = underscore_split[len(underscore_split) - 1]
 
     def create_thumbnail_image(self, destination_dir, min_dimension):
         self.thumbnail_path = ImageGenerator().create_thumbnail(self.original_path, min_dimension, destination_dir)
+        self.thumbnail_basename = os.path.splitext(os.path.basename(self.thumbnail_path))[0]
 
     def get_caption(self):
         if self.__caption == None:
@@ -40,21 +47,6 @@ class Image:
         if self.__keywords == None:
             self.__parse_metadata()
         return self.__keywords
-
-    def to_json(self, root_path):
-        # Save the JSON with relative paths to the build directory
-        relative_downsampled_path = os.path.relpath(self.downsampled_path, root_path)
-        relative_thumbnail_path = os.path.relpath(self.thumbnail_path, root_path)
-
-        valid_json_dictionary = {
-            'caption': self.__caption,
-            'date': str(self.__date),
-            'location': self.__location,
-            'tags': self.__keywords,
-            'full_image_path': relative_downsampled_path,
-            'thumbnail_path': relative_thumbnail_path
-        }
-        return valid_json_dictionary
 
     # ---- Private functions
 
