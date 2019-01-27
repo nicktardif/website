@@ -3,13 +3,11 @@
 *.html
 *.JPG
 *.jpg
-images/sprites/
-images/
+*.pyc
+build/
 
 css/nicktardif.min.css
 css/thumbs.css
 css/categories
 js/min/
 js/nicktardif.min.js
-
-node_modules/

@@ -33,6 +33,14 @@
     </h2>
 
     <div id="my-gallery" class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+      {% for image in current_category.images %}
+      <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="{{image.downsampled_path}}" itemprop="contentUrl" data-size="{{image.downsampled_size_string}}">
+          <div class="sprite-{{current_category.name}}-{{image.thumbnail_basename}}" itemprop="thumbnail" />
+        </a>
+        <figcaption itemprop="caption description">{{image.get_caption()}}<br/>{{image.get_location()}}</figcaption>
+      </figure>
+      {% endfor %}
     </div>
 
     <!-- Root element of PhotoSwipe. Must have class pswp. -->

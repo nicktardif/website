@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3d00cd0f3aee214c22254180031088134a38b49e390551d742425c49af685126"
+            "sha256": "28df5049d7a67d48ae815c0fa899fd38d3854ab204f16636eeb2d72d936ecd14"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -14,13 +14,12 @@
         ]
     },
     "default": {
-        "argparse": {
+        "docopt": {
             "hashes": [
-                "sha256:62b089a55be1d8949cd2bc7e0df0bddb9e028faefc8c32038cc84862aefdd6e4",
-                "sha256:c31647edb69fd3d465a847ea3157d37bed1f95f19760b11a47aa91c04b666314"
+                "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
             ],
             "index": "pypi",
-            "version": "==1.4.0"
+            "version": "==0.6.2"
         },
         "glue": {
             "hashes": [
@@ -44,9 +43,9 @@
         },
         "pillow": {
             "hashes": [
-                "sha256:987e1c94a33c93d9b209315bfda9faa54b8edfce6438a1e93ae866ba20de5956"
+                "sha256:d7c1c06246b05529f9984435fc4fa5a545ea26606e7f450bdbe00c153f5aeaad"
             ],
-            "version": "==5.3.0"
+            "version": "==5.4.1"
         },
         "py3exiv2": {
             "hashes": [
