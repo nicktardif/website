@@ -34,6 +34,8 @@ class Category:
         env = Environment(loader=FileSystemLoader(template_dir))
         template = env.get_template('gallery_template.html')
 
+        self.images = sorted(self.images, key=lambda x: x.get_date(), reverse=True)
+
         output_from_parsed_template = template.render(
                 current_category=self,
                 categories=sorted_categories)
