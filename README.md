@@ -16,9 +16,8 @@ pipenv run python main.py generate <input_dir> <output_dir>
 
 ## How to Launch Local Server
 ```
-cd build && python -m SimpleHTTPServer
+pipenv run python main.py host <build_dir>
 ```
-
 Visit `127.0.0.1:8000` to visit the site
 
 ## How to Deploy
