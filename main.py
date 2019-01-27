@@ -2,6 +2,7 @@
 Usage:
     main.py generate INPUT_DIR [OUTPUT_DIR]
     main.py deploy BUILD_DIR
+    main.py host BUILD_DIR
     main.py (-h | --help)
 
 Arguments:
@@ -14,6 +15,7 @@ Options:
 from docopt import docopt
 from src.generate import generate_website
 from src.deploy import deploy_website
+from src.host import host_website
 
 def main():
     args = docopt(__doc__)
@@ -27,6 +29,10 @@ def main():
         print('Deploying the website')
         build_dir = args['BUILD_DIR']
         deploy_website(build_dir)
+    elif args['host']:
+        print('Hosting the website at localhost:8000')
+        build_dir = args['BUILD_DIR']
+        host_website(build_dir)
 
 if __name__ == "__main__":
     main()
