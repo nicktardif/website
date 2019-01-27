@@ -1,4 +1,4 @@
-from image import Image
+from src.image import Image
 from jinja2 import Environment, FileSystemLoader
 import json
 import os

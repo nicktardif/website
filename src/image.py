@@ -1,4 +1,4 @@
-from image_generator import ImageGenerator
+from src.image_generator import ImageGenerator
 import json
 import os
 import pyexiv2

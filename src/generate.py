@@ -1,19 +1,6 @@
-"""
-Usage:
-    convert.py (INPUT_DIR) [OUTPUT_DIR]
-    convert.py (-h | --help)
-
-Arguments:
-    INPUT_DIR   Directory to retrieve input images
-    OUTPUT_DIR  Directory to create the build in [default: build]
-
-Options:
-    -h --help  Show this screen
-"""
-from category import Category
-from docopt import docopt
-from image import Image
-from timer import Timer, timer_decorator
+from src.category import Category
+from src.image import Image
+from src.timer import Timer, timer_decorator
 import datetime
 import glob
 import os
@@ -121,10 +108,7 @@ def compress_spritemaps(categories, sprites_dir, css_categories_dir):
         subprocess.check_output(rm_png_cmd, shell=True)
         print('Compressed {} category, ({} of {})'.format(category.name, idx + 1, len(categories)))
 
-def main():
-    args = docopt(__doc__)
-    input_root_dir = args['INPUT_DIR']
-    output_root_dir = args['OUTPUT_DIR'] or 'build'
+def generate_website(input_root_dir, output_root_dir):
     code_root_dir = os.getcwd()
     template_dir = os.path.join(code_root_dir, 'templates')
 
@@ -195,6 +179,3 @@ def main():
     css_files = get_all_css(original_css_dir)
     concat_files(css_files, os.path.join(css_dir, 'nicktardif.min.css'))
     shutil.copy(os.path.join(original_css_dir, 'default-skin.svg'), css_dir)
-
-if __name__ == "__main__":
-    main()

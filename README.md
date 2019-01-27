@@ -11,7 +11,7 @@ pipenv install
 
 ## Building
 ```
-pipenv run python convert.py <input_dir> <output_dir>
+pipenv run python main.py <input_dir> <output_dir>
 ```
 
 ## How to Launch Local Server
