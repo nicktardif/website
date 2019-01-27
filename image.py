@@ -18,14 +18,16 @@ class Image:
         self.__location = None
         self.__keywords = None
 
-    def create_downsampled_image(self, destination_dir, max_dimension):
-        self.downsampled_path = ImageGenerator().create_hires(self.original_path, max_dimension, destination_dir)
+    def create_downsampled_image(self, destination_dir, build_root_dir, max_dimension):
+        downsampled_absolute_path = ImageGenerator().create_hires(self.original_path, max_dimension, destination_dir)
+        self.downsampled_path = os.path.relpath(downsampled_absolute_path, build_root_dir)
         no_extension = os.path.splitext(self.downsampled_path)[0]
         underscore_split = no_extension.split('_')
         self.downsampled_size_string = underscore_split[len(underscore_split) - 1]
 
-    def create_thumbnail_image(self, destination_dir, min_dimension):
-        self.thumbnail_path = ImageGenerator().create_thumbnail(self.original_path, min_dimension, destination_dir)
+    def create_thumbnail_image(self, destination_dir, build_root_dir, min_dimension):
+        thumbnail_absolute_path = ImageGenerator().create_thumbnail(self.original_path, min_dimension, destination_dir)
+        self.thumbnail_path = os.path.relpath(thumbnail_absolute_path, build_root_dir)
         self.thumbnail_basename = os.path.splitext(os.path.basename(self.thumbnail_path))[0]
 
     def get_caption(self):

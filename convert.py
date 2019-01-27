@@ -92,13 +92,17 @@ def main():
     shutil.rmtree(tmp_full_dir, True)
     sprites_dir = os.path.join(output_root_dir, 'sprites')
     thumbnail_dir = os.path.join(output_root_dir, 'thumbnails')
-    css_dir = os.path.join(output_root_dir, 'css/categories')
+    css_categories_dir = os.path.join(output_root_dir, 'css/categories')
+    css_dir = os.path.join(output_root_dir, 'css')
+    js_dir = os.path.join(output_root_dir, 'js')
 
     directories_to_create = [
             full_dir,
             sprites_dir,
             thumbnail_dir,
-            css_dir]
+            css_categories_dir,
+            css_dir,
+            js_dir]
     for directory in directories_to_create:
         os.makedirs(directory, exist_ok=True)
 
@@ -112,8 +116,8 @@ def main():
     image_count = len(image_paths)
     for idx, image_path in enumerate(image_paths):
         image = Image(image_path)
-        image.create_downsampled_image(full_dir, 2400)
-        image.create_thumbnail_image(thumbnail_dir, 400)
+        image.create_downsampled_image(full_dir, output_root_dir, 2400)
+        image.create_thumbnail_image(thumbnail_dir, output_root_dir, 400)
         images.append(image)
         percent = ((idx + 1) / image_count) * 100.0
         print('Image Resizing: {:.2f}% - ({} of {})'.format(percent, idx + 1, image_count))
@@ -138,16 +142,14 @@ def main():
     glue_cmd = 'glue {} --project --cachebuster-filename-only-sprites --img {} --css {} --ratios=2,1.5,1'.format(
             thumbnail_dir,
             sprites_dir,
-            css_dir)
+            css_categories_dir)
     print('Starting to generate the spritemaps')
     subprocess.check_output(glue_cmd, shell=True)
     print('Finished spritemap generation')
     glue_end = datetime.datetime.now()
 
     # Delete the images used to generate the spritemaps
-    old_images = get_all_images(thumbnail_dir)
-    for image in old_images:
-        os.remove(image)
+    shutil.rmtree(thumbnail_dir)
 
     # Compress the spritemaps
     compress_start = datetime.datetime.now()
@@ -157,7 +159,7 @@ def main():
         compress_2x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 25% -format jpg {}/{}@2x*.png'.format(sprites_dir, category.name)
         compress_1_5x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 45% -format jpg {}/{}@1.5x*.png'.format(sprites_dir, category.name)
         compress_1x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 65% -format jpg {}/{}_*.png'.format(sprites_dir, category.name)
-        sed_cmd = "sed -i -e 's/png/jpg/g' {}/{}.css".format(css_dir, category.name)
+        sed_cmd = "sed -i -e 's/png/jpg/g' {}/{}.css".format(css_categories_dir, category.name)
         rm_png_cmd = 'rm {}/{}*.png'.format(sprites_dir, category.name)
 
         subprocess.check_output(compress_2x_cmd, shell=True)
@@ -172,22 +174,25 @@ def main():
     conversion_time = (convert_end - convert_start).total_seconds()
     glue_time = (glue_end - glue_start).total_seconds()
     compression_time = (compress_end - compress_start).total_seconds()
-    print('\nConversion took  {} seconds'.format(conversion_time))
-    print('Glue took        {} seconds'.format(glue_time))
-    print('Compression took {} seconds'.format(compression_time))
-    print('Total time       {} seconds'.format(conversion_time + glue_time + compression_time))
+    print('\nStage Runtimes')
+    print('Conversion took  {:.2f} seconds'.format(conversion_time))
+    print('Glue took        {:.2f} seconds'.format(glue_time))
+    print('Compression took {:.2f} seconds'.format(compression_time))
+    print('Total time       {:.2f} seconds'.format(conversion_time + glue_time + compression_time))
 
     # Move the full images into the expected location
     shutil.move(tmp_full_dir, full_dir)
 
     # Copy in the CSS and JS files
-    js_dir = os.path.join(code_root_dir, 'js')
-    js_files = get_all_js(js_dir)
-    concat_files(js_files, 'nicktardif.min.js')
+    original_js_dir = os.path.join(code_root_dir, 'js')
+    js_files = get_all_js(original_js_dir)
+    concat_files(js_files, os.path.join(js_dir, 'nicktardif.min.js'))
 
-    css_dir = os.path.join(code_root_dir, 'css')
-    css_files = get_all_css(css_dir)
-    concat_files(css_files, 'nicktardif.min.css')
+    original_css_dir = os.path.join(code_root_dir, 'css')
+    css_files = get_all_css(original_css_dir)
+    concat_files(css_files, os.path.join(css_dir, 'nicktardif.min.css'))
+    shutil.copy(os.path.join(original_css_dir, 'default-skin.svg'), css_dir)
+
 
 if __name__ == "__main__":
     main()
