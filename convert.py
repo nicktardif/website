@@ -13,6 +13,7 @@ Options:
 from category import Category
 from docopt import docopt
 from image import Image
+from timer import Timer, timer_decorator
 import datetime
 import glob
 import os
@@ -36,6 +37,26 @@ def concat_files(input_files, output_file):
             with open(current_file) as infile:
                 for line in infile:
                     outfile.write(line)
+
+@timer_decorator
+def generate_thumbnails(image_paths, images, thumbnail_dir, output_root_dir):
+    # Add all images to the list, and create downsampled and thumbnail images
+    image_count = len(image_paths)
+    for idx, image_path in enumerate(image_paths):
+        image = Image(image_path)
+        image.create_thumbnail_image(thumbnail_dir, output_root_dir, 400)
+        images.append(image)
+        percent = ((idx + 1) / image_count) * 100.0
+        print('Thumbnail Generation: {:.2f}% - ({} of {})'.format(percent, idx + 1, image_count))
+
+@timer_decorator
+def compress_fullsize_images(images, full_dir, output_root_dir):
+    # Add all images to the list, and create downsampled and thumbnail images
+    image_count = len(images)
+    for idx, image in enumerate(images):
+        image.create_downsampled_image(full_dir, output_root_dir, 2400)
+        percent = ((idx + 1) / image_count) * 100.0
+        print('Fullsize Compression: {:.2f}% - ({} of {})'.format(percent, idx + 1, image_count))
 
 def generate_categories(images):
     # Make a category for all of the images
@@ -66,8 +87,39 @@ def generate_categories(images):
 
     categories = [all_category, recent_category]
     categories.extend(keyword_categories.values())
-    print('categories are: {}'.format(categories))
-    return categories
+
+    # Sort the categories by name (useful for the sidebar)
+    sorted_categories = sorted(categories, key=lambda x: x.pretty_name)
+    print('categories are: {}'.format(sorted_categories))
+
+    return sorted_categories
+
+@timer_decorator
+def create_spritemaps(thumbnail_dir, sprites_dir, css_categories_dir):
+    glue_cmd = 'glue {} --project --cachebuster-filename-only-sprites --img {} --css {} --ratios=2,1.5,1'.format(
+            thumbnail_dir,
+            sprites_dir,
+            css_categories_dir)
+    print('Starting to generate the spritemaps')
+    subprocess.check_output(glue_cmd, shell=True)
+    print('Finished spritemap generation')
+
+@timer_decorator
+def compress_spritemaps(categories, sprites_dir, css_categories_dir):
+    print('Starting to compress spritemaps')
+    for idx, category in enumerate(categories):
+        compress_2x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 25% -format jpg {}/{}@2x*.png'.format(sprites_dir, category.name)
+        compress_1_5x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 45% -format jpg {}/{}@1.5x*.png'.format(sprites_dir, category.name)
+        compress_1x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 65% -format jpg {}/{}_*.png'.format(sprites_dir, category.name)
+        sed_cmd = "sed -i -e 's/png/jpg/g' {}/{}.css".format(css_categories_dir, category.name)
+        rm_png_cmd = 'rm {}/{}*.png'.format(sprites_dir, category.name)
+
+        subprocess.check_output(compress_2x_cmd, shell=True)
+        subprocess.check_output(compress_1_5x_cmd, shell=True)
+        subprocess.check_output(compress_1x_cmd, shell=True)
+        subprocess.check_output(sed_cmd, shell=True)
+        subprocess.check_output(rm_png_cmd, shell=True)
+        print('Compressed {} category, ({} of {})'.format(category.name, idx + 1, len(categories)))
 
 def main():
     args = docopt(__doc__)
@@ -106,82 +158,33 @@ def main():
     for directory in directories_to_create:
         os.makedirs(directory, exist_ok=True)
 
-    convert_start = datetime.datetime.now()
-
     # Collect all the image paths
     image_paths = get_all_images(input_root_dir)
     images = []
 
-    # Add all images to the list, and create downsampled and thumbnail images
-    image_count = len(image_paths)
-    for idx, image_path in enumerate(image_paths):
-        image = Image(image_path)
-        image.create_downsampled_image(full_dir, output_root_dir, 2400)
-        image.create_thumbnail_image(thumbnail_dir, output_root_dir, 400)
-        images.append(image)
-        percent = ((idx + 1) / image_count) * 100.0
-        print('Image Resizing: {:.2f}% - ({} of {})'.format(percent, idx + 1, image_count))
+    # Generat Thumbnails from the images
+    generate_thumbnails(image_paths, images, thumbnail_dir, output_root_dir)
 
-    # Create the categories
+    # Compress the fullsize images
+    compress_fullsize_images(images, full_dir, output_root_dir)
+
+    # Generate thumbnail folder and HTML pages for each category
     categories = generate_categories(images)
-
-    # --- Generate thumbnail folder and HTML pages for each category
     for category in categories:
         category.make_thumbnail_folder(thumbnail_dir)
+        category.generate_html(template_dir, categories)
 
-        sorted_categories = sorted(categories, key=lambda x: x.pretty_name)
-        category.generate_html(template_dir, sorted_categories)
-
-    convert_end = datetime.datetime.now()
-
-    # Move the full images into the expected location
-    shutil.move(full_dir, tmp_full_dir)
-
-    # Create the spritemaps
-    glue_start = datetime.datetime.now()
-    glue_cmd = 'glue {} --project --cachebuster-filename-only-sprites --img {} --css {} --ratios=2,1.5,1'.format(
-            thumbnail_dir,
-            sprites_dir,
-            css_categories_dir)
-    print('Starting to generate the spritemaps')
-    subprocess.check_output(glue_cmd, shell=True)
-    print('Finished spritemap generation')
-    glue_end = datetime.datetime.now()
-
-    # Delete the images used to generate the spritemaps
-    shutil.rmtree(thumbnail_dir)
+    # Create spritemaps from the thumbnails
+    shutil.move(full_dir, tmp_full_dir) # Move the full images so they won't be spritemapped
+    create_spritemaps(thumbnail_dir, sprites_dir, css_categories_dir)
+    shutil.move(tmp_full_dir, full_dir) # Move the full images back
+    shutil.rmtree(thumbnail_dir) # Delete the images used to generate the spritemaps
 
     # Compress the spritemaps
-    compress_start = datetime.datetime.now()
+    compress_spritemaps(categories, sprites_dir, css_categories_dir)
 
-    print('Starting to compress spritemaps')
-    for idx, category in enumerate(categories):
-        compress_2x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 25% -format jpg {}/{}@2x*.png'.format(sprites_dir, category.name)
-        compress_1_5x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 45% -format jpg {}/{}@1.5x*.png'.format(sprites_dir, category.name)
-        compress_1x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 65% -format jpg {}/{}_*.png'.format(sprites_dir, category.name)
-        sed_cmd = "sed -i -e 's/png/jpg/g' {}/{}.css".format(css_categories_dir, category.name)
-        rm_png_cmd = 'rm {}/{}*.png'.format(sprites_dir, category.name)
-
-        subprocess.check_output(compress_2x_cmd, shell=True)
-        subprocess.check_output(compress_1_5x_cmd, shell=True)
-        subprocess.check_output(compress_1x_cmd, shell=True)
-        subprocess.check_output(sed_cmd, shell=True)
-        subprocess.check_output(rm_png_cmd, shell=True)
-        print('Compressed {} category, ({} of {})'.format(category.name, idx + 1, len(categories)))
-
-    compress_end = datetime.datetime.now()
-
-    conversion_time = (convert_end - convert_start).total_seconds()
-    glue_time = (glue_end - glue_start).total_seconds()
-    compression_time = (compress_end - compress_start).total_seconds()
-    print('\nStage Runtimes')
-    print('Conversion took  {:.2f} seconds'.format(conversion_time))
-    print('Glue took        {:.2f} seconds'.format(glue_time))
-    print('Compression took {:.2f} seconds'.format(compression_time))
-    print('Total time       {:.2f} seconds'.format(conversion_time + glue_time + compression_time))
-
-    # Move the full images into the expected location
-    shutil.move(tmp_full_dir, full_dir)
+    # Print out our runtimes
+    Timer().print_times()
 
     # Copy in the CSS and JS files
     original_js_dir = os.path.join(code_root_dir, 'js')
@@ -192,7 +195,6 @@ def main():
     css_files = get_all_css(original_css_dir)
     concat_files(css_files, os.path.join(css_dir, 'nicktardif.min.css'))
     shutil.copy(os.path.join(original_css_dir, 'default-skin.svg'), css_dir)
-
 
 if __name__ == "__main__":
     main()
