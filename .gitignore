@@ -4,8 +4,6 @@
 *.JPG
 *.jpg
 *.pyc
-images/sprites/
-images/
 build/
 
 css/nicktardif.min.css
@@ -13,5 +11,3 @@ css/thumbs.css
 css/categories
 js/min/
 js/nicktardif.min.js
-
-node_modules/
