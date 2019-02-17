@@ -179,3 +179,6 @@ def generate_website(input_root_dir, output_root_dir):
     css_files = get_all_css(original_css_dir)
     concat_files(css_files, os.path.join(css_dir, 'nicktardif.min.css'))
     shutil.copy(os.path.join(original_css_dir, 'default-skin.svg'), css_dir)
+
+    # Copy in the favicon file
+    shutil.copy(os.path.join(code_root_dir, 'assets', 'favicon.ico'), output_root_dir)
