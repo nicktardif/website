@@ -78,5 +78,9 @@ class Image:
         self.__location = location
 
         # Parse out the date
-        date = data['Exif.Photo.DateTimeOriginal'].value
-        self.__date = date
+        if 'Exif.Photo.DateTimeOriginal' in data:
+            self.__date = data['Exif.Photo.DateTimeOriginal'].value
+        elif 'Exif.Image.DateTime' in data:
+            self.__date = data['Exif.Image.DateTime'].value
+        else:
+            raise TypeError('Did not find a datetime for', self.original_path)
