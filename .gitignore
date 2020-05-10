@@ -5,6 +5,7 @@
 *.jpg
 *.pyc
 build/
+*build*/
 
 css/nicktardif.min.css
 css/thumbs.css

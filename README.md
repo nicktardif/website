@@ -1,26 +1,35 @@
-## Nick's Website
-Displays photos! Uses [PhotoSwipe.js](http://www.photoswipe.com) and lots of image compression techniques.
+# Nicktardif.com
 
-Live site can be found at [nicktardif.com](http://www.nicktardif.com)
-
-## Dependencies
+### Dependencies
 ```
-sudo apt-get install python3.5-dev python-all-dev libboost-python-dev libexiv2-dev imagemagick
-pipenv install
+pip install pipenv
+pipenv install # Update the Python packages
 ```
 
-## Building
+### Running
 ```
-pipenv run python main.py generate <input_dir> <output_dir>
+./run.sh
 ```
 
-## How to Launch Local Server
-```
-pipenv run python main.py host <build_dir>
-```
-Visit `127.0.0.1:8000` to visit the site
+The API will be available at `localhost:8000/api/v1/`, and the Swagger docs will be available at `localhost:8000/apidocs`
 
-## How to Deploy
+You can use [Postman](https://www.getpostman.com/) as an easy way to test out the API
+
+### Run Tests
 ```
-pipenv run python main.py deploy <build_dir>
+./launch_tests.sh
+```
+
+### Notes
+
+#### How to run Flask Migrate
+```
+# Initialize Flask Migrate (only needed if your database doesn't exist yet)
+pipenv run /bin/bash -c 'FLASK_APP=sec_app flask db init'
+
+# Modify the Python database models, then trigger a migration
+pipenv run /bin/bash -c 'FLASK_APP=sec_app/ flask db migrate'
+
+# Upgrade the database with the migration
+pipenv run /bin/bash -c 'FLASK_APP=sec_app/ flask db upgrade'
 ```

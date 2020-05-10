@@ -1,12 +1,19 @@
 [[source]]
 name = "pypi"
+url = "https://pypi.org/simple"
 verify_ssl = true
-url = "https://pypi.python.org/simple"
 
 [dev-packages]
 
 [packages]
-glue = "*"
-"py3exiv2" = "*"
-jinja2 = "*"
-docopt = "*"
+flask = "*"
+flask-migrate = "*"
+flask-testing = "*"
+nose2 = "*"
+flask-api = "*"
+gunicorn = "*"
+gevent = "*"
+flasgger = "*"
+
+[requires]
+python_version = "3.6"
