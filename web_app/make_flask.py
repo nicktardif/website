@@ -3,8 +3,9 @@ app = Flask(__name__)
 
 API_VERSION = '1.0.0'
 
+app.config['DATA_DIR'] = '/tmp'
 app.config['API_VERSION'] = API_VERSION
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/app.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}/app.db'.format(app.config['DATA_DIR'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SWAGGER_TEMPLATE'] = {
     "swagger": "2.0",
