@@ -1,11 +1,18 @@
 from web_app import app, db
 from flask_api import status
 from web_app.models import Image
+from web_app.utilities import Validator, Validation
 from flask import jsonify, request
 import datetime
 
-def image_exists_in_database(image_name):
+def image_name_exists_in_database(image_name):
     return True if Image.query.filter_by(original_path=image_name).first() else False
+
+def image_exists(image_id):
+    return Validation.custom_validation(
+        lambda: Image.query.get(image_id),
+        lambda: 'Image with the ID {} does not exist in the database'.format(image_id),
+        status.HTTP_404_NOT_FOUND)
 
 class ImageView():
     @app.route('/api/v1/images/<int:image_id>')
@@ -122,79 +129,95 @@ class ImageView():
                 schema:
                     $ref: "#/definitions/ErrorResponse"
         """
-        # TODO: Check some kind of authorization
-        if request.form:
-            if 'image_name' not in request.form:
-                message = 'Did not supply image_name in the data field'
-                return jsonify({'error': message}), status.HTTP_400_BAD_REQUEST
-            if 'image_data' not in request.form:
-                message = 'Did not supply image_data in the data field'
-                return jsonify({'error': message}), status.HTTP_400_BAD_REQUEST
+        # TODO: Check some kind of user authorization
+        unique_image_validation = Validation.custom_json_validation('image_name',
+                lambda v: not image_name_exists_in_database(v),
+                lambda v: 'Image with the name {} already exists in the database'.format(v)
+        )
 
-            image_name = request.form.get('image_name')
-            if image_exists_in_database(image_name):
-                message = 'Image with the name {} already exists in the database'.format(image_name)
-                return jsonify({'error': message}), status.HTTP_400_BAD_REQUEST
+        validator = Validator([
+            Validation.is_json_payload(),
+            Validation.required_json('image_name'),
+            Validation.required_json('image_data'),
+            unique_image_validation
+        ])
+        if not validator.validate(request):
+            return validator.get_error_response()
 
-            image_data = request.form.get('image_data')
+        new_image = Image.fromNameAndData(
+                request.get_json().get('image_name'),
+                bytes(request.get_json().get('image_data')))
+        db.session.add(new_image)
+        db.session.commit()
 
-            new_image = Image.fromNameAndData(image_name, image_data)
-            db.session.add(new_image)
-            db.session.commit()
+        return jsonify(new_image), status.HTTP_201_CREATED
 
-            return jsonify(new_image), status.HTTP_201_CREATED
-        else:
-            message = 'Request did not include a data form, try again'
-            return jsonify({'error': message}), status.HTTP_400_BAD_REQUEST
+    @app.route('/api/v1/images/<int:image_id>', methods=['PATCH'])
+    def update_image(image_id):
+        """Updates a image in the database
+        ---
+        tags:
+         - images
+        parameters:
+          - in: query
+            name: image_id
+            type: integer
+            description: ID of the image to update
+            required: true
+          - in: body
+            name: caption
+            type: string
+            description: Caption for the image
+            required: false
+          - in: body
+            name: date
+            type: date
+            description: Date for the image, in UTC
+            required: false
+          - in: body
+            name: location
+            type: string
+            description: Location for the image
+            required: false
+        responses:
+            200:
+                description: Image was updated successfully
+                schema:
+                    $ref: "#/definitions/Image"
+            400:
+                description: Request was not formatted correctly
+                schema:
+                    $ref: "#/definitions/ErrorResponse"
+            404:
+                description: Did not find a image with the specified ID
+                schema:
+                    $ref: "#/definitions/ErrorResponse"
+        """
+        validator = Validator([
+            Validation.is_json_payload(),
+            image_exists(image_id)
+        ])
+        if not validator.validate(request):
+            return validator.get_error_response()
 
-#    @app.route('/api/v1/locations/<int:location_id>', methods=['PATCH'])
-#    def update_location(location_id):
-#        """Updates a location in the database
-#        ---
-#        tags:
-#         - locations
-#        parameters:
-#          - in: query
-#            name: location_id
-#            type: integer
-#            description: ID of the location to update
-#            required: true
-#          - in: body
-#            name: name
-#            type: string
-#            description: Name of the Location
-#            required: true
-#        responses:
-#            200:
-#                description: Location was updated successfully
-#                schema:
-#                    $ref: "#/definitions/Location"
-#            400:
-#                description: Request was not formatted correctly
-#                schema:
-#                    $ref: "#/definitions/ErrorResponse"
-#            404:
-#                description: Did not find a location with the specified ID
-#                schema:
-#                    $ref: "#/definitions/ErrorResponse"
-#        """
-#        if request.form:
-#            if 'name' not in request.form:
-#                message = 'Did not supply name in the data field'
-#                return jsonify({'error': message}), status.HTTP_400_BAD_REQUEST
-#            name = request.form.get('name')
-#
-#            location = Location.query.get(location_id)
-#            if location:
-#                location.name = name
-#                db.session.commit()
-#                return jsonify(location), status.HTTP_200_OK
-#            else:
-#                message = 'Location with the ID {} does not exist in the database'.format(location_id)
-#                return jsonify({'error': message}), status.HTTP_404_NOT_FOUND
-#        else:
-#            message = 'Request did not include a data form, try again'
-#            return jsonify({'error': message}), status.HTTP_400_BAD_REQUEST
+        caption = request.get_json().get('caption')
+        if caption:
+            Image.update_caption(image_id, caption)
+
+        location = request.get_json().get('location')
+        if location:
+            Image.update_location(image_id, location)
+
+        date = request.get_json().get('date')
+        if date:
+            Image.update_date(image_id, datetime.datetime.fromisoformat(date))
+
+        keywords = request.get_json().get('keywords')
+        if keywords:
+            Image.update_keywords(image_id, keywords)
+
+        image = Image.query.get(image_id)
+        return jsonify(image), status.HTTP_200_OK
 
     @app.route('/api/v1/images/<int:image_id>', methods=['DELETE'])
     def delete_image(image_id):
@@ -215,10 +238,11 @@ class ImageView():
                 schema:
                     $ref: "#/definitions/ErrorResponse"
         """
+        validator = Validator([image_exists(image_id)])
+        if not validator.validate(request):
+            return validator.get_error_response()
+
         image = Image.query.get(image_id)
         if image:
             image.delete()
             return '', status.HTTP_200_OK
-        else:
-            message = 'Image with the ID {} does not exist in the database'.format(image_id)
-            return jsonify({'error': message}), status.HTTP_404_NOT_FOUND

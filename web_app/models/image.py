@@ -1,5 +1,6 @@
 from base64 import b64decode
 from sqlalchemy.orm import relationship
+import datetime
 import os
 import pyexiv2
 
@@ -36,6 +37,22 @@ class Image(db.Model):
         self.location = location
         self.keywords = keywords
 
+    def update_caption(image_id, caption):
+        Image.query.get(image_id).caption = caption
+        db.session.commit()
+
+    def update_date(image_id, date):
+        Image.query.get(image_id).date = date
+        db.session.commit()
+
+    def update_location(image_id, location):
+        Image.query.get(image_id).location = location
+        db.session.commit()
+
+    def update_keywords(image_id, keywords):
+        Image.query.get(image_id).keywords = keywords
+        db.session.commit()
+
     def delete(self):
         full_image_path = '{}/{}'.format(app.config['DATA_DIR'], self.original_path)
         os.remove(full_image_path)
@@ -65,7 +82,7 @@ class Image(db.Model):
         thumbnail_path = ''
         thumbnail_basename = ''
 
-        metadata = Image.__get_metadata(full_image_path)
+        metadata = pyexiv2.Image(full_image_path)
         caption = Image.__get_caption(metadata)
         date = Image.__get_date(metadata)
         location = Image.__get_location(metadata)
@@ -76,28 +93,20 @@ class Image(db.Model):
         with open(full_image_path, 'wb') as fh:
             fh.write(b64decode(data))
 
-    def __get_metadata(full_image_path):
-        data = pyexiv2.metadata.ImageMetadata(full_image_path)
-        data.read()
-        return data
-
     def __get_caption(metadata):
-        return Image.__get_metadata_value(metadata, 'Exif.Image.ImageDescription', lambda x: x.value)
+        return metadata.read_exif().get('Exif.Image.ImageDescription')
 
     def __get_date(metadata):
-        date = Image.__get_metadata_value(metadata, 'Exif.Image.DateTime', lambda x: x.value)
+        date_format = '%Y:%m:%d %H:%M:%S'
+        date = datetime.datetime.strptime(metadata.read_exif().get('Exif.Image.DateTime'), date_format)
         if not date:
-            date = Image.__get_metadata_value(metadata, 'Exif.Photo.DateTimeOriginal', lambda x: x.value)
+            date = datetime.datetime.strptime(metadata.read_exif().get('Exif.Photo.DateTimeOriginal'), date_format)
         if not date:
             raise TypeError('Did not find a datetime for', self.original_path)
         return date
 
     def __get_location(metadata):
-        return Image.__get_metadata_value(metadata, 'Iptc.Application2.SubLocation', lambda x: x.value[0])
+        return metadata.read_iptc().get('Iptc.Application2.SubLocation')
 
     def __get_keywords(metadata):
-        return [Keyword(x) for x in Image.__get_metadata_value(metadata, 'Iptc.Application2.Keywords', lambda x: x.value)]
-
-    def __get_metadata_value(metadata, key, value_function):
-        metadata_key = metadata.get(key)
-        return value_function(metadata_key) if metadata_key else ''
+        return [Keyword(x) for x in metadata.read_iptc().get('Iptc.Application2.Keywords')]
