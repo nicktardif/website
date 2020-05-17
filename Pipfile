@@ -14,6 +14,8 @@ flask-api = "*"
 gunicorn = "*"
 gevent = "*"
 flasgger = "*"
+pytz = "*"
+pyexiv2 = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"
