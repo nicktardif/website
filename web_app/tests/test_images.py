@@ -22,7 +22,7 @@ def populate_database(db):
 
 def image_to_base64(full_image_path):
     with open(full_image_path, 'rb') as f:
-        return b64encode(f.read())
+        return b64encode(f.read()).decode('utf-8')
 
 class GetImageTest(SampleTestCase):
     def test_get_image(self):
