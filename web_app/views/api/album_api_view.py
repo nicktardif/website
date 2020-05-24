@@ -4,7 +4,7 @@ from web_app.models import Album, Image
 from web_app.utilities import Validator, Validation
 from flask import jsonify, request
 
-class AlbumView():
+class AlbumApiView():
     @app.route('/api/v1/albums/<int:album_id>')
     def get_album(album_id):
         validator = Validator([Validation.album_exists(album_id)])

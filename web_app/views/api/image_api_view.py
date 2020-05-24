@@ -8,7 +8,7 @@ import datetime
 def image_name_exists_in_database(image_name):
     return True if Image.query.filter_by(original_path=image_name).first() else False
 
-class ImageView():
+class ImageApiView():
     @app.route('/api/v1/images/<int:image_id>')
     def get_image(image_id):
         validator = Validator([Validation.image_exists(image_id)])

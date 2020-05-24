@@ -4,7 +4,7 @@ from web_app.models import Album, Portfolio
 from web_app.utilities import Validator, Validation
 from flask import jsonify, request
 
-class PortfolioView():
+class PortfolioApiView():
     @app.route('/api/v1/portfolios/<int:portfolio_id>')
     def get_portfolio(portfolio_id):
         validator = Validator([Validation.portfolio_exists(portfolio_id)])
