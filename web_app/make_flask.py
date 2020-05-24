@@ -1,33 +1,23 @@
 from flask import Flask
+import os
 app = Flask(__name__)
 
-API_VERSION = '1.0.0'
+class Config():
+    DATA_DIR = os.getcwd()
+    DB_NAME = 'app.db'
+    API_VERSION = '1.0.0'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-app.config['DATA_DIR'] = '/tmp'
-app.config['API_VERSION'] = API_VERSION
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///{}/app.db'.format(app.config['DATA_DIR'])
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SWAGGER_TEMPLATE'] = {
-    "swagger": "2.0",
-    "info": {
-        "version": API_VERSION,
-        "title": "Night King's Intinerary",
-        "description": "Programatically planning a Westeros vacation",
-        "contact": {
-            "name": "Nick Tardif",
-            "email": "nicktardif@gmail.com",
-            "url": "",
-        },
-    },
-    "host": "127.0.0.1:8000",
-    "basePath": "/",
-    "schemes": [
-        "http"
-    ],
-    "consumes": [
-        "application/json"
-    ],
-    "produces": [
-        "application/json"
-    ]
-}
+class TestingConfig(Config):
+    DATA_DIR = '/tmp'
+
+def set_config(config_type):
+    if config_type in ['Production', '', None]:
+        app.config.from_object(Config())
+    elif config_type in ['Testing', 'testing']:
+        app.config.from_object(TestingConfig())
+
+    db_path = 'sqlite:///{}/{}'.format(app.config['DATA_DIR'], app.config['DB_NAME'])
+    app.config['SQLALCHEMY_DATABASE_URI'] = db_path
+
+set_config(os.environ.get('FLASK_CONFIG', ''))
