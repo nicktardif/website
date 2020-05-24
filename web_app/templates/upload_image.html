@@ -1,0 +1,30 @@
+<script>
+function previewFile() {
+	const preview = document.querySelector('img');
+	const file = document.querySelector('input[type=file]').files[0];
+	const reader = new FileReader();
+
+	reader.addEventListener('load', function() {
+		preview.src = reader.result;
+		console.log(document.querySelector('input[type=file]').files);
+
+		var data = {}
+		data['image_name'] = file.name;
+		data['image_data'] = reader.result.split(',')[1];
+
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "/api/v1/images", true);
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send(JSON.stringify(data));
+	}, false);
+
+	if (file) {
+		reader.readAsDataURL(file);
+	}
+}
+</script>
+
+<h1>Upload an Image</h1>
+<input type="file" onchange="previewFile()">
+<br>
+<img src="" height="200" alt="Image Preview" />
