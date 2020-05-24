@@ -15,31 +15,20 @@ class Portfolio(db.Model):
 
     def __init__(self, name, primary_album_id, albums):
         self.name = name
-        self.primary_album_id
+        self.primary_album_id = primary_album_id
         self.albums = albums
 
     def update_name(self, name):
         self.name = name
         db.session.commit()
 
-    def add_album(self, album_id):
-        album = Album.query.get(album_id)
-        success = False
-        if album:
-            self.albums.append(album)
-            success = True
-        return success
-
-    def remove_album(self, album_id):
-        album = Album.query.get(album_id)
-        success = False
-        if album in self.albums:
-            self.albums.remove(album)
-            success = True
-        return success
-
-    def update_primary_album_id(self, primary_album_id):
+    def update_primary_album(self, primary_album_id):
         self.primary_album_id = primary_album_id
+        db.session.commit()
+
+    def update_albums(self, albums):
+        self.albums = albums
+        db.session.commit()
 
     def delete(self):
         db.session.delete(self)
