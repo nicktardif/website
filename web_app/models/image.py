@@ -6,7 +6,8 @@ import pyexiv2
 
 from web_app import app, db
 from web_app.models import Keyword
-from web_app.models.associations import image_keyword_association_table
+from web_app.models import associations
+from web_app.models.associations import album_image_association_table, image_keyword_association_table
 from web_app.utilities.file_helper import get_full_path
 
 class Image(db.Model):
@@ -23,8 +24,13 @@ class Image(db.Model):
 
     keywords = relationship(
             'Keyword',
-            secondary=image_keyword_association_table,
-            back_populates='images')
+            secondary = image_keyword_association_table,
+            back_populates = 'images')
+
+    albums = relationship(
+            'Album',
+            secondary = album_image_association_table,
+            back_populates = 'images')
 
     def __init__(self, original_path, downsampled_path, downsampled_size_string, thumbnail_path, thumbnail_basename, caption, date, location, keywords):
         self.original_path = original_path
@@ -37,20 +43,20 @@ class Image(db.Model):
         self.location = location
         self.keywords = keywords
 
-    def update_caption(image_id, caption):
-        Image.query.get(image_id).caption = caption
+    def update_caption(self, caption):
+        self.caption = caption
         db.session.commit()
 
-    def update_date(image_id, date):
-        Image.query.get(image_id).date = date
+    def update_date(self, date):
+        self.date = date
         db.session.commit()
 
-    def update_location(image_id, location):
-        Image.query.get(image_id).location = location
+    def update_location(self, location):
+        self.location = location
         db.session.commit()
 
-    def update_keywords(image_id, keywords):
-        Image.query.get(image_id).keywords = keywords
+    def update_keywords(self, keywords):
+        self.keywords = keywords
         db.session.commit()
 
     def delete(self):

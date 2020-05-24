@@ -38,7 +38,7 @@ class GetImageTest(SampleTestCase):
     def test_get_image_invalid_id(self):
         image_id = 1
         response = self.client.get('/api/v1/images/{}'.format(image_id))
-        expected_response = {'error': 'Image with ID {} not found in the database'.format(image_id)}
+        expected_response = {'error': 'Image with the ID {} does not exist in the database'.format(image_id)}
         self.assertEquals(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertEquals(response.json, expected_response)
 
