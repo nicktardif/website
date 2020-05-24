@@ -104,9 +104,9 @@ class Image(db.Model):
 
     def __get_date(metadata):
         date_format = '%Y:%m:%d %H:%M:%S'
-        date = datetime.datetime.strptime(metadata.read_exif().get('Exif.Image.DateTime'), date_format)
+        date = datetime.datetime.strptime(metadata.read_exif().get('Exif.Photo.DateTimeOriginal'), date_format)
         if not date:
-            date = datetime.datetime.strptime(metadata.read_exif().get('Exif.Photo.DateTimeOriginal'), date_format)
+            date = datetime.datetime.strptime(metadata.read_exif().get('Exif.Image.DateTime'), date_format)
         if not date:
             raise TypeError('Did not find a datetime for', self.original_path)
         return date
