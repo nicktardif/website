@@ -1,6 +1,6 @@
 *.swp
 
-*.html
+.html
 *.JPG
 *.jpg
 *.pyc
