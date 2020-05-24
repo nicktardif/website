@@ -1,13 +1,17 @@
 from sqlalchemy.orm import relationship
 from web_app import db
 from web_app.models import Album
+from web_app.models.associations import portfolio_album_association_table
 
 class Portfolio(db.Model):
     __tablename__ = 'portfolio'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=False)
     primary_album_id = db.Column(db.Integer, nullable=False)
-    albums = relationship('Album')
+    albums = relationship(
+            'Album',
+            secondary = portfolio_album_association_table,
+            back_populates = 'portfolios')
 
     def __init__(self, name, primary_album_id, albums):
         self.name = name

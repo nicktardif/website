@@ -1,12 +1,20 @@
 from sqlalchemy.orm import relationship
 from web_app import db
 from web_app.models import Image
+from web_app.models.associations import portfolio_album_association_table, album_image_association_table
 
 class Album(db.Model):
     __tablename__ = 'album'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(20), nullable=False)
-    images = relationship('Image')
+    images = relationship(
+            'Image',
+            secondary = album_image_association_table,
+            back_populates = 'albums')
+    portfolios = relationship(
+            'Portfolio',
+            secondary = portfolio_album_association_table,
+            back_populates = 'albums')
 
     def __init__(self, name, images):
         self.name = name
@@ -16,21 +24,8 @@ class Album(db.Model):
         self.name = name
         db.session.commit()
 
-    def add_image(self, image_id):
-        image = Image.query.get(image_id)
-        success = False
-        if image:
-            self.images.append(image)
-            success = True
-        return success
-
-    def remove_image(self, image_id):
-        image = Image.query.get(image_id)
-        success = False
-        if image in self.images:
-            self.images.remove(image)
-            success = True
-        return success
+    def update_images(self, images):
+        self.images = images
 
     def delete(self):
         db.session.delete(self)
