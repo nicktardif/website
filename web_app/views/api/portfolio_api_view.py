@@ -6,7 +6,7 @@ from flask import jsonify, request
 
 class PortfolioApiView():
     @app.route('/api/v1/portfolios/<int:portfolio_id>')
-    def get_portfolio(portfolio_id):
+    def api_get_portfolio(portfolio_id):
         validator = Validator([Validation.portfolio_exists(portfolio_id)])
         if not validator.validate(request):
             return validator.get_error_response()
@@ -14,7 +14,7 @@ class PortfolioApiView():
         return jsonify(Portfolio.query.get(portfolio_id)), status.HTTP_200_OK
 
     @app.route('/api/v1/portfolios')
-    def get_all_portfolios():
+    def api_get_all_portfolios():
         portfolios = Portfolio.query.all()
         if portfolios:
             return jsonify(portfolios), status.HTTP_200_OK
@@ -22,7 +22,7 @@ class PortfolioApiView():
             return '', status.HTTP_204_NO_CONTENT
 
     @app.route('/api/v1/portfolios', methods=['POST'])
-    def create_portfolio():
+    def api_create_portfolio():
         validator = Validator([
             Validation.is_json_payload(),
             Validation.required_json('name'),
@@ -42,7 +42,7 @@ class PortfolioApiView():
         return jsonify(new_portfolio), status.HTTP_201_CREATED
 
     @app.route('/api/v1/portfolios/<int:portfolio_id>', methods=['PATCH'])
-    def update_portfolio(portfolio_id):
+    def api_update_portfolio(portfolio_id):
         validator = Validator([
             Validation.is_json_payload(),
             Validation.portfolio_exists(portfolio_id)
@@ -67,7 +67,7 @@ class PortfolioApiView():
         return jsonify(portfolio), status.HTTP_200_OK
 
     @app.route('/api/v1/portfolios/<int:portfolio_id>', methods=['DELETE'])
-    def delete_portfolio(portfolio_id):
+    def api_delete_portfolio(portfolio_id):
         validator = Validator([Validation.portfolio_exists(portfolio_id)])
         if not validator.validate(request):
             return validator.get_error_response()

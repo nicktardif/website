@@ -10,7 +10,7 @@ def image_name_exists_in_database(image_name):
 
 class ImageApiView():
     @app.route('/api/v1/images/<int:image_id>')
-    def get_image(image_id):
+    def api_get_image(image_id):
         validator = Validator([Validation.image_exists(image_id)])
         if not validator.validate(request):
             return validator.get_error_response()
@@ -18,7 +18,7 @@ class ImageApiView():
         return jsonify(Image.query.get(image_id)), status.HTTP_200_OK
 
     @app.route('/api/v1/images')
-    def get_all_images():
+    def api_get_all_images():
         images = Image.query.all()
         if images:
             return jsonify(images), status.HTTP_200_OK
@@ -26,7 +26,7 @@ class ImageApiView():
             return '', status.HTTP_204_NO_CONTENT
 
     @app.route('/api/v1/images', methods=['POST'])
-    def create_image():
+    def api_create_image():
         # TODO: Check some kind of user authorization
         unique_image_validation = Validation.custom_json_validation('image_name',
                 lambda v: not image_name_exists_in_database(v),
@@ -44,14 +44,14 @@ class ImageApiView():
 
         new_image = Image.fromNameAndData(
                 request.get_json().get('image_name'),
-                bytes(request.get_json().get('image_data')))
+                bytes(request.get_json().get('image_data'), encoding='utf8'))
         db.session.add(new_image)
         db.session.commit()
 
         return jsonify(new_image), status.HTTP_201_CREATED
 
     @app.route('/api/v1/images/<int:image_id>', methods=['PATCH'])
-    def update_image(image_id):
+    def api_update_image(image_id):
         validator = Validator([
             Validation.is_json_payload(),
             Validation.image_exists(image_id)
@@ -80,7 +80,7 @@ class ImageApiView():
         return jsonify(image), status.HTTP_200_OK
 
     @app.route('/api/v1/images/<int:image_id>', methods=['DELETE'])
-    def delete_image(image_id):
+    def api_delete_image(image_id):
         validator = Validator([Validation.image_exists(image_id)])
         if not validator.validate(request):
             return validator.get_error_response()
