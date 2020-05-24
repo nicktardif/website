@@ -13,7 +13,6 @@ nose2 = "*"
 flask-api = "*"
 gunicorn = "*"
 gevent = "*"
-flasgger = "*"
 pytz = "*"
 pyexiv2 = "*"
 
