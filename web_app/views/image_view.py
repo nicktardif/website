@@ -7,7 +7,6 @@ class ImageView():
     def get_image(image_id):
         image = Image.query.get(image_id)
         return render_template('images.html', images=[image])
-        return jsonify(Image.query.get(image_id)), status.HTTP_200_OK
 
     @app.route('/images')
     def get_all_images():

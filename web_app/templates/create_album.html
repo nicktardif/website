@@ -1,0 +1,33 @@
+<script>
+function createAlbum() {
+	const name = document.querySelector('input[name=album_name]').value;
+	const selected_images = document.querySelectorAll('input[name=image]:checked');
+	let ids = Array.from(selected_images).map(checkbox => parseInt(checkbox.value));
+
+	let data = {}
+	data['name'] = name;
+	data['image_ids'] = ids;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", "/api/v1/albums", true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(JSON.stringify(data));
+}
+</script>
+
+<html>
+	{% include 'admin_header.html' %}
+
+	<h1>Create an Album</h1>
+
+	<input id="album_name" type="text" name="album_name">
+	<label for="album_name">Album Name Input</label><br>
+	{% for image in images %}
+	<input id="image-{{ image.id }}" type="checkbox" name="image" value="{{ image.id }}">
+	<label for="image-{{ image.id }}">{{ image.caption }} - {{ image.location }} - {{ image.date }}</label><br>
+	{% endfor %}
+
+	<button onclick="createAlbum()">Create Album</button>
+
+	<br>
+</html>

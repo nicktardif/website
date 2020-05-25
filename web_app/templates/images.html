@@ -1,22 +1,7 @@
-<script>
-function deleteImage(objButton) {
-	imageId = objButton.value;
-	var xhr = new XMLHttpRequest();
-	xhr.open("DELETE", "/api/v1/images/" + imageId, true);
-	xhr.send();
-}
-</script>
-
 <html>
+	{% include 'admin_header.html' %}
+
 	{% for image in images %}
-	<img src={{url_for('static', filename=image.original_path)}} height="200" />
-	<p>{{image.caption}}, {{image.location}}</p>
-	<p>Date: {{image.date}}</p>
-	<p>ID: {{image.id}}</p>
-	<p>Keywords</p>
-	{% for keyword in image.keywords %}<li>{{keyword.name}}</li>{% endfor %}
-	<p>albums: {{image.albums}}</p>
-	<button class="delete_image" value="{{ image.id }}" onclick="deleteImage(this)">Delete Image</button>
-	<hr />
+	{% include 'image.html' %}
 	{% endfor %}
 </html>
