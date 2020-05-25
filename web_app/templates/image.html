@@ -1,0 +1,18 @@
+<img src={{url_for('static', filename=image.original_path)}} height="200" />
+<p>{{image.caption}}, {{image.location}}</p>
+<p>Date: {{image.date}}</p>
+<p>ID: {{image.id}}</p>
+
+<p>Keywords</p>
+{% for keyword in image.keywords %}
+	<li>{{keyword.name}}</li>
+{% endfor %}
+
+<p>Albums</p>
+{% for album in image.albums %}
+	<li>{{album.name}} - <a href={{url_for('get_album', album_id=album.id)}}>See Album</a></li>
+{% endfor %}
+
+<br>
+<button class="delete_image" value="{{ image.id }}" onclick="deleteImage(this)">Delete Image</button>
+<hr />

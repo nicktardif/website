@@ -1,3 +1,4 @@
+from .album_view import AlbumView
 from .image_view import ImageView
 
 from .api.image_api_view import ImageApiView
