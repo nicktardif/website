@@ -9,16 +9,19 @@ import os
 import unittest
 
 def populate_database(db):
+    album = Album('test 1', [])
+    db.session.add(album)
+    db.session.commit()
+
     sample_keyword = Keyword('landscape')
-    db.session.add(sample_keyword)
 
     sample_image = Image('yolo.jpg', '', '', '', '', 'yolo', datetime.datetime.utcnow(), 'Westeros', [sample_keyword])
     sample_image_2 = Image('yolo-2.jpg', '', '', '', '', 'yolo', datetime.datetime.utcnow(), 'Easteros', [sample_keyword])
-    album = Album('test 1', [])
     album_2 = Album('test 2', [sample_image, sample_image_2])
+
+    db.session.add(sample_keyword)
     db.session.add(sample_image)
     db.session.add(sample_image_2)
-    db.session.add(album)
     db.session.add(album_2)
     db.session.commit()
 
@@ -134,6 +137,78 @@ class UpdateAlbumTest(SampleTestCase):
         expected_response = {'error': 'Request did not include a JSON payload, try again'}
         self.assertEquals(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEquals(response.json, jsonify(expected_response).json)
+
+    def test_album_add_image(self):
+        populate_database(db)
+
+        album_id = 1
+        image_id = 1
+        response = self.client.post('/api/v1/albums/{}/images/{}'.format(album_id, image_id))
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+
+        album = Album.query.get(album_id)
+        image = Image.query.get(image_id)
+        self.assertEquals(image in album.images, True)
+
+    def test_album_add_image(self):
+        populate_database(db)
+
+        album_id = 1
+        image_id = 1
+        response = self.client.post('/api/v1/albums/{}/images/{}'.format(album_id, image_id))
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+
+        album = Album.query.get(album_id)
+        image = Image.query.get(image_id)
+        self.assertEquals(image in album.images, True)
+
+    def test_album_add_image_already_in_album(self):
+        populate_database(db)
+
+        album_id = 2
+        image_id = 1
+        response = self.client.post('/api/v1/albums/{}/images/{}'.format(album_id, image_id))
+        self.assertEquals(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+        album = Album.query.get(album_id)
+        image = Image.query.get(image_id)
+        self.assertEquals(image in album.images, True)
+
+    def test_album_add_image_does_not_exist(self):
+        populate_database(db)
+
+        album_id = 1
+        image_id = 10
+        response = self.client.post('/api/v1/albums/{}/images/{}'.format(album_id, image_id))
+        self.assertEquals(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_album_remove_image(self):
+        populate_database(db)
+
+        album_id = 2
+        image_id = 1
+        response = self.client.delete('/api/v1/albums/{}/images/{}'.format(album_id, image_id))
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+
+        album = Album.query.get(album_id)
+        image = Image.query.get(image_id)
+        self.assertEquals(image in album.images, False)
+
+    def test_album_remove_image_not_in_album(self):
+        populate_database(db)
+
+        album_id = 1
+        image_id = 1
+        response = self.client.delete('/api/v1/albums/{}/images/{}'.format(album_id, image_id))
+        self.assertEquals(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_album_remove_image_does_not_exist(self):
+        populate_database(db)
+
+        album_id = 1
+        image_id = 10
+        response = self.client.delete('/api/v1/albums/{}/images/{}'.format(album_id, image_id))
+        self.assertEquals(response.status_code, status.HTTP_404_NOT_FOUND)
 
 class DeleteAlbumTest(SampleTestCase):
     def test_delete_album(self):
