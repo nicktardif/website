@@ -1,0 +1,10 @@
+<html>
+	{% include 'admin_header.html' %}
+
+	{% for portfolio in portfolios %}
+		<p>Name: {{portfolio.name}}</p>
+		<p>Album Count: {{portfolio.albums|length}}</p>
+		<a href={{url_for('get_portfolio', portfolio_id=portfolio.id)}}>See Portfolio</a>
+		<br>
+	{% endfor %}
+</html>
