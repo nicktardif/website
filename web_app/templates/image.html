@@ -1,3 +1,5 @@
+{% include 'admin_header.html' %}
+
 <img src={{url_for('static', filename=image.original_path)}} height="200" />
 <p>{{image.caption}}, {{image.location}}</p>
 <p>Date: {{image.date}}</p>
@@ -10,8 +12,15 @@
 
 <p>Albums</p>
 {% for album in image.albums %}
-	<li>{{album.name}} - <a href={{url_for('get_album', album_id=album.id)}}>See Album</a></li>
+<li>{{album.name}} - <a href={{url_for('get_album', album_id=album.id)}}>See Album</a> - <button onclick="removeImageFromAlbum(this)" data-image-id={{image.id}} data-album-id={{album.id}}>Remove</button></li>
 {% endfor %}
+
+<select id="image_new_album_dropdown">
+	{% for album in albums %}
+	<option value={{album.id}}>{{album.name}}</option>
+	{% endfor %}
+</select>
+<button onclick="addImageToAlbum(this)" data-image-id={{image.id}}>Add to Album</button>
 
 <br>
 <button class="delete_image" value="{{ image.id }}" onclick="deleteImage(this)">Delete Image</button>

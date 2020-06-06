@@ -26,6 +26,15 @@ class Album(db.Model):
 
     def update_images(self, images):
         self.images = images
+        db.session.commit()
+
+    def add_image(self, image):
+        self.images.append(image)
+        db.session.commit()
+
+    def remove_image(self, image):
+        self.images.remove(image)
+        db.session.commit()
 
     def delete(self):
         db.session.delete(self)
@@ -33,6 +42,7 @@ class Album(db.Model):
 
     def toJSON(self):
         return {
+            'id': self.id,
             'name': self.name,
             'images': self.images
         }

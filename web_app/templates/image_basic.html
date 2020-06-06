@@ -1,0 +1,6 @@
+<img src={{url_for('static', filename=image.original_path)}} height="200" />
+<p>{{image.caption}}, {{image.location}}</p>
+<p>Date: {{image.date}}</p>
+<a href={{url_for('get_image', image_id=image.id)}}>Details</a>
+
+<br />

@@ -59,6 +59,40 @@ class AlbumApiView():
 
         return jsonify(album), status.HTTP_200_OK
 
+    @app.route('/api/v1/albums/<int:album_id>/images/<int:image_id>', methods=['POST'])
+    def api_album_add_image(album_id, image_id):
+        validator = Validator([
+            Validation.album_exists(album_id),
+            Validation.image_exists(image_id)
+        ])
+        if not validator.validate(request):
+            return validator.get_error_response()
+
+        album = Album.query.get(album_id)
+        image = Image.query.get(image_id)
+        if image in album.images:
+            return '', status.HTTP_400_BAD_REQUEST
+        else:
+            album.add_image(image)
+            return '', status.HTTP_200_OK
+
+    @app.route('/api/v1/albums/<int:album_id>/images/<int:image_id>', methods=['DELETE'])
+    def api_album_remove_image(album_id, image_id):
+        validator = Validator([
+            Validation.album_exists(album_id),
+            Validation.image_exists(image_id)
+        ])
+        if not validator.validate(request):
+            return validator.get_error_response()
+
+        album = Album.query.get(album_id)
+        image = Image.query.get(image_id)
+        if image in album.images:
+            album.remove_image(image)
+            return '', status.HTTP_200_OK
+        else:
+            return '', status.HTTP_400_BAD_REQUEST
+
     @app.route('/api/v1/albums/<int:album_id>', methods=['DELETE'])
     def api_delete_album(album_id):
         validator = Validator([Validation.album_exists(album_id)])
