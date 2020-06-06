@@ -5,6 +5,13 @@ function deleteImage(objButton) {
 	xhr.send();
 }
 
+function deleteAlbum(objButton) {
+	albumId = objButton.value;
+	var xhr = new XMLHttpRequest();
+	xhr.open("DELETE", "/api/v1/albums/" + albumId, true);
+	xhr.send();
+}
+
 function removeImageFromAlbum(objButton) {
 	var imageId = objButton.dataset.imageId;
 	var albumId = objButton.dataset.albumId;
