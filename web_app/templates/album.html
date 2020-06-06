@@ -4,6 +4,10 @@
 	<p>Name: {{album.name}}</p>
 	<p>Image Count: {{album.images|length}}</p>
 
+	<br>
+	<button value="{{album.id}}" onclick="deleteAlbum(this)">Delete Album</button>
+	<br>
+
 	<h2>Images</h2>
 	{% for image in album.images %}
 		{% include 'image_basic.html' %}
