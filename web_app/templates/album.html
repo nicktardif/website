@@ -8,6 +8,18 @@
 	<button value="{{album.id}}" onclick="deleteAlbum(this)">Delete Album</button>
 	<br>
 
+	<p>Portfolios</p>
+	{% for portfolio in album.portfolios %}
+	<li>{{portfolio.name}} - <a href={{url_for('get_portfolio', portfolio_id=portfolio.id)}}>See Portfolio</a> - <button onclick="removeAlbumFromPortfolio(this)" data-album-id={{album.id}} data-portfolio-id={{portfolio.id}}>Remove</button></li>
+	{% endfor %}
+
+	<select id="album_new_portfolio_dropdown">
+		{% for portfolio in portfolios %}
+		<option value={{portfolio.id}}>{{portfolio.name}}</option>
+		{% endfor %}
+	</select>
+	<button onclick="addAlbumToPortfolio(this)" data-album-id={{album.id}}>Add to Portfolio</button>
+
 	<h2>Images</h2>
 	{% for image in album.images %}
 		{% include 'image_basic.html' %}

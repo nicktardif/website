@@ -18,6 +18,10 @@ def populate_database(db):
     db.session.add(portfolio)
     db.session.commit()
 
+    portfolio_two = Portfolio('smaller portfolio', 1, [album])
+    db.session.add(portfolio)
+    db.session.commit()
+
 class GetPortfolioTest(SampleTestCase):
     def test_get_portfolio(self):
         populate_database(db)
@@ -153,6 +157,69 @@ class UpdatePortfolioTest(SampleTestCase):
         expected_response = {'error': 'Request did not include a JSON payload, try again'}
         self.assertEquals(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertEquals(response.json, jsonify(expected_response).json)
+
+    #######
+
+    def test_portfolio_add_album(self):
+        populate_database(db)
+
+        portfolio_id = 2
+        album_id = 2
+        response = self.client.post('/api/v1/portfolios/{}/albums/{}'.format(portfolio_id, album_id))
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+
+        portfolio = Portfolio.query.get(portfolio_id)
+        album = Album.query.get(album_id)
+        self.assertEquals(album in portfolio.albums, True)
+
+    def test_portfolio_add_album_already_in_portfolio(self):
+        populate_database(db)
+
+        portfolio_id = 2
+        album_id = 1
+        response = self.client.post('/api/v1/portfolios/{}/albums/{}'.format(portfolio_id, album_id))
+        self.assertEquals(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+        portfolio = Portfolio.query.get(portfolio_id)
+        album = Album.query.get(album_id)
+        self.assertEquals(album in portfolio.albums, True)
+
+    def test_portfolio_add_album_does_not_exist(self):
+        populate_database(db)
+
+        portfolio_id = 1
+        album_id = 10
+        response = self.client.post('/api/v1/portfolios/{}/albums/{}'.format(portfolio_id, album_id))
+        self.assertEquals(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_portfolio_remove_album(self):
+        populate_database(db)
+
+        portfolio_id = 2
+        album_id = 1
+        response = self.client.delete('/api/v1/portfolios/{}/albums/{}'.format(portfolio_id, album_id))
+        self.assertEquals(response.status_code, status.HTTP_200_OK)
+
+        portfolio = Portfolio.query.get(portfolio_id)
+        album = Album.query.get(album_id)
+        self.assertEquals(album in portfolio.albums, False)
+
+    def test_portfolio_remove_album_not_in_portfolio(self):
+        populate_database(db)
+
+        portfolio_id = 2
+        album_id = 2
+        response = self.client.delete('/api/v1/portfolios/{}/albums/{}'.format(portfolio_id, album_id))
+        self.assertEquals(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_portfolio_remove_album_does_not_exist(self):
+        populate_database(db)
+
+        portfolio_id = 1
+        album_id = 10
+        response = self.client.delete('/api/v1/portfolios/{}/albums/{}'.format(portfolio_id, album_id))
+        self.assertEquals(response.status_code, status.HTTP_404_NOT_FOUND)
+
 
 class DeletePortfolioTest(SampleTestCase):
     def test_delete_portfolio(self):

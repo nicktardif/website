@@ -30,6 +30,14 @@ class Portfolio(db.Model):
         self.albums = albums
         db.session.commit()
 
+    def add_album(self, album):
+        self.albums.append(album)
+        db.session.commit()
+
+    def remove_album(self, album):
+        self.albums.remove(album)
+        db.session.commit()
+
     def delete(self):
         db.session.delete(self)
         db.session.commit()

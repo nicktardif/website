@@ -66,6 +66,40 @@ class PortfolioApiView():
 
         return jsonify(portfolio), status.HTTP_200_OK
 
+    @app.route('/api/v1/portfolios/<int:portfolio_id>/albums/<int:album_id>', methods=['POST'])
+    def api_portfolio_add_album(portfolio_id, album_id):
+        validator = Validator([
+            Validation.portfolio_exists(portfolio_id),
+            Validation.album_exists(album_id)
+        ])
+        if not validator.validate(request):
+            return validator.get_error_response()
+
+        portfolio = Portfolio.query.get(portfolio_id)
+        album = Album.query.get(album_id)
+        if album not in portfolio.albums:
+            portfolio.add_album(album)
+            return '', status.HTTP_200_OK
+        else:
+            return '', status.HTTP_400_BAD_REQUEST
+
+    @app.route('/api/v1/portfolios/<int:portfolio_id>/albums/<int:album_id>', methods=['DELETE'])
+    def api_portfolio_remove_album(portfolio_id, album_id):
+        validator = Validator([
+            Validation.portfolio_exists(portfolio_id),
+            Validation.album_exists(album_id)
+        ])
+        if not validator.validate(request):
+            return validator.get_error_response()
+
+        portfolio = Portfolio.query.get(portfolio_id)
+        album = Album.query.get(album_id)
+        if album in portfolio.albums:
+            portfolio.remove_album(album)
+            return '', status.HTTP_200_OK
+        else:
+            return '', status.HTTP_400_BAD_REQUEST
+
     @app.route('/api/v1/portfolios/<int:portfolio_id>', methods=['DELETE'])
     def api_delete_portfolio(portfolio_id):
         validator = Validator([Validation.portfolio_exists(portfolio_id)])
