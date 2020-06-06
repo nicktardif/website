@@ -1,5 +1,6 @@
 from .album_view import AlbumView
 from .image_view import ImageView
+from .portfolio_view import PortfolioView
 
 from .api.image_api_view import ImageApiView
 from .api.album_api_view import AlbumApiView

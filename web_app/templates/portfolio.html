@@ -1,0 +1,16 @@
+<html>
+	{% include 'admin_header.html' %}
+
+	<p>Name: {{portfolio.name}}</p>
+	<p>Album Count: {{portfolio.albums|length}}</p>
+	<p>Primary Album - <a href={{url_for('get_album', album_id=primary_album.id)}}>{{primary_album.name}}</a></p>
+
+	<br>
+	<button value="{{portfolio.id}}" onclick="deletePortfolio(this)">Delete Portfolio</button>
+	<br>
+
+	<h2>Albums</h2>
+	{% for album in portfolio.albums %}
+		{% include 'album_basic.html' %}
+	{% endfor %}
+</html>

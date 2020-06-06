@@ -1,0 +1,49 @@
+<script>
+function createPortfolio() {
+	const name = document.querySelector('input[name=portfolio_name]').value;
+	const selected_albums = document.querySelectorAll('input[name=album]:checked');
+	let ids = Array.from(selected_albums).map(checkbox => parseInt(checkbox.value));
+
+	const primaryAlbumId = document.getElementById("primary_album_id_dropdown").value;
+	if (!ids.includes(primaryAlbumId)) {
+		ids.push(primaryAlbumId);
+	}
+
+	let data = {}
+	data['name'] = name;
+	data['primary_album_id'] = primaryAlbumId;
+	data['album_ids'] = ids;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", "/api/v1/portfolios", true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(JSON.stringify(data));
+}
+</script>
+
+<html>
+	{% include 'admin_header.html' %}
+
+	<h1>Create an Portfolio</h1>
+
+	<input id="portfolio_name" type="text" name="portfolio_name">
+	<label for="portfolio_name">Portfolio Name Input</label><br>
+
+	<label for="primary_album_id_dropdown">Primary Album Selection</label>
+	<select id="primary_album_id_dropdown">
+		{% for album in albums %}
+		<option value={{album.id}}>{{album.name}}</option>
+		{% endfor %}
+	</select>
+
+	<br />
+
+	{% for album in albums %}
+	<input id="album-{{album.id}}" type="checkbox" name="album" value="{{album.id}}">
+	<label for="album-{{album.id}}">{{ album.name }}</label><br>
+	{% endfor %}
+
+	<button onclick="createPortfolio()">Create Portfolio</button>
+
+	<br>
+</html>
