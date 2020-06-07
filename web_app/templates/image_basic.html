@@ -1,9 +1,7 @@
 <div class="col-md-3">
-	<img class="img-thumbnail thumbnail" src={{url_for('static', filename=image.original_path)}} />
-</div>
-<div class="col-md-3">
-	<p>{{image.caption}}</p>
-	<p>{{image.location}}</p>
-	<p>{{image.date}}</p>
+	<img class="img-thumbnail thumbnail img-basic" src={{url_for('static', filename=image.original_path)}} />
+	<p class="basic-image-text">{{image.caption}}</p>
+	<p class="basic-image-text">{{image.location}}</p>
+	<p class="basic-image-text">{{image.date}}</p>
 	<a class="btn btn-outline-secondary" href={{url_for('get_image', image_id=image.id)}}>See More</a>
 </div>

@@ -51,3 +51,31 @@ function addAlbumToPortfolio(objButton) {
 	// TODO: Provide notification if the call was successful
 	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
 }
+
+function setAsPrimaryAlbum(objButton) {
+	var portfolioId = objButton.dataset.portfolioId;
+	var primaryAlbumId = document.getElementById("portfolio_new_primary_album_dropdown").value;
+	let data = {}
+	data['primary_album_id'] = primaryAlbumId;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("PATCH", "/api/v1/portfolios/" + portfolioId, true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(JSON.stringify(data));
+	// TODO: Provide notification if the call was successful
+	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
+}
+
+function updatePortfolioName(objButton) {
+	var portfolioId = objButton.dataset.portfolioId;
+	var name = document.getElementById("portfolio_name").value;
+	let data = {}
+	data['name'] = name;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("PATCH", "/api/v1/portfolios/" + portfolioId, true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(JSON.stringify(data));
+	// TODO: Provide notification if the call was successful
+	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
+}
