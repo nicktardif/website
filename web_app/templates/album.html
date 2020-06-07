@@ -28,6 +28,10 @@
 						<button class="btn btn-outline-danger float-right" onclick="removeAlbumFromPortfolio(this)" data-album-id={{album.id}} data-portfolio-id={{portfolio.id}}>Remove</button>
 					</li>
 				{% endfor %}
+
+				{% if album.portfolios|length == 0 %}
+					<li class="list-group-item">This album is not part of any portfolios.</li>
+				{% endif %}
 			</ul>
 
 			<h3 class="my-3">Add to Portfolio</h3>
