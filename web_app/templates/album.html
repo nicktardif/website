@@ -1,27 +1,54 @@
-<html>
-	{% include 'admin_header.html' %}
+{% extends 'admin_layout.html' %}
+{% block title %}Album View{% endblock %}
 
-	<p>Name: {{album.name}}</p>
-	<p>Image Count: {{album.images|length}}</p>
+{% block content %}
 
-	<br>
-	<button value="{{album.id}}" onclick="deleteAlbum(this)">Delete Album</button>
-	<br>
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Info</h2>
+			<div class="input-group my-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text">Name</span>
+				</div>
+				<input type="text" class="form-control" id="album_name" value="{{album.name}}" aria-label="Name">
+				<div class="input-group-append">
+					<button class="btn btn-outline-primary" onclick="updateAlbumName(this)" data-album-id={{album.id}}>Set</button>
+				</div>
+			</div>
 
-	<p>Portfolios</p>
-	{% for portfolio in album.portfolios %}
-	<li>{{portfolio.name}} - <a href={{url_for('get_portfolio', portfolio_id=portfolio.id)}}>See Portfolio</a> - <button onclick="removeAlbumFromPortfolio(this)" data-album-id={{album.id}} data-portfolio-id={{portfolio.id}}>Remove</button></li>
-	{% endfor %}
+			<button class="btn btn-danger" value="{{album.id}}" onclick="deleteAlbum(this)">Delete Album</button>
+		</div>
 
-	<select id="album_new_portfolio_dropdown">
-		{% for portfolio in portfolios %}
-		<option value={{portfolio.id}}>{{portfolio.name}}</option>
-		{% endfor %}
-	</select>
-	<button onclick="addAlbumToPortfolio(this)" data-album-id={{album.id}}>Add to Portfolio</button>
+		<div class="col-md-6">
+			<h2>Portfolios</h2>
+			<ul class="list-group list-group-flush">
+				{% for portfolio in album.portfolios %}
+					<li class="list-group-item">
+						<a class="btn btn-outline-primary" href={{url_for('get_portfolio', portfolio_id=portfolio.id)}}>{{portfolio.name}}</a>
+						<button class="btn btn-outline-danger float-right" onclick="removeAlbumFromPortfolio(this)" data-album-id={{album.id}} data-portfolio-id={{portfolio.id}}>Remove</button>
+					</li>
+				{% endfor %}
+			</ul>
+
+			<h3 class="my-3">Add to Portfolio</h3>
+			<div class="input-group">
+				<select class="custom-select" id="album_new_portfolio_dropdown">
+					{% for portfolio in portfolios %}
+						<option value={{portfolio.id}}>{{portfolio.name}}</option>
+					{% endfor %}
+				</select>
+				<div class="input-group-append">
+					<button class="btn btn-outline-primary" onclick="addAlbumToPortfolio(this)" data-album-id={{album.id}}>Add</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<h2>Images</h2>
-	{% for image in album.images %}
-		{% include 'image_basic.html' %}
-	{% endfor %}
-</html>
+	<div class="row">
+		{% for image in album.images %}
+			{% include 'image_basic.html' %}
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
