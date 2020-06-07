@@ -32,6 +32,34 @@ function addImageToAlbum(objButton) {
 	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
 }
 
+function updateImageCaption(objButton) {
+	var imageId = objButton.dataset.imageId;
+	var caption = document.getElementById("image_caption").value;
+	let data = {}
+	data['caption'] = caption;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("PATCH", "/api/v1/images/" + imageId, true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(JSON.stringify(data));
+	// TODO: Provide notification if the call was successful
+	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
+}
+
+function updateImageLocation(objButton) {
+	var imageId = objButton.dataset.imageId;
+	var location = document.getElementById("image_location").value;
+	let data = {}
+	data['location'] = location;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("PATCH", "/api/v1/images/" + imageId, true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(JSON.stringify(data));
+	// TODO: Provide notification if the call was successful
+	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
+}
+
 function removeAlbumFromPortfolio(objButton) {
 	var albumId = objButton.dataset.albumId;
 	var portfolioId = objButton.dataset.portfolioId;
@@ -74,6 +102,20 @@ function updatePortfolioName(objButton) {
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("PATCH", "/api/v1/portfolios/" + portfolioId, true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(JSON.stringify(data));
+	// TODO: Provide notification if the call was successful
+	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
+}
+
+function updateAlbumName(objButton) {
+	var albumId = objButton.dataset.albumId;
+	var name = document.getElementById("album_name").value;
+	let data = {}
+	data['name'] = name;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("PATCH", "/api/v1/albums/" + albumId, true);
 	xhr.setRequestHeader("Content-Type", "application/json");
 	xhr.send(JSON.stringify(data));
 	// TODO: Provide notification if the call was successful

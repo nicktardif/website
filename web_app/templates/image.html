@@ -8,7 +8,7 @@
 
 		<br />
 		<br />
-		<button class="btn btn-danger" value="{{ image.id }}" onclick="deleteImage(this)">Delete</button>
+		<button class="btn btn-danger" value="{{ image.id }}" onclick="deleteImage(this)">Delete Image</button>
 
 	</div>
 
@@ -17,7 +17,10 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text">Caption</span>
 			</div>
-			<input type="text" class="form-control" value="{{image.caption}}" aria-label="Caption">
+			<input type="text" class="form-control" id="image_caption" value="{{image.caption}}" aria-label="Caption">
+			<div class="input-group-append">
+				<button class="btn btn-outline-primary" onclick="updateImageCaption(this)" data-image-id={{image.id}}>Set</button>
+			</div>
 		</div>
 
 		<br />
@@ -26,7 +29,10 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text">Location</span>
 			</div>
-			<input type="text" class="form-control" value="{{image.location}}" aria-label="Location">
+			<input type="text" class="form-control" id="image_location" value="{{image.location}}" aria-label="Location">
+			<div class="input-group-append">
+				<button class="btn btn-outline-primary" onclick="updateImageLocation(this)" data-image-id={{image.id}}>Set</button>
+			</div>
 		</div>
 
 		<br />
@@ -41,7 +47,7 @@
 
 	<div class="col-md-4">
 		<h4>Keywords</h4>
-		<ul class="list-group">
+		<ul class="list-group list-group-flush">
 		{% for keyword in image.keywords %}
 			<li class="list-group-item">{{keyword.name}}</li>
 		{% endfor %}
@@ -50,25 +56,25 @@
 		<br />
 
 		<h4>Albums</h4>
-		<ul class="list-group">
+		<ul class="list-group list-group-flush">
 			{% for album in image.albums %}
-			<li class="list-group-item"><a class="btn btn-outline-primary" href={{url_for('get_album', album_id=album.id)}}>{{album.name}}</a> <button class="btn btn-outline-danger float-right" onclick="removeImageFromAlbum(this)" data-image-id={{image.id}} data-album-id={{album.id}}>Remove</button></li>
+			<li class="list-group-item">
+				<a class="btn btn-outline-primary" href={{url_for('get_album', album_id=album.id)}}>{{album.name}}</a>
+				<button class="btn btn-outline-danger float-right" onclick="removeImageFromAlbum(this)" data-image-id={{image.id}} data-album-id={{album.id}}>Remove</button>
+			</li>
 			{% endfor %}
 
-			<li class="list-group-item">
-				<div class="row">
-					<div class="">
-						<select class="custom-select" id="image_new_album_dropdown">
-							{% for album in albums %}
-							<option value={{album.id}}>{{album.name}}</option>
-							{% endfor %}
-						</select>
-					</div>
-					<div class="col-md-1">
-						<button class="btn btn-outline-primary" onclick="addImageToAlbum(this)" data-image-id={{image.id}}>Add</button>
-					</div>
+		<h4 class="my-3">Add to Album</h4>
+			<div class="input-group">
+				<select class="custom-select" id="image_new_album_dropdown">
+					{% for album in albums %}
+					<option value={{album.id}}>{{album.name}}</option>
+					{% endfor %}
+				</select>
+				<div class="input-group-append">
+					<button class="btn btn-outline-primary" onclick="addImageToAlbum(this)" data-image-id={{image.id}}>Add</button>
 				</div>
-			</li>
+			</div>
 		</ul>
 	</div>
 </div>
