@@ -1,7 +1,10 @@
-<html>
-	{% include 'admin_header.html' %}
+{% extends 'admin_layout.html' %}
+{% block title %}All Images{% endblock %}
 
+{% block content %}
+	<div class="row">
 	{% for image in images %}
 	{% include 'image_basic.html' %}
 	{% endfor %}
-</html>
+	</div>
+{% endblock %}
