@@ -1,3 +1,7 @@
+{% extends 'admin_layout.html' %}
+{% block title %}Create an Album{% endblock %}
+
+{% block content %}
 <script>
 function createAlbum() {
 	const name = document.querySelector('input[name=album_name]').value;
@@ -15,19 +19,22 @@ function createAlbum() {
 }
 </script>
 
-<html>
-	{% include 'admin_header.html' %}
+<h1>Create an Album</h1>
 
-	<h1>Create an Album</h1>
+<div class="input-group">
+	<div class="input-group-prepend">
+		<span class="input-group-text">Name</span>
+		<input type="text" class="form-control" placeholder="Album Name" id="album_name" name="album_name">
+	</div>
+</div>
 
-	<input id="album_name" type="text" name="album_name">
-	<label for="album_name">Album Name Input</label><br>
-	{% for image in images %}
-	<input id="image-{{ image.id }}" type="checkbox" name="image" value="{{ image.id }}">
-	<label for="image-{{ image.id }}">{{ image.caption }} - {{ image.location }} - {{ image.date }}</label><br>
-	{% endfor %}
+<br />
 
-	<button onclick="createAlbum()">Create Album</button>
+<h4>Select Images</h4>
+{% for image in images %}
+<input id="image-{{ image.id }}" type="checkbox" name="image" value="{{ image.id }}">
+<label for="image-{{ image.id }}">{{ image.caption }} - {{ image.location }} - {{ image.date }}</label><br>
+{% endfor %}
 
-	<br>
-</html>
+<button class="btn btn-primary" onclick="createAlbum()">Create Album</button>
+{% endblock %}

@@ -1,6 +1,9 @@
-<img src={{url_for('static', filename=image.original_path)}} height="200" />
-<p>{{image.caption}}, {{image.location}}</p>
-<p>Date: {{image.date}}</p>
-<a href={{url_for('get_image', image_id=image.id)}}>Details</a>
-
-<br />
+<div class="col-md-3">
+	<img class="img-thumbnail thumbnail" src={{url_for('static', filename=image.original_path)}} />
+</div>
+<div class="col-md-3">
+	<p>{{image.caption}}</p>
+	<p>{{image.location}}</p>
+	<p>{{image.date}}</p>
+	<a class="btn btn-outline-secondary" href={{url_for('get_image', image_id=image.id)}}>See More</a>
+</div>

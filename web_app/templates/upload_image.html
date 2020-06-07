@@ -1,3 +1,7 @@
+{% extends 'admin_layout.html' %}
+{% block title %}Upload Image{% endblock %}
+
+{% block content %}
 <script>
 function previewFile() {
 	const preview = document.querySelector('img');
@@ -24,8 +28,7 @@ function previewFile() {
 }
 </script>
 
-{% include 'admin_header.html' %}
 <h1>Upload an Image</h1>
 <input type="file" onchange="previewFile()">
-<br>
-<img src="" height="200" alt="Image Preview" />
+<img src="img-thumbnail" height="200" alt="Image Preview" />
+{% endblock %}
