@@ -60,6 +60,21 @@ function updateImageLocation(objButton) {
 	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
 }
 
+function updateImageDate(objButton) {
+	var imageId = objButton.dataset.imageId;
+	var date = document.getElementById("image_date").value;
+	let data = {}
+	data['date'] = date;
+	// NOTE: 2011-11-04 00:05:23 is the valid ISO format
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("PATCH", "/api/v1/images/" + imageId, true);
+	xhr.setRequestHeader("Content-Type", "application/json");
+	xhr.send(JSON.stringify(data));
+	// TODO: Provide notification if the call was successful
+	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
+}
+
 function removeAlbumFromPortfolio(objButton) {
 	var albumId = objButton.dataset.albumId;
 	var portfolioId = objButton.dataset.portfolioId;
