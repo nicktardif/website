@@ -1,0 +1,8 @@
+.basic-image-text {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.img-basic {
+  height: 200px;
+}

@@ -1,3 +1,7 @@
+{% extends 'admin_layout.html' %}
+{% block title %}Create a Portfolio{% endblock %}
+
+{% block content %}
 <script>
 function createPortfolio() {
 	const name = document.querySelector('input[name=portfolio_name]').value;
@@ -21,29 +25,35 @@ function createPortfolio() {
 }
 </script>
 
-<html>
-	{% include 'admin_header.html' %}
+<h1>Create a Portfolio</h1>
 
-	<h1>Create an Portfolio</h1>
+<div class="input-group">
+	<div class="input-group-prepend">
+		<span class="input-group-text">Name</span>
+	</div>
+	<input type="text" class="form-control" placeholder="Portfolio Name" id="portfolio_name" name="portfolio_name">
+</div>
 
-	<input id="portfolio_name" type="text" name="portfolio_name">
-	<label for="portfolio_name">Portfolio Name Input</label><br>
+<br />
 
-	<label for="primary_album_id_dropdown">Primary Album Selection</label>
-	<select id="primary_album_id_dropdown">
+<div class="input-group">
+	<div class="input-group-prepend">
+		<span class="input-group-text">Primary Album</span>
+	</div>
+	<select class="custom-select" id="primary_album_id_dropdown">
 		{% for album in albums %}
 		<option value={{album.id}}>{{album.name}}</option>
 		{% endfor %}
 	</select>
+</div>
 
-	<br />
+<br />
 
-	{% for album in albums %}
-	<input id="album-{{album.id}}" type="checkbox" name="album" value="{{album.id}}">
-	<label for="album-{{album.id}}">{{ album.name }}</label><br>
-	{% endfor %}
+<h4>Albums to Include</h4>
+{% for album in albums %}
+<input id="album-{{album.id}}" type="checkbox" name="album" value="{{album.id}}">
+<label for="album-{{album.id}}">{{ album.name }}</label><br>
+{% endfor %}
 
-	<button onclick="createPortfolio()">Create Portfolio</button>
-
-	<br>
-</html>
+<button class="btn btn-primary" onclick="createPortfolio()">Create Portfolio</button>
+{% endblock %}

@@ -1,16 +1,49 @@
-<html>
-	{% include 'admin_header.html' %}
+{% extends 'admin_layout.html' %}
+{% block title %}Portfolio{% endblock %}
 
-	<p>Name: {{portfolio.name}}</p>
-	<p>Album Count: {{portfolio.albums|length}}</p>
-	<p>Primary Album - <a href={{url_for('get_album', album_id=primary_album.id)}}>{{primary_album.name}}</a></p>
+{% block content %}
+<h1>Portfolio</h1>
+<div class="row">
+	<div class="col-md-6">
+		<h2>Info</h2>
+		<div class="input-group my-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Name</span>
+			</div>
+			<input type="text" class="form-control" id="portfolio_name" value="{{portfolio.name}}" aria-label="Name">
+			<div class="input-group-append">
+				<button class="btn btn-outline-primary" onclick="updatePortfolioName(this)" data-portfolio-id={{portfolio.id}}>Set</button>
+			</div>
+		</div>
 
-	<br>
-	<button value="{{portfolio.id}}" onclick="deletePortfolio(this)">Delete Portfolio</button>
-	<br>
+		<div class="input-group my-3">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Primary Album</span>
+			</div>
+			<select class="custom-select" id="portfolio_new_primary_album_dropdown">
+				{% for album in portfolio.albums %}
+					{% if album.id == portfolio.primary_album_id %}
+						<option selected="selected" value={{album.id}}>{{album.name}}</option>
+					{% else %}
+						<option value={{album.id}}>{{album.name}}</option>
+					{% endif %}
+				{% endfor %}
+			</select>
+			<div class="input-group-append">
+				<button class="btn btn-outline-primary" onclick="setAsPrimaryAlbum(this)" data-portfolio-id={{portfolio.id}}>Set</button>
+			</div>
+		</div>
 
-	<h2>Albums</h2>
-	{% for album in portfolio.albums %}
-		{% include 'album_basic.html' %}
-	{% endfor %}
-</html>
+		<button class="btn btn-danger" value="{{portfolio.id}}" onclick="deletePortfolio(this)">Delete Portfolio</button>
+	</div>
+
+	<div class="col-md-6">
+		<h2>Albums</h2>
+		{% for album in portfolio.albums %}
+		<div class="my-3">
+			<a class="btn btn-outline-primary" href={{url_for('get_album', album_id=album.id)}}>{{album.name}} <span class="badge badge-light">{{album.images|length}}</span></a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
