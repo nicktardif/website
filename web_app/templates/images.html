@@ -1,7 +1,12 @@
 {% extends 'admin_layout.html' %}
 {% block title %}All Images{% endblock %}
 
+{% block nav %}
+<a class="btn btn-primary ml-auto" href={{url_for('upload_image')}}>Upload Image</a>
+{% endblock %}
+
 {% block content %}
+	<h1>Images</h1>
 	<div class="row">
 	{% for image in images %}
 	{% include 'image_basic.html' %}

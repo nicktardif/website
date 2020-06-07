@@ -1,8 +1,12 @@
 {% extends 'admin_layout.html' %}
 {% block title %}All Albums{% endblock %}
 
+{% block nav %}
+<a class="btn btn-primary ml-auto" href={{url_for('create_album')}}>Create Album</a>
+{% endblock %}
+
 {% block content %}
-<h3>Albums</h3>
+<h1>Albums</h1>
 {% for album in albums %}
 <div class="my-3">
 	<a class="btn btn-outline-primary" href={{url_for('get_album', album_id=album.id)}}>{{album.name}} <span class="badge badge-light">{{album.images|length}}</span></a>

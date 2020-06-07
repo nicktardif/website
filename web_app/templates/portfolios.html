@@ -1,8 +1,12 @@
 {% extends 'admin_layout.html' %}
 {% block title %}All Portfolios{% endblock %}
 
+{% block nav %}
+<a class="btn btn-primary ml-auto" href={{url_for('create_portfolio')}}>Create Portfolio</a>
+{% endblock %}
+
 {% block content %}
-<h3>Portfolios</h3>
+<h1>Portfolios</h1>
 {% for portfolio in portfolios %}
 <div class="my-3">
 	<a class="btn btn-outline-primary" href={{url_for('get_portfolio', portfolio_id=portfolio.id)}}>{{portfolio.name}} <span class="badge badge-light">{{portfolio.albums|length}}</span></a>

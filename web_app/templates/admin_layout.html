@@ -6,7 +6,16 @@
 
 	<body>
 		<div class="container">
-			{% include 'admin_header.html' %}
+			<div class="row justify-content-between my-3">
+				<div class="my-auto">
+					<a href={{url_for('get_all_images')}}>Images</a> | <a href={{url_for('get_all_albums')}}>Albums</a> | <a href={{url_for('get_all_portfolios')}}>Portfolios</a>
+				</div>
+				<div>
+					{% block nav %}{% endblock %}
+				</div>
+			</div>
+
+			<hr />
 
 			{% block content %}{% endblock %}
 		</div>
