@@ -1,27 +1,75 @@
-{% include 'admin_header.html' %}
+{% extends 'admin_layout.html' %}
+{% block title %}Image View{% endblock %}
 
-<img src={{url_for('static', filename=image.original_path)}} height="200" />
-<p>{{image.caption}}, {{image.location}}</p>
-<p>Date: {{image.date}}</p>
-<p>ID: {{image.id}}</p>
+{% block content %}
+<div class="row">
+	<div class="col-md-4">
+		<img class="img-thumbnail" src={{url_for('static', filename=image.original_path)}} />
 
-<p>Keywords</p>
-{% for keyword in image.keywords %}
-	<li>{{keyword.name}}</li>
-{% endfor %}
+		<br />
+		<br />
+		<button class="btn btn-danger" value="{{ image.id }}" onclick="deleteImage(this)">Delete</button>
 
-<p>Albums</p>
-{% for album in image.albums %}
-<li>{{album.name}} - <a href={{url_for('get_album', album_id=album.id)}}>See Album</a> - <button onclick="removeImageFromAlbum(this)" data-image-id={{image.id}} data-album-id={{album.id}}>Remove</button></li>
-{% endfor %}
+	</div>
 
-<select id="image_new_album_dropdown">
-	{% for album in albums %}
-	<option value={{album.id}}>{{album.name}}</option>
-	{% endfor %}
-</select>
-<button onclick="addImageToAlbum(this)" data-image-id={{image.id}}>Add to Album</button>
+	<div class="col-md-4">
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Caption</span>
+			</div>
+			<input type="text" class="form-control" value="{{image.caption}}" aria-label="Caption">
+		</div>
 
-<br>
-<button class="delete_image" value="{{ image.id }}" onclick="deleteImage(this)">Delete Image</button>
-<hr />
+		<br />
+
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Location</span>
+			</div>
+			<input type="text" class="form-control" value="{{image.location}}" aria-label="Location">
+		</div>
+
+		<br />
+
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text">Time</span>
+			</div>
+			<input type="text" class="form-control" value="{{image.date}}" aria-label="Time">
+		</div>
+	</div>
+
+	<div class="col-md-4">
+		<h4>Keywords</h4>
+		<ul class="list-group">
+		{% for keyword in image.keywords %}
+			<li class="list-group-item">{{keyword.name}}</li>
+		{% endfor %}
+		</ul>
+
+		<br />
+
+		<h4>Albums</h4>
+		<ul class="list-group">
+			{% for album in image.albums %}
+			<li class="list-group-item"><a class="btn btn-outline-primary" href={{url_for('get_album', album_id=album.id)}}>{{album.name}}</a> <button class="btn btn-outline-danger float-right" onclick="removeImageFromAlbum(this)" data-image-id={{image.id}} data-album-id={{album.id}}>Remove</button></li>
+			{% endfor %}
+
+			<li class="list-group-item">
+				<div class="row">
+					<div class="">
+						<select class="custom-select" id="image_new_album_dropdown">
+							{% for album in albums %}
+							<option value={{album.id}}>{{album.name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="col-md-1">
+						<button class="btn btn-outline-primary" onclick="addImageToAlbum(this)" data-image-id={{image.id}}>Add</button>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

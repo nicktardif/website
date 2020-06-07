@@ -1,0 +1,15 @@
+<html lang="en">
+	<head>
+		{% include 'common_head.html' %}
+		<title>{% block title %}{% endblock %}</title>
+	</head>
+
+	<body>
+		<div class="container">
+			{% include 'admin_header.html' %}
+
+			{% block content %}{% endblock %}
+		</div>
+	</body>
+</html>
+
