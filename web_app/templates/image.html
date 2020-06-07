@@ -41,7 +41,10 @@
 			<div class="input-group-prepend">
 				<span class="input-group-text">Time</span>
 			</div>
-			<input type="text" class="form-control" value="{{image.date}}" aria-label="Time">
+			<input type="text" class="form-control" id="image_date" value="{{image.date}}" aria-label="Time">
+			<div class="input-group-append">
+				<button class="btn btn-outline-primary" onclick="updateImageDate(this)" data-image-id={{image.id}}>Set</button>
+			</div>
 		</div>
 	</div>
 
