@@ -34,7 +34,9 @@
 			</div>
 		</div>
 
-		<button class="btn btn-danger" value="{{portfolio.id}}" onclick="deletePortfolio(this)">Delete Portfolio</button>
+		<button class="btn btn-primary" data-portfolio-id={{portfolio.id}} onclick="generateWebsite(this)">Generate Website</button>
+
+		<button class="btn btn-danger" data-portfolio-id={{portfolio.id}} onclick="deletePortfolio(this)">Delete Portfolio</button>
 	</div>
 
 	<div class="col-md-6">

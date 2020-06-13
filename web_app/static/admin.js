@@ -123,6 +123,24 @@ function updatePortfolioName(objButton) {
 	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
 }
 
+function deletePortfolio(objButton) {
+	var portfolioId = objButton.dataset.portfolioId;
+	let xhr = new XMLHttpRequest();
+	xhr.open("DELETE", "/api/v1/portfolios/" + portfolioId, true);
+	xhr.send();
+	// TODO: Provide notification if the call was successful
+	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
+}
+
+function generateWebsite(objButton) {
+	var portfolioId = objButton.dataset.portfolioId;
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", "/api/v1/portfolios/" + portfolioId + "/generate", true);
+	xhr.send();
+	// TODO: Provide notification if the call was successful
+	// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/response
+}
+
 function updateAlbumName(objButton) {
 	var albumId = objButton.dataset.albumId;
 	var name = document.getElementById("album_name").value;
