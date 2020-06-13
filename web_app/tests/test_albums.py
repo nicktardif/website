@@ -15,8 +15,8 @@ def populate_database(db):
 
     sample_keyword = Keyword('landscape')
 
-    sample_image = Image('yolo.jpg', '', '', '', '', 'yolo', datetime.datetime.utcnow(), 'Westeros', [sample_keyword])
-    sample_image_2 = Image('yolo-2.jpg', '', '', '', '', 'yolo', datetime.datetime.utcnow(), 'Easteros', [sample_keyword])
+    sample_image = Image('yolo.jpg', 'yolo', datetime.datetime.utcnow(), 'Westeros', [sample_keyword])
+    sample_image_2 = Image('yolo-2.jpg', 'yolo', datetime.datetime.utcnow(), 'Easteros', [sample_keyword])
     album_2 = Album('test 2', [sample_image, sample_image_2])
 
     db.session.add(sample_keyword)

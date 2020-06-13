@@ -14,7 +14,7 @@ def populate_database(db):
     sample_keyword = Keyword('landscape')
     db.session.add(sample_keyword)
 
-    sample_image = Image('yolo.jpg', '', '', '', '', 'yolo', datetime.datetime.utcnow(), 'Westeros', [sample_keyword])
+    sample_image = Image('yolo.jpg', 'yolo', datetime.datetime.utcnow(), 'Westeros', [sample_keyword])
     if not os.path.exists(get_full_path('yolo.jpg')):
         os.mknod(get_full_path('yolo.jpg'))
     db.session.add(sample_image)

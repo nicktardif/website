@@ -17,3 +17,15 @@ portfolio_album_association_table = db.Table(
         db.Model.metadata,
         db.Column('album_id', db.Integer, db.ForeignKey('album.id')),
         db.Column('portfolio_id', db.Integer, db.ForeignKey('portfolio.id')))
+
+thumbnail_image_association_table = db.Table(
+        'thumbnail_image_association',
+        db.Model.metadata,
+        db.Column('thumbnail_id', db.Integer, db.ForeignKey('thumbnail_image.id')),
+        db.Column('image_id', db.Integer, db.ForeignKey('image.id')))
+
+downsampled_image_association_table = db.Table(
+        'downsampled_image_association',
+        db.Model.metadata,
+        db.Column('downsampled_id', db.Integer, db.ForeignKey('downsampled_image.id')),
+        db.Column('image_id', db.Integer, db.ForeignKey('image.id')))
