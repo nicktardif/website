@@ -6,8 +6,8 @@ import pyexiv2
 
 from web_app import app, db
 from web_app.models import Keyword
-from web_app.models import associations
-from web_app.models.associations import album_image_association_table, image_keyword_association_table
+from web_app.models.associations import album_image_association_table, image_keyword_association_table, thumbnail_image_association_table, downsampled_image_association_table
+from web_app.classes import ImageGenerator
 from web_app.utilities.file_helper import get_full_path
 
 class Image(db.Model):
@@ -32,12 +32,18 @@ class Image(db.Model):
             secondary = album_image_association_table,
             back_populates = 'images')
 
-    def __init__(self, original_path, downsampled_path, downsampled_size_string, thumbnail_path, thumbnail_basename, caption, date, location, keywords):
+    thumbnail_image = relationship(
+            'ThumbnailImage',
+            uselist = False,
+            back_populates = 'original_image')
+
+    downsampled_image = relationship(
+            'DownsampledImage',
+            uselist = False,
+            back_populates = 'original_image')
+
+    def __init__(self, original_path, caption, date, location, keywords):
         self.original_path = original_path
-        self.downsampled_path = downsampled_path
-        self.downsampled_size_string = downsampled_size_string
-        self.thumbnail_path = thumbnail_path
-        self.thumbnail_basename = thumbnail_basename
         self.caption = caption
         self.date = date
         self.location = location
@@ -55,6 +61,14 @@ class Image(db.Model):
         self.location = location
         db.session.commit()
 
+    def generate_thumbnail(self, thumbnail_size):
+        self.thumbnail_image = ImageGenerator.create_thumbnail(self, thumbnail_size)
+        db.session.commit()
+
+    def generate_downsampled(self, downsampled_size):
+        self.downsampled_image = ImageGenerator.create_downsampled(self, downsampled_size)
+        db.session.commit()
+
     def update_keywords(self, keywords):
         self.keywords = keywords
         db.session.commit()
@@ -68,10 +82,6 @@ class Image(db.Model):
     def toJSON(self):
         return {
             'original_path': self.original_path,
-            'downsampled_path': self.downsampled_path,
-            'downsampled_size_string': self.downsampled_size_string,
-            'thumbnail_path': self.thumbnail_path,
-            'thumbnail_basename': self.thumbnail_basename,
             'caption': self.caption,
             'date': self.date,
             'location': self.location,
@@ -81,19 +91,14 @@ class Image(db.Model):
     def fromNameAndData(image_name, image_data):
         full_image_path = '{}/{}'.format(app.config['DATA_DIR'], image_name)
         Image.__save_to_disk(full_image_path, image_data)
-
         original_path = image_name
-        downsampled_path = ''
-        downsampled_size_string = ''
-        thumbnail_path = ''
-        thumbnail_basename = ''
 
         metadata = pyexiv2.Image(full_image_path)
         caption = Image.__get_caption(metadata)
         date = Image.__get_date(metadata)
         location = Image.__get_location(metadata)
         keywords = Image.__get_keywords(metadata)
-        return Image(original_path, downsampled_path, downsampled_size_string, thumbnail_path, thumbnail_basename, caption, date, location, keywords)
+        return Image(original_path, caption, date, location, keywords)
 
     def __save_to_disk(full_image_path, data):
         with open(full_image_path, 'wb') as fh:
