@@ -9,7 +9,7 @@ import os
 import shutil
 import tempfile
 import subprocess
-from web_app.utilities.file_helper import get_full_path
+from web_app.utilities.file_helper import get_full_path, get_full_build_path
 from jinja2 import Environment, FileSystemLoader
 
 class PortfolioApiView():
@@ -126,6 +126,11 @@ class PortfolioApiView():
         images = get_all_images_in_portfolio(portfolio_id)
         image_count = len(images)
 
+        # TODO: Clear the build dir, create CSS and JS dirs
+        shutil.rmtree(app.config['BUILD_DIR'], ignore_errors=True)
+        for directory in [app.config['BUILD_DIR'], app.config['BUILD_CSS_DIR'], app.config['BUILD_JS_DIR']]:
+            os.mkdir(directory)
+
         # create thumbnail and downsampled images for all images in the albums
         for idx, image in enumerate(images):
             if not image.thumbnail_image:
@@ -161,37 +166,25 @@ def create_gallery_webpage(album):
     # copy all the thumbnail images in the album to a new folder
     with tempfile.TemporaryDirectory() as temporary_directory:
         for image in album.images:
-            shutil.copy(image.thumbnail_image.path, temporary_directory)
+            shutil.copy(get_full_path(image.thumbnail_image.path), temporary_directory)
 
-        album_sprites_dir = get_full_path(album.name + '_sprites')
+        album_sprites_dir = get_full_build_path(album.name + '_sprites')
         shutil.rmtree(album_sprites_dir, ignore_errors=True)
         os.mkdir(album_sprites_dir)
 
-        album_css_dir = get_full_path(album.name + '_css')
+        album_css_dir = get_full_build_path(album.name + '_css')
         shutil.rmtree(album_css_dir, ignore_errors=True)
         os.mkdir(album_css_dir)
-
-        html_dir = get_full_path('html')
-        shutil.rmtree(html_dir, ignore_errors=True)
-        os.mkdir(html_dir)
 
         # run the glue spritemap generation - outputs are spritemap and css code
         create_spritemaps(temporary_directory, album_sprites_dir, album_css_dir, album)
 
         # generate the page HTML
         hash_string = os.path.basename(temporary_directory)
-        generate_html(html_dir, album, Album.query.all(), hash_string)
+        generate_html(app.config['BUILD_DIR'], album, Album.query.all(), hash_string)
 
-        css_dir = get_full_path('css')
-        if not os.path.exists(css_dir):
-            os.mkdir(css_dir)
-
-        sprites_dir = get_full_path('sprites')
-        if not os.path.exists(sprites_dir):
-            os.mkdir(sprites_dir)
-
-        shutil.copytree(album_css_dir, css_dir, dirs_exist_ok=True)
-        shutil.copytree(album_sprites_dir, sprites_dir, dirs_exist_ok=True)
+        shutil.copytree(album_css_dir, app.config['BUILD_CSS_DIR'], dirs_exist_ok=True)
+        shutil.copytree(album_sprites_dir, app.config['BUILD_SPRITES_DIR'], dirs_exist_ok=True)
 
 # For each category, render an HTML page
 def generate_html(html_dir, album, albums, hash_string):
@@ -225,13 +218,15 @@ def create_spritemaps(thumbnail_dir, sprites_dir, css_dir, album):
     compress_2x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 25% -format jpg {}/{}@2x*.png'.format(sprites_dir, random_name)
     compress_1_5x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 45% -format jpg {}/{}@1.5x*.png'.format(sprites_dir, random_name)
     compress_1x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 65% -format jpg {}/{}.png'.format(sprites_dir, random_name)
-    sed_cmd = "sed -i -e 's/png/jpg/g' {}/{}.css".format(css_dir, random_name)
+    sed_switch_image_type_cmd = "sed -i -e 's/png/jpg/g' {}/{}.css".format(css_dir, random_name)
+    sed_update_sprite_path_cmd = "sed -i -e 's/..\/{}_sprites/\/sprites/g' {}/{}.css".format(album.name, css_dir, random_name)
     rm_png_cmd = 'rm {}/{}*.png'.format(sprites_dir, random_name)
 
     subprocess.check_output(compress_2x_cmd, shell=True)
     subprocess.check_output(compress_1_5x_cmd, shell=True)
     subprocess.check_output(compress_1x_cmd, shell=True)
-    subprocess.check_output(sed_cmd, shell=True)
+    subprocess.check_output(sed_switch_image_type_cmd, shell=True)
+    subprocess.check_output(sed_update_sprite_path_cmd, shell=True)
     subprocess.check_output(rm_png_cmd, shell=True)
     print('Compressed {} album'.format(album.name))
 

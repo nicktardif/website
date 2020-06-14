@@ -1,7 +1,8 @@
+from PIL import Image as PilImage
 from sqlalchemy.orm import relationship
 from web_app import app, db
 from web_app.models.associations import album_image_association_table, image_keyword_association_table, thumbnail_image_association_table, downsampled_image_association_table
-from PIL import Image as PilImage
+from web_app.utilities.file_helper import get_full_path
 
 class ThumbnailImage(db.Model):
     __tablename__ = 'thumbnail_image'
@@ -13,9 +14,9 @@ class ThumbnailImage(db.Model):
             'Image',
             back_populates = 'thumbnail_image')
 
-    def __init__(self, image_full_path, original_image):
-        self.path = image_full_path
+    def __init__(self, image_name, original_image):
+        self.path = image_name
         self.original_image = original_image
 
-        width, height = PilImage.open(image_full_path).size
+        width, height = PilImage.open(get_full_path(image_name)).size
         self.dimensions = '{}x{}'.format(width, height)
