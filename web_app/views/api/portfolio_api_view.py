@@ -5,6 +5,13 @@ from web_app.utilities import Validator, Validation
 from flask import jsonify, request
 import itertools
 
+import os
+import shutil
+import tempfile
+import subprocess
+from web_app.utilities.file_helper import get_full_path
+from jinja2 import Environment, FileSystemLoader
+
 class PortfolioApiView():
     @app.route('/api/v1/portfolios/<int:portfolio_id>')
     def api_get_portfolio(portfolio_id):
@@ -130,12 +137,109 @@ class PortfolioApiView():
             percent = ((idx + 1) / image_count) * 100.0
             print('Derived Image Generation: {:.2f}% - ({} of {})'.format(percent, idx + 1, image_count))
 
-        # for each album:
-            # create a spritemap and compress it
-            # generate the page HTML
-        # generate the whole website
+        for album in Album.query.all():
+            create_gallery_webpage(album)
+
+        ## generate the whole website
+
+        ## Copy in the CSS and JS files
+        #original_js_dir = os.path.join(code_root_dir, 'js')
+        #js_files = get_all_js(original_js_dir)
+        #concat_files(js_files, os.path.join(js_dir, 'nicktardif.min.js'))
+
+        #original_css_dir = os.path.join(code_root_dir, 'css')
+        #css_files = get_all_css(original_css_dir)
+        #concat_files(css_files, os.path.join(css_dir, 'nicktardif.min.css'))
+        #shutil.copy(os.path.join(original_css_dir, 'default-skin.svg'), css_dir)
+
+        ## Copy in the favicon file
+        #shutil.copy(os.path.join(code_root_dir, 'assets', 'favicon.ico'), output_root_dir)
 
         return '', status.HTTP_200_OK
 
+def create_gallery_webpage(album):
+    # copy all the thumbnail images in the album to a new folder
+    with tempfile.TemporaryDirectory() as temporary_directory:
+        for image in album.images:
+            shutil.copy(image.thumbnail_image.path, temporary_directory)
+
+        album_sprites_dir = get_full_path(album.name + '_sprites')
+        shutil.rmtree(album_sprites_dir, ignore_errors=True)
+        os.mkdir(album_sprites_dir)
+
+        album_css_dir = get_full_path(album.name + '_css')
+        shutil.rmtree(album_css_dir, ignore_errors=True)
+        os.mkdir(album_css_dir)
+
+        html_dir = get_full_path('html')
+        shutil.rmtree(html_dir, ignore_errors=True)
+        os.mkdir(html_dir)
+
+        # run the glue spritemap generation - outputs are spritemap and css code
+        create_spritemaps(temporary_directory, album_sprites_dir, album_css_dir, album)
+
+        # generate the page HTML
+        hash_string = os.path.basename(temporary_directory)
+        generate_html(html_dir, album, Album.query.all(), hash_string)
+
+        css_dir = get_full_path('css')
+        if not os.path.exists(css_dir):
+            os.mkdir(css_dir)
+
+        sprites_dir = get_full_path('sprites')
+        if not os.path.exists(sprites_dir):
+            os.mkdir(sprites_dir)
+
+        shutil.copytree(album_css_dir, css_dir, dirs_exist_ok=True)
+        shutil.copytree(album_sprites_dir, sprites_dir, dirs_exist_ok=True)
+
+# For each category, render an HTML page
+def generate_html(html_dir, album, albums, hash_string):
+    code_root_dir = os.getcwd()
+    template_dir = os.path.join(code_root_dir, 'web_app', 'templates')
+    print('template dir: ' + template_dir)
+    env = Environment(loader=FileSystemLoader(template_dir))
+    env.filters['basename'] = basename
+    env.filters['basenameNoExt'] = basenameNoExt
+    template = env.get_template('gallery_template.html')
+
+    output_from_parsed_template = template.render(hash_string=hash_string, album=album, albums=albums)
+
+    # Write out the HTML file
+    html_file = '{}.html'.format(album.name)
+    with open(os.path.join(html_dir, html_file), 'w') as f:
+        f.write(output_from_parsed_template)
+
+def create_spritemaps(thumbnail_dir, sprites_dir, css_dir, album):
+    glue_cmd = 'glue {} --img {} --force --css {} --ratios=2,1.5,1'.format(
+            thumbnail_dir,
+            sprites_dir,
+            css_dir)
+    print('Starting to generate the spritemaps')
+    subprocess.check_output(glue_cmd, shell=True)
+
+    print('Finished spritemap generation')
+
+    print('Starting to compress spritemaps')
+    random_name = os.path.basename(thumbnail_dir)
+    compress_2x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 25% -format jpg {}/{}@2x*.png'.format(sprites_dir, random_name)
+    compress_1_5x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 45% -format jpg {}/{}@1.5x*.png'.format(sprites_dir, random_name)
+    compress_1x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 65% -format jpg {}/{}.png'.format(sprites_dir, random_name)
+    sed_cmd = "sed -i -e 's/png/jpg/g' {}/{}.css".format(css_dir, random_name)
+    rm_png_cmd = 'rm {}/{}*.png'.format(sprites_dir, random_name)
+
+    subprocess.check_output(compress_2x_cmd, shell=True)
+    subprocess.check_output(compress_1_5x_cmd, shell=True)
+    subprocess.check_output(compress_1x_cmd, shell=True)
+    subprocess.check_output(sed_cmd, shell=True)
+    subprocess.check_output(rm_png_cmd, shell=True)
+    print('Compressed {} album'.format(album.name))
+
 def get_all_images_in_portfolio(portfolio_id):
     return set(list(itertools.chain.from_iterable([album.images for album in Portfolio.query.get(portfolio_id).albums])))
+
+def basename(path):
+    return os.path.basename(path)
+
+def basenameNoExt(path):
+    return os.path.splitext(os.path.basename(path))[0]
