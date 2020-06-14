@@ -6,6 +6,7 @@ from flask import jsonify, request
 import itertools
 
 import os
+import glob
 import shutil
 import tempfile
 import subprocess
@@ -142,23 +143,29 @@ class PortfolioApiView():
             percent = ((idx + 1) / image_count) * 100.0
             print('Derived Image Generation: {:.2f}% - ({} of {})'.format(percent, idx + 1, image_count))
 
+        for image in images:
+            shutil.copy(get_full_path(image.downsampled_image.path), get_full_build_path(''))
+
         for album in Album.query.all():
             create_gallery_webpage(album)
+
+        primary_album = Album.query.get(Portfolio.query.get(portfolio_id).primary_album_id)
+        shutil.copy(get_full_build_path('{}.html'.format(album.name)), get_full_build_path('default.html'))
 
         ## generate the whole website
 
         ## Copy in the CSS and JS files
-        #original_js_dir = os.path.join(code_root_dir, 'js')
-        #js_files = get_all_js(original_js_dir)
-        #concat_files(js_files, os.path.join(js_dir, 'nicktardif.min.js'))
+        original_js_dir = get_full_path('js')
+        js_files = glob.glob('{}/*.js'.format(original_js_dir))
+        concat_files(js_files, os.path.join(app.config['BUILD_JS_DIR'], 'nicktardif.min.js'))
 
-        #original_css_dir = os.path.join(code_root_dir, 'css')
-        #css_files = get_all_css(original_css_dir)
-        #concat_files(css_files, os.path.join(css_dir, 'nicktardif.min.css'))
-        #shutil.copy(os.path.join(original_css_dir, 'default-skin.svg'), css_dir)
+        original_css_dir = get_full_path('css')
+        css_files = glob.glob('{}/*.css'.format(original_css_dir))
+        concat_files(css_files, os.path.join(app.config['BUILD_CSS_DIR'], 'nicktardif.min.css'))
+        shutil.copy(get_full_path('css/default-skin.svg'), app.config['BUILD_CSS_DIR'])
 
         ## Copy in the favicon file
-        #shutil.copy(os.path.join(code_root_dir, 'assets', 'favicon.ico'), output_root_dir)
+        shutil.copy(get_full_path('assets/favicon.ico'), get_full_build_path(''))
 
         return '', status.HTTP_200_OK
 
@@ -238,3 +245,10 @@ def basename(path):
 
 def basenameNoExt(path):
     return os.path.splitext(os.path.basename(path))[0]
+
+def concat_files(input_files, output_file):
+    with open(output_file, 'w') as outfile:
+        for current_file in input_files:
+            with open(current_file) as infile:
+                for line in infile:
+                    outfile.write(line)
