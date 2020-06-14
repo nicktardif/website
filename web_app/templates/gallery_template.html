@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8"/>
   <link rel="stylesheet" href="css/nicktardif.min.css">
-  <link rel="stylesheet" href="/static/css/{{ hash_string }}.css">
+  <link rel="stylesheet" href="css/{{ hash_string }}.css">
   <script src="js/nicktardif.min.js"></script>
   <script>
     WebFont.load({
@@ -35,7 +35,7 @@
     <div id="my-gallery" class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
       {% for image in album.images %}
       <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="static/{{image.downsampled_image.path | basename}}" itemprop="contentUrl" data-size="{{image.downsampled_image.dimensions}}">
+        <a href="{{image.downsampled_image.path | basename}}" itemprop="contentUrl" data-size="{{image.downsampled_image.dimensions}}">
           <div class="sprite-{{hash_string}}-{{image.thumbnail_image.path | basenameNoExt}}" itemprop="thumbnail" />
         </a>
         <figcaption itemprop="caption description">{{image.caption}}<br/>{{image.location}}</figcaption>

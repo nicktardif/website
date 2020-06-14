@@ -1,5 +1,5 @@
 <div class="col-md-3">
-	<img class="img-thumbnail thumbnail img-basic" src={{url_for('static', filename=image.original_path)}} />
+	<img class="img-thumbnail thumbnail img-basic" src={{url_for('static', filename=image.thumbnail_image.path)}} />
 	<p class="basic-image-text">{{image.caption}}</p>
 	<p class="basic-image-text">{{image.location}}</p>
 	<p class="basic-image-text">{{image.date}}</p>

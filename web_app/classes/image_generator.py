@@ -1,25 +1,25 @@
+from web_app.models import DownsampledImage, ThumbnailImage
 from web_app.utilities.file_helper import get_full_path
 import os
 import subprocess
-from web_app.models import DownsampledImage, ThumbnailImage
 
 class ImageGenerator:
     def create_thumbnail(image, min_dimension):
         image_full_path = get_full_path(image.original_path)
         width, height = ImageGenerator.calculate_dimensions(image_full_path, min_dimension, False)
-        thumbnail_full_path = ImageGenerator.create_thumbnail_file(image_full_path, width, height, min_dimension)
-        print('Thumbnail: {}x{}, Destination: {}'.format(width, height, thumbnail_full_path))
+        thumbnail_name = ImageGenerator.create_thumbnail_file(image_full_path, width, height, min_dimension)
+        print('Thumbnail: {}x{}, Destination: {}'.format(width, height, get_full_path(thumbnail_name)))
 
-        thumbnail = ThumbnailImage(thumbnail_full_path, image)
+        thumbnail = ThumbnailImage(thumbnail_name, image)
         return thumbnail
 
     def create_downsampled(image, max_dimension):
         image_full_path = get_full_path(image.original_path)
         width, height = ImageGenerator.calculate_dimensions(image_full_path, max_dimension, True)
-        downsampled_file = ImageGenerator.create_downsampled_file(image_full_path, width, height)
-        print('Downsampled: {}x{}, Destination: {}'.format(width, height, downsampled_file))
+        downsampled_name = ImageGenerator.create_downsampled_file(image_full_path, width, height)
+        print('Downsampled: {}x{}, Destination: {}'.format(width, height, get_full_path(downsampled_name)))
 
-        downsampled_image = DownsampledImage(downsampled_file, image)
+        downsampled_image = DownsampledImage(downsampled_name, image)
         return downsampled_image
 
     def calculate_dimensions(image_full_path, request_dimension, is_max):
@@ -52,28 +52,28 @@ class ImageGenerator:
         return new_width, new_height
 
     def create_thumbnail_file(image_full_path, scaled_width, scaled_height, square_size):
-        downscaled_full_path = ImageGenerator.get_downscaled_file_name(image_full_path, square_size, square_size)
+        thumbnail_name = ImageGenerator.get_downscaled_file_name(image_full_path, square_size, square_size)
         convert_cmd = "convert -resize {}x{}^ -extent {}x{} -gravity Center \( \"{}\" -strip -resize {}x{} \) \"{}\"".format(
                 square_size, square_size,
                 square_size, square_size,
                 image_full_path,
                 scaled_width, scaled_height,
-                downscaled_full_path)
+                get_full_path(thumbnail_name))
 
         subprocess.check_output(convert_cmd, shell=True)
-        return downscaled_full_path
+        return thumbnail_name
 
     def create_downsampled_file(image_full_path, width, height):
-        downscaled_full_path = ImageGenerator.get_downscaled_file_name(image_full_path, width, height)
+        downscaled_name = ImageGenerator.get_downscaled_file_name(image_full_path, width, height)
         convert_cmd = "convert -strip -interlace Plane -quality 85% \"{}\" -resize {}x{} \"{}\"".format(
                 image_full_path,
                 width, height,
-                downscaled_full_path)
+                get_full_path(downscaled_name))
 
         subprocess.check_output(convert_cmd, shell=True)
-        return downscaled_full_path
+        return downscaled_name
 
     def get_downscaled_file_name(image_full_path, width, height):
         basename, extension = os.path.splitext(os.path.basename(image_full_path))
         full_name = '{}_{}x{}{}'.format(basename, width, height, extension)
-        return get_full_path(full_name)
+        return full_name

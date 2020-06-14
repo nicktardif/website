@@ -3,3 +3,6 @@ from web_app import app
 
 def get_full_path(relative_path):
     return join(app.config['DATA_DIR'], relative_path)
+
+def get_full_build_path(relative_path):
+    return join(app.config['BUILD_DIR'], relative_path)
