@@ -17,3 +17,15 @@ class ImageView():
     @app.route('/images/upload')
     def upload_image():
         return render_template('upload_image.html')
+
+    @app.template_filter()
+    def thumbnail_image_with_fallback(image):
+        """ Return the thumbnail image if it exists, otherwise return fullsized image """
+        if image.thumbnail_image:
+            return image.thumbnail_image.path
+        else:
+            return image.original_path
+
+    @app.template_filter()
+    def timeSortedImages(images):
+        return sorted(images, key=lambda x: x.date, reverse=True)

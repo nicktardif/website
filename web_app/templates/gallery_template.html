@@ -33,7 +33,7 @@
     </h2>
 
     <div id="my-gallery" class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-      {% for image in album.images %}
+      {% for image in album.images | timeSortedImages %}
       <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
         <a href="{{image.downsampled_image.path | basename}}" itemprop="contentUrl" data-size="{{image.downsampled_image.dimensions}}">
           <div class="sprite-{{hash_string}}-{{image.thumbnail_image.path | basenameNoExt}}" itemprop="thumbnail" />

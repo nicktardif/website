@@ -14,13 +14,9 @@ class Image(db.Model):
     __tablename__ = 'image'
     id = db.Column(db.Integer, primary_key=True)
     original_path = db.Column(db.String(250), nullable=False)
-    downsampled_path = db.Column(db.String(250), nullable=True)
-    downsampled_size_string = db.Column(db.String(250), nullable=True)
-    thumbnail_path = db.Column(db.String(250), nullable=True)
-    thumbnail_basename = db.Column(db.String(250), nullable=True)
-    caption = db.Column(db.String(250), nullable=False)
+    caption = db.Column(db.String(250), nullable=True)
     date = db.Column(db.DateTime, nullable=False)
-    location = db.Column(db.String(250), nullable=False)
+    location = db.Column(db.String(250), nullable=True)
 
     keywords = relationship(
             'Keyword',
@@ -109,9 +105,13 @@ class Image(db.Model):
 
     def __get_date(metadata):
         date_format = '%Y:%m:%d %H:%M:%S'
-        date = datetime.datetime.strptime(metadata.read_exif().get('Exif.Photo.DateTimeOriginal'), date_format)
-        if not date:
-            date = datetime.datetime.strptime(metadata.read_exif().get('Exif.Image.DateTime'), date_format)
+        datetime_original_metadata = metadata.read_exif().get('Exif.Photo.DateTimeOriginal')
+        date = None
+        if datetime_original_metadata:
+            date = datetime.datetime.strptime(datetime_original_metadata, date_format)
+        else:
+            datetime_metadata = metadata.read_exif().get('Exif.Image.DateTime')
+            date = datetime.datetime.strptime(datetime_metadata, date_format)
         if not date:
             raise TypeError('Did not find a datetime for', self.original_path)
         return date
