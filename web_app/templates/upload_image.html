@@ -5,30 +5,33 @@
 <script>
 function previewFile() {
 	const preview = document.querySelector('img');
-	const file = document.querySelector('input[type=file]').files[0];
-	const reader = new FileReader();
+	const files = document.querySelector('input[type=file]').files;
 
-	reader.addEventListener('load', function() {
-		preview.src = reader.result;
-		console.log(document.querySelector('input[type=file]').files);
+	Array.from(files).forEach(file =>  {
+		const reader = new FileReader();
+		reader.addEventListener('load', function() {
+			new_image = '<div class="row"><img class="img-basic" src="' + reader.result + '" height="200" alt="Image Preview" /></div>'
+			images_div = document.getElementById("uploaded-images").insertAdjacentHTML("beforeend", new_image);
 
-		var data = {}
-		data['image_name'] = file.name;
-		data['image_data'] = reader.result.split(',')[1];
+			var data = {}
+			data['image_name'] = file.name;
+			data['image_data'] = reader.result.split(',')[1];
 
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST", "/api/v1/images", true);
-		xhr.setRequestHeader("Content-Type", "application/json");
-		xhr.send(JSON.stringify(data));
-	}, false);
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "/api/v1/images", true);
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send(JSON.stringify(data));
+		}, false);
 
-	if (file) {
-		reader.readAsDataURL(file);
-	}
+		if (file) {
+			reader.readAsDataURL(file);
+		}
+	});
 }
 </script>
 
 <h1>Upload an Image</h1>
-<input type="file" onchange="previewFile()">
-<img src="img-thumbnail" height="200" alt="Image Preview" />
+<input type="file" multiple onchange="previewFile()">
+<div id="uploaded-images">
+</div>
 {% endblock %}

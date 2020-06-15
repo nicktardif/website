@@ -8,7 +8,7 @@
 {% block content %}
 	<h1>Images</h1>
 	<div class="row">
-	{% for image in images %}
+	{% for image in images | timeSortedImages %}
 	{% include 'image_basic.html' %}
 	{% endfor %}
 	</div>

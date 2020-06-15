@@ -150,7 +150,7 @@ class PortfolioApiView():
             create_gallery_webpage(album)
 
         primary_album = Album.query.get(Portfolio.query.get(portfolio_id).primary_album_id)
-        shutil.copy(get_full_build_path('{}.html'.format(album.name)), get_full_build_path('default.html'))
+        shutil.copy(get_full_build_path('{}.html'.format(primary_album.name)), get_full_build_path('index.html'))
 
         ## generate the whole website
 
@@ -201,6 +201,7 @@ def generate_html(html_dir, album, albums, hash_string):
     env = Environment(loader=FileSystemLoader(template_dir))
     env.filters['basename'] = basename
     env.filters['basenameNoExt'] = basenameNoExt
+    env.filters['timeSortedImages'] = timeSortedImages
     template = env.get_template('gallery_template.html')
 
     output_from_parsed_template = template.render(hash_string=hash_string, album=album, albums=albums)
@@ -245,6 +246,9 @@ def basename(path):
 
 def basenameNoExt(path):
     return os.path.splitext(os.path.basename(path))[0]
+
+def timeSortedImages(images):
+    return sorted(images, key=lambda x: x.date, reverse=True)
 
 def concat_files(input_files, output_file):
     with open(output_file, 'w') as outfile:
