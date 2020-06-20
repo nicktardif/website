@@ -17,6 +17,9 @@ pytz = "*"
 pyexiv2 = "*"
 glue = {editable = true,path = "./../glue"}
 pillow = "*"
+flask-security = "*"
+email-validator = "*"
+bcrypt = "*"
 
 [requires]
 python_version = "3.8"

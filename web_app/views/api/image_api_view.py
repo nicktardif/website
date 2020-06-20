@@ -3,6 +3,7 @@ from flask_api import status
 from web_app.models import Image
 from web_app.utilities import Validator, Validation
 from flask import jsonify, request
+from web_app.utilities.custom_roles_required import custom_roles_required
 import datetime
 
 def image_name_exists_in_database(image_name):
@@ -10,6 +11,7 @@ def image_name_exists_in_database(image_name):
 
 class ImageApiView():
     @app.route('/api/v1/images/<int:image_id>')
+    @custom_roles_required('admin')
     def api_get_image(image_id):
         validator = Validator([Validation.image_exists(image_id)])
         if not validator.validate(request):
@@ -18,6 +20,7 @@ class ImageApiView():
         return jsonify(Image.query.get(image_id)), status.HTTP_200_OK
 
     @app.route('/api/v1/images')
+    @custom_roles_required('admin')
     def api_get_all_images():
         images = Image.query.all()
         if images:
@@ -26,6 +29,7 @@ class ImageApiView():
             return '', status.HTTP_204_NO_CONTENT
 
     @app.route('/api/v1/images', methods=['POST'])
+    @custom_roles_required('admin')
     def api_create_image():
         # TODO: Check some kind of user authorization
         unique_image_validation = Validation.custom_json_validation('image_name',
@@ -51,6 +55,7 @@ class ImageApiView():
         return jsonify(new_image), status.HTTP_201_CREATED
 
     @app.route('/api/v1/images/<int:image_id>', methods=['PATCH'])
+    @custom_roles_required('admin')
     def api_update_image(image_id):
         validator = Validator([
             Validation.is_json_payload(),
@@ -80,6 +85,7 @@ class ImageApiView():
         return jsonify(image), status.HTTP_200_OK
 
     @app.route('/api/v1/images/<int:image_id>', methods=['DELETE'])
+    @custom_roles_required('admin')
     def api_delete_image(image_id):
         validator = Validator([Validation.image_exists(image_id)])
         if not validator.validate(request):

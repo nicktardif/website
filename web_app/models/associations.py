@@ -29,3 +29,7 @@ downsampled_image_association_table = db.Table(
         db.Model.metadata,
         db.Column('downsampled_id', db.Integer, db.ForeignKey('downsampled_image.id')),
         db.Column('image_id', db.Integer, db.ForeignKey('image.id')))
+
+roles_users_association_table = db.Table('roles_users',
+        db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
+        db.Column('role_id', db.Integer(), db.ForeignKey('role.id')))
