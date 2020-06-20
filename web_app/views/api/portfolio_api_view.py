@@ -202,6 +202,7 @@ def generate_html(html_dir, album, albums, hash_string):
     env.filters['basename'] = basename
     env.filters['basenameNoExt'] = basenameNoExt
     env.filters['timeSortedImages'] = timeSortedImages
+    env.filters['alphabeticalAlbums'] = alphabeticalAlbums
     template = env.get_template('gallery_template.html')
 
     output_from_parsed_template = template.render(hash_string=hash_string, album=album, albums=albums)
@@ -249,6 +250,9 @@ def basenameNoExt(path):
 
 def timeSortedImages(images):
     return sorted(images, key=lambda x: x.date, reverse=True)
+
+def alphabeticalAlbums(albums):
+    return sorted(albums, key=lambda x: x.name)
 
 def concat_files(input_files, output_file):
     with open(output_file, 'w') as outfile:
