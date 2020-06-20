@@ -14,14 +14,14 @@
 </head>
 
 <body>
-  <div class="">
+  <div id="main-body">
 
     <h1 class="header">nicktardif.com</h1>
 
     <div id="sidenav" class="sidenav">
       <a id="closenavbtn" class="closebtn">&times;</a>
       <p class="navheader">Photos</p>
-      {% for album in albums %}
+      {% for album in albums | alphabeticalAlbums %}
       <a href="{{ album.name }}.html">{{ album.name }}</a>
       {% endfor %}
       

@@ -207,19 +207,15 @@ function closeNav() {
   document.getElementById("sidenav").style.width = "0";
 }
 
-function getPageTopLeft(el) {
-  var rect = el.getBoundingClientRect();
-  var docEl = document.documentElement;
-  return {
-    left: rect.left + (window.pageXOffset || docEl.scrollLeft || 0),
-    top: rect.top + (window.pageYOffset || docEl.scrollTop || 0)
-  };
+function getLeftOffsetFromParent(el) {
+  return el.getBoundingClientRect().left - el.parentElement.getBoundingClientRect().left;
 }
 
 function setMenuLeftPadding() {
   firstImg = document.getElementById(galleryId).getElementsByTagName('figure')[0];
-  topLeft = getPageTopLeft(firstImg);
-  document.getElementById("opennav").style.paddingLeft = topLeft.left + "px";
+  leftOffset = getLeftOffsetFromParent(firstImg);
+  // This assumes the Gallery and Opennav are siblings in the DOM
+  document.getElementById("opennav").style.paddingLeft = leftOffset + "px";
 }
 
 window.addEventListener('load', function(event) {

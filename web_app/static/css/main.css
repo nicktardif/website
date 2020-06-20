@@ -1,6 +1,10 @@
 body {
   font-family: 'Josefin Sans', sans-serif;
 }
+#main-body {
+  margin-left: 10%;
+  margin-right: 10%;
+}
 .header {
   text-align: center;
   font-size: 4em;
