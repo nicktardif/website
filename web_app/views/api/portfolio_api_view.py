@@ -3,6 +3,7 @@ from flask_api import status
 from web_app.models import Album, Portfolio
 from web_app.utilities import Validator, Validation
 from flask import jsonify, request
+from web_app.utilities.custom_roles_required import custom_roles_required
 import itertools
 
 import os
@@ -15,6 +16,7 @@ from jinja2 import Environment, FileSystemLoader
 
 class PortfolioApiView():
     @app.route('/api/v1/portfolios/<int:portfolio_id>')
+    @custom_roles_required('admin')
     def api_get_portfolio(portfolio_id):
         validator = Validator([Validation.portfolio_exists(portfolio_id)])
         if not validator.validate(request):
@@ -23,6 +25,7 @@ class PortfolioApiView():
         return jsonify(Portfolio.query.get(portfolio_id)), status.HTTP_200_OK
 
     @app.route('/api/v1/portfolios')
+    @custom_roles_required('admin')
     def api_get_all_portfolios():
         portfolios = Portfolio.query.all()
         if portfolios:
@@ -31,6 +34,7 @@ class PortfolioApiView():
             return '', status.HTTP_204_NO_CONTENT
 
     @app.route('/api/v1/portfolios', methods=['POST'])
+    @custom_roles_required('admin')
     def api_create_portfolio():
         validator = Validator([
             Validation.is_json_payload(),
@@ -51,6 +55,7 @@ class PortfolioApiView():
         return jsonify(new_portfolio), status.HTTP_201_CREATED
 
     @app.route('/api/v1/portfolios/<int:portfolio_id>', methods=['PATCH'])
+    @custom_roles_required('admin')
     def api_update_portfolio(portfolio_id):
         validator = Validator([
             Validation.is_json_payload(),
@@ -76,6 +81,7 @@ class PortfolioApiView():
         return jsonify(portfolio), status.HTTP_200_OK
 
     @app.route('/api/v1/portfolios/<int:portfolio_id>/albums/<int:album_id>', methods=['POST'])
+    @custom_roles_required('admin')
     def api_portfolio_add_album(portfolio_id, album_id):
         validator = Validator([
             Validation.portfolio_exists(portfolio_id),
@@ -93,6 +99,7 @@ class PortfolioApiView():
             return '', status.HTTP_400_BAD_REQUEST
 
     @app.route('/api/v1/portfolios/<int:portfolio_id>/albums/<int:album_id>', methods=['DELETE'])
+    @custom_roles_required('admin')
     def api_portfolio_remove_album(portfolio_id, album_id):
         validator = Validator([
             Validation.portfolio_exists(portfolio_id),
@@ -110,6 +117,7 @@ class PortfolioApiView():
             return '', status.HTTP_400_BAD_REQUEST
 
     @app.route('/api/v1/portfolios/<int:portfolio_id>', methods=['DELETE'])
+    @custom_roles_required('admin')
     def api_delete_portfolio(portfolio_id):
         validator = Validator([Validation.portfolio_exists(portfolio_id)])
         if not validator.validate(request):
@@ -119,6 +127,7 @@ class PortfolioApiView():
         return '', status.HTTP_200_OK
 
     @app.route('/api/v1/portfolios/<int:portfolio_id>/generate', methods=['POST'])
+    @custom_roles_required('admin')
     def api_generate_website(portfolio_id):
         thumbnail_size = 400
         downsample_max_size = 2400

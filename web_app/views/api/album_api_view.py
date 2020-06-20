@@ -3,9 +3,11 @@ from flask_api import status
 from web_app.models import Album, Image
 from web_app.utilities import Validator, Validation
 from flask import jsonify, request
+from web_app.utilities.custom_roles_required import custom_roles_required
 
 class AlbumApiView():
     @app.route('/api/v1/albums/<int:album_id>')
+    @custom_roles_required('admin')
     def api_get_album(album_id):
         validator = Validator([Validation.album_exists(album_id)])
         if not validator.validate(request):
@@ -14,6 +16,7 @@ class AlbumApiView():
         return jsonify(Album.query.get(album_id)), status.HTTP_200_OK
 
     @app.route('/api/v1/albums')
+    @custom_roles_required('admin')
     def api_get_all_albums():
         albums = Album.query.all()
         if albums:
@@ -22,6 +25,7 @@ class AlbumApiView():
             return '', status.HTTP_204_NO_CONTENT
 
     @app.route('/api/v1/albums', methods=['POST'])
+    @custom_roles_required('admin')
     def api_create_album():
         validator = Validator([
             Validation.is_json_payload(),
@@ -39,6 +43,7 @@ class AlbumApiView():
         return jsonify(new_album), status.HTTP_201_CREATED
 
     @app.route('/api/v1/albums/<int:album_id>', methods=['PATCH'])
+    @custom_roles_required('admin')
     def api_update_album(album_id):
         validator = Validator([
             Validation.is_json_payload(),
@@ -60,6 +65,7 @@ class AlbumApiView():
         return jsonify(album), status.HTTP_200_OK
 
     @app.route('/api/v1/albums/<int:album_id>/images/<int:image_id>', methods=['POST'])
+    @custom_roles_required('admin')
     def api_album_add_image(album_id, image_id):
         validator = Validator([
             Validation.album_exists(album_id),
@@ -77,6 +83,7 @@ class AlbumApiView():
             return '', status.HTTP_200_OK
 
     @app.route('/api/v1/albums/<int:album_id>/images/<int:image_id>', methods=['DELETE'])
+    @custom_roles_required('admin')
     def api_album_remove_image(album_id, image_id):
         validator = Validator([
             Validation.album_exists(album_id),
@@ -94,6 +101,7 @@ class AlbumApiView():
             return '', status.HTTP_400_BAD_REQUEST
 
     @app.route('/api/v1/albums/<int:album_id>', methods=['DELETE'])
+    @custom_roles_required('admin')
     def api_delete_album(album_id):
         validator = Validator([Validation.album_exists(album_id)])
         if not validator.validate(request):

@@ -1,3 +1,4 @@
+from .authorization_view import AuthorizationView
 from .album_view import AlbumView
 from .build_view import BuildView
 from .image_view import ImageView
