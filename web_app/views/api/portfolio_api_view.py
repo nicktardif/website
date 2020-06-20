@@ -226,12 +226,12 @@ def create_spritemaps(thumbnail_dir, sprites_dir, css_dir, album):
             thumbnail_dir,
             sprites_dir,
             css_dir)
-    print('Starting to generate the spritemaps')
+    print('Starting to generate the spritemaps for {}'.format(album.name))
     subprocess.check_output(glue_cmd, shell=True)
 
     print('Finished spritemap generation')
 
-    print('Starting to compress spritemaps')
+    print('Starting to compress spritemaps for {}'.format(album.name))
     random_name = os.path.basename(thumbnail_dir)
     compress_2x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 25% -format jpg {}/{}@2x*.png'.format(sprites_dir, random_name)
     compress_1_5x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 45% -format jpg {}/{}@1.5x*.png'.format(sprites_dir, random_name)
