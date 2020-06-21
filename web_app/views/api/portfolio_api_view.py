@@ -11,7 +11,7 @@ import glob
 import shutil
 import tempfile
 import subprocess
-from web_app.utilities.file_helper import get_full_path, get_full_build_path
+from web_app.utilities.file_helper import get_full_path
 from jinja2 import Environment, FileSystemLoader
 
 class PortfolioApiView():
@@ -136,11 +136,6 @@ class PortfolioApiView():
         images = get_all_images_in_portfolio(portfolio_id)
         image_count = len(images)
 
-        # TODO: Clear the build dir, create CSS and JS dirs
-        shutil.rmtree(app.config['BUILD_DIR'], ignore_errors=True)
-        for directory in [app.config['BUILD_DIR'], app.config['BUILD_CSS_DIR'], app.config['BUILD_JS_DIR']]:
-            os.mkdir(directory)
-
         # create thumbnail and downsampled images for all images in the albums
         for idx, image in enumerate(images):
             if not image.thumbnail_image:
@@ -152,55 +147,64 @@ class PortfolioApiView():
             percent = ((idx + 1) / image_count) * 100.0
             print('Derived Image Generation: {:.2f}% - ({} of {})'.format(percent, idx + 1, image_count))
 
-        for image in images:
-            shutil.copy(get_full_path(image.downsampled_image.path), get_full_build_path(''))
+        portfolio = Portfolio.query.get(portfolio_id)
 
-        for album in Album.query.all():
-            create_gallery_webpage(album)
+        with tempfile.TemporaryDirectory() as temp_build_dir:
+            for directory in ['css', 'js', 'sprites']:
+                os.mkdir(os.path.join(temp_build_dir, directory))
 
-        primary_album = Album.query.get(Portfolio.query.get(portfolio_id).primary_album_id)
-        shutil.copy(get_full_build_path('{}.html'.format(primary_album.name)), get_full_build_path('index.html'))
+            for image in images:
+                shutil.copy(get_full_path(image.downsampled_image.path), temp_build_dir)
 
-        ## generate the whole website
+            for album in portfolio.albums:
+                create_gallery_webpage(album, portfolio_id, temp_build_dir)
 
-        ## Copy in the CSS and JS files
-        original_js_dir = get_full_path('js')
-        js_files = glob.glob('{}/*.js'.format(original_js_dir))
-        concat_files(js_files, os.path.join(app.config['BUILD_JS_DIR'], 'nicktardif.min.js'))
+            primary_album = Album.query.get(portfolio.primary_album_id)
+            shutil.copy(os.path.join(temp_build_dir, '{}.html'.format(primary_album.name)), os.path.join(temp_build_dir, 'index.html'))
 
-        original_css_dir = get_full_path('css')
-        css_files = glob.glob('{}/*.css'.format(original_css_dir))
-        concat_files(css_files, os.path.join(app.config['BUILD_CSS_DIR'], 'nicktardif.min.css'))
-        shutil.copy(get_full_path('css/default-skin.svg'), app.config['BUILD_CSS_DIR'])
+            ## generate the whole website
 
-        ## Copy in the favicon file
-        shutil.copy(get_full_path('assets/favicon.ico'), get_full_build_path(''))
+            ## Copy in the CSS and JS files
+            original_js_dir = get_full_path('js')
+            js_files = glob.glob('{}/*.js'.format(original_js_dir))
+            concat_files(js_files, os.path.join(temp_build_dir, 'js', 'nicktardif.min.js'))
+
+            original_css_dir = get_full_path('css')
+            css_files = glob.glob('{}/*.css'.format(original_css_dir))
+            concat_files(css_files, os.path.join(temp_build_dir, 'css', 'nicktardif.min.css'))
+            shutil.copy(get_full_path('css/default-skin.svg'), os.path.join(temp_build_dir, 'css'))
+
+            ## Copy in the favicon file
+            shutil.copy(get_full_path('assets/favicon.ico'), temp_build_dir)
+
+            shutil.rmtree(app.config['BUILD_DIR'])
+            shutil.move(temp_build_dir, app.config['BUILD_DIR'])
 
         return '', status.HTTP_200_OK
 
-def create_gallery_webpage(album):
+def create_gallery_webpage(album, portfolio_id, build_dir):
     # copy all the thumbnail images in the album to a new folder
-    with tempfile.TemporaryDirectory() as temporary_directory:
+    with tempfile.TemporaryDirectory() as temp_images_dir:
         for image in album.images:
-            shutil.copy(get_full_path(image.thumbnail_image.path), temporary_directory)
+            shutil.copy(get_full_path(image.thumbnail_image.path), temp_images_dir)
 
-        album_sprites_dir = get_full_build_path(album.name + '_sprites')
+        album_sprites_dir = os.path.join(build_dir, album.name + '_sprites')
         shutil.rmtree(album_sprites_dir, ignore_errors=True)
         os.mkdir(album_sprites_dir)
 
-        album_css_dir = get_full_build_path(album.name + '_css')
+        album_css_dir = os.path.join(build_dir, album.name + '_css')
         shutil.rmtree(album_css_dir, ignore_errors=True)
         os.mkdir(album_css_dir)
 
         # run the glue spritemap generation - outputs are spritemap and css code
-        create_spritemaps(temporary_directory, album_sprites_dir, album_css_dir, album)
+        create_spritemaps(temp_images_dir, album_sprites_dir, album_css_dir, album)
 
         # generate the page HTML
-        hash_string = os.path.basename(temporary_directory)
-        generate_html(app.config['BUILD_DIR'], album, Album.query.all(), hash_string)
+        hash_string = os.path.basename(temp_images_dir)
+        generate_html(build_dir, album, Portfolio.query.get(portfolio_id).albums, hash_string)
 
-        shutil.copytree(album_css_dir, app.config['BUILD_CSS_DIR'], dirs_exist_ok=True)
-        shutil.copytree(album_sprites_dir, app.config['BUILD_SPRITES_DIR'], dirs_exist_ok=True)
+        shutil.copytree(album_css_dir, os.path.join(build_dir, 'css'), dirs_exist_ok=True)
+        shutil.copytree(album_sprites_dir, os.path.join(build_dir, 'sprites'), dirs_exist_ok=True)
 
 # For each category, render an HTML page
 def generate_html(html_dir, album, albums, hash_string):
