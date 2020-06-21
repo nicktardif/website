@@ -1,0 +1,17 @@
+# This file goes in /etc/systemd/system/website.service
+# Enable with "sudo systemctl start website" and "sudo systemctl enable website"
+
+[Unit]
+Description=Gunicorn instance to run personal website
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/root/Git/website
+Environment="PATH=/root/Git/website/:$PATH"
+ExecStart=run.sh
+
+# This will tell systemd what to link this service to if we enable it to start at boot. We want this service to start when the regular multi-user system is up and running:
+[Install]
+WantedBy=multi-user.target
