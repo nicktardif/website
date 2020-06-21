@@ -53,7 +53,7 @@ class ImageGenerator:
 
     def create_thumbnail_file(image_full_path, scaled_width, scaled_height, square_size):
         thumbnail_name = ImageGenerator.get_downscaled_file_name(image_full_path, square_size, square_size)
-        convert_cmd = "convert -resize {}x{}^ -extent {}x{} -gravity Center \( \"{}\" -strip -resize {}x{} \) \"{}\"".format(
+        convert_cmd = "convert -quality 70% -resize {}x{}^ -extent {}x{} -gravity Center \( \"{}\" -strip -resize {}x{} \) \"{}\"".format(
                 square_size, square_size,
                 square_size, square_size,
                 image_full_path,

@@ -233,9 +233,9 @@ def create_spritemaps(thumbnail_dir, sprites_dir, css_dir, album):
 
     print('Starting to compress spritemaps for {}'.format(album.name))
     random_name = os.path.basename(thumbnail_dir)
-    compress_2x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 25% -format jpg {}/{}@2x*.png'.format(sprites_dir, random_name)
-    compress_1_5x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 45% -format jpg {}/{}@1.5x*.png'.format(sprites_dir, random_name)
-    compress_1x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 65% -format jpg {}/{}.png'.format(sprites_dir, random_name)
+    compress_2x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 35% -format jpg {}/{}@2x*.png'.format(sprites_dir, random_name)
+    compress_1_5x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 50% -format jpg {}/{}@1.5x*.png'.format(sprites_dir, random_name)
+    compress_1x_cmd = 'mogrify -define jpeg:fancy-upsampling=off -quality 70% -format jpg {}/{}.png'.format(sprites_dir, random_name)
     sed_switch_image_type_cmd = "sed -i -e 's/png/jpg/g' {}/{}.css".format(css_dir, random_name)
     sed_update_sprite_path_cmd = "sed -i -e 's/..\/{}_sprites/\/sprites/g' {}/{}.css".format(album.name, css_dir, random_name)
     rm_png_cmd = 'rm {}/{}*.png'.format(sprites_dir, random_name)
