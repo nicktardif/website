@@ -1,9 +1,12 @@
 body {
   font-family: 'Josefin Sans', sans-serif;
 }
-#main-body {
-  margin-left: 10%;
-  margin-right: 10%;
+
+@media all and (min-width:800px) {
+  #main-body {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 .header {
   text-align: center;
