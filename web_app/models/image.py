@@ -120,4 +120,4 @@ class Image(db.Model):
         return metadata.read_iptc().get('Iptc.Application2.SubLocation')
 
     def __get_keywords(metadata):
-        return [Keyword(x) for x in metadata.read_iptc().get('Iptc.Application2.Keywords')]
+        return [Keyword(x) for x in metadata.read_iptc().get('Iptc.Application2.Keywords', [])]
