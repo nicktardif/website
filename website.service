@@ -9,8 +9,8 @@ After=network.target
 User=root
 Group=www-data
 WorkingDirectory=/root/Git/website
-Environment="PATH=/root/Git/website/:$PATH"
-ExecStart=run.sh
+ExecStart=/root/Git/website/run.sh
+PrivateTmp=false
 
 # This will tell systemd what to link this service to if we enable it to start at boot. We want this service to start when the regular multi-user system is up and running:
 [Install]
